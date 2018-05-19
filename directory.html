@@ -8,7 +8,7 @@
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="css/nav.css">
 
     <style>
         body {
@@ -22,6 +22,9 @@
         a:active {
             color: inherit;
             text-decoration: none;
+        }
+        p{
+            margin: 0;
         }
         .clearfix{
             clear:both;
@@ -76,15 +79,15 @@
         } */
         .content{
             width: 100%;
-            padding: 0 66.425px 0 166.425px;
+            padding: 0 95px 0 160px;
             box-sizing: border-box;
         }
-        .type{
+        .content .type{
             margin: 0;
             padding-left: 0;
-            height: 140px;
-            padding-top: 70px;
+            padding-top: 68px;
             box-sizing: border-box;
+            margin-bottom: 40px;
         }
         .content > .type > li{
             display: inline-block;
@@ -95,11 +98,11 @@
             color:#FA6E0A;
         }
         .content > .type > li:not(:last-child){
-            margin-right: 25px;
+            margin-right: 20px;
         }
         .content > .type > li::before{
             content:'‧';
-            font-size: 30px;
+            font-size: 24px;
             color: #1496FA;
             display: inline-block;
         }
@@ -107,67 +110,101 @@
             color:#FA6E0A;
         }
         .news-wrap{
-            margin-left:-33.2125px;
-            margin-right: -33.2125px;
+            /*margin-left:-33.2125px;*/
+            /*margin-right: -33.2125px;*/
+            margin: 0 -30px;
+            width: 1725px;
         }
         .news-item{
             float:left;
-            width: 20%;
-            padding: 0 33.2125px;
-            box-sizing: border-box;
+            /*width: 20%;*/
+            width: 285px;
+            height: 455px;
+            /*margin: 0 30px;*/
+            /*padding: 0 33.2125px;*/
+            padding: 0 30px;
+            /*box-sizing: border-box;*/
         }
         .bg{
             background-color: rgba(130,210,255,0.1);
             width: 100%;
             height: 400px;
             margin-bottom: 40px;
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            /*box-shadow: 3px 3px 6px rgba(0,0,0,0.4);*/
         }
     </style>
 </head>
 <body>
     <div class="main-wrap">
-        <div class="nav">
-            <div class="navbar">
-                <a href="">
-                    <img src="img/bar.svg" alt="" width="50">
-                </a>
-            </div>
-            <div class="page_dot">
-                <ul>
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="social">
-                <div class="youtube">
-                    <a href="">
-                        <img src="img/youtube.svg" alt="" width="50">
-                    </a>
+        <div class="nav_section">
+            <div class="nav">
+                <div class="navbar">
+                    <img src="img/Menu.svg" alt="" width="50">
                 </div>
-                <div class="fb">
-                    <a href="">
-                        <img src="img/facebook.svg" alt="" width="50">
-                    </a>
+                <div class="page_dot">
+                    <ul>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
+                <div class="social">
+                    <div class="youtube">
+                        <a href="">
+                            <img src="img/youtube.svg" alt="" width="50">
+                        </a>
+                    </div>
+                    <div class="fb">
+                        <a href="">
+                            <img src="img/facebook.svg" alt="" width="50">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav_content">
+                <div class="search_box">
+                    <p>即將推出功能</p>
+                    <img src="img/Magnifier-B.svg" alt="" width="20">
+                </div>
+                <!--<p style="font-size:18px;">-->
+                <!--即將推出功能-->
+                <!--</p>-->
+                <div class="type">
+                    <p>‧&nbsp;朝陽新聞</p>
+                </div>
+                <hr class="line_w">
+                <div class="type type_select">
+                    <p class="active">‧&nbsp;校園</p>
+                    <p>‧&nbsp;體育</p>
+                    <p>‧&nbsp;藝文</p>
+                    <p>‧&nbsp;科技</p>
+                    <p>‧&nbsp;醫藥</p>
+                    <p class="type_select_last">‧&nbsp;地方文化</p>
+                </div>
+                <hr class="line_w">
+                <div class="type type_select">
+                    <p>‧&nbsp;朝陽新聞台</p>
+                    <p>‧&nbsp;傳播藝術系</p>
+                    <p class="type_select_last">‧&nbsp;朝陽科技大學</p>
+                </div>
+
             </div>
         </div>
         <div class="content">
             <ul class="type">
-                <li class="active"><a href="#!">校園</a></li>
-                <li><a href="#!">體育</a></li>
-                <li><a href="#!">藝文</a></li>
-                <li><a href="#!">科技</a></li>
-                <li><a href="#!">醫藥</a></li>
-                <li><a href="#!">地方文化</a></li>
+                <li class="active"><a href="#!">&nbsp;校園</a></li>
+                <li><a href="#!">&nbsp;體育</a></li>
+                <li><a href="#!">&nbsp;藝文</a></li>
+                <li><a href="#!">&nbsp;科技</a></li>
+                <li><a href="#!">&nbsp;醫藥</a></li>
+                <li><a href="#!">&nbsp;地方文化</a></li>
             </ul>
             <div class="news-wrap">
-                <div class="news-item">
-                    <div class="bg"></div>
-                </div>
+                <a href="index.html">
+                    <div class="news-item">
+                        <div class="bg"></div>
+                    </div>
+                </a>
                 <div class="news-item">
                     <div class="bg"></div>
                 </div>
@@ -199,5 +236,20 @@
             </div>
         </div>
     </div>
+
+
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        $(".navbar").click(function(){
+            $(".nav_content").toggleClass("active");
+        });
+        $(".content").click(function(){
+            $(".nav_content").removeClass("active");
+        });
+        $(".content_right").click(function(){
+            $(".nav_content").removeClass("active");
+        });
+    </script>
 </body>
 </html>
