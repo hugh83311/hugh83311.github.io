@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>朝陽新聞台</title>
     <!-- <link rel="stylesheet" href="/css/fontawesome-all.min.css"  integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="css/nav.css">
     <style>
         body {
             margin: 0;
+            padding: 0;
             font-family: Microsoft JhengHei;
             letter-spacing: 1px;
+            overflow: hidden;
         }
 
-        /* img {
+        img {
             display: block;
-        } */
+        }
 
         a,
         a:hover,
@@ -26,6 +29,9 @@
         a:active {
             color: inherit;
             text-decoration: none;
+        }
+        p{
+            margin: 0
         }
 
         /* ul {
@@ -39,8 +45,59 @@
             display: inline-flex;
             width: 100%;
         }
-
-        .nav {
+        /**nav**/
+        .clearfix{
+            clear:both;
+        }
+        /* .nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100px;
+            height: 100vh;
+            padding: 60px 0;
+            background : linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+            box-sizing: border-box;
+            font-size: 40px;
+            color: #929292;
+        }
+        .page_dot > ul{
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .page_dot > ul > li{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        .page_dot > ul > li.active{
+            background : linear-gradient(-45deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 48.38%, rgba(255, 251, 238, 1) 65.97%, rgba(255, 254, 251, 1) 83.29%, rgba(255, 255, 255, 1) 100%);
+        }
+        .page_dot > ul > li:not(:last-child){
+            margin-bottom: 10px;
+        }
+        .page_dot > ul > li:not(:last-child)::after{
+            content:'';
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: white;
+            top:100%;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .youtube{
+            margin-bottom: 15px;
+        } */
+        /* .nav {
             flex: 1 1 5vw;
             max-width: 100px;
             height: 100vh;
@@ -53,18 +110,16 @@
             justify-content: center;
             position: relative;
         }
-
         .navbar {
             position: absolute;
             top: 20px;
-            /* font-size: 40px;
-            color: #929292; */
+           font-size: 40px;
+            color: #929292; 
         }
         .youtube {
             position: absolute;
             bottom: 70px;
         }
-
         .fb {
             position: absolute;
             bottom: 20px;
@@ -81,7 +136,7 @@
             border-radius: 99%;
             background-color:  #333;
             margin-bottom: 5px;
-            /* border: 1px solid #333; */
+            border: 1px solid #333; 
         }
         .page_id  li.active{
             background-color: transparent;
@@ -95,53 +150,64 @@
             width: 5px;
             height: 10px;
             background-color: #333;
+        } */
+        .nav_section{
+            /* position: relative; */
+        }
+        .nav_content{
+            width: 455px;
+            height: 100vh;
+            position: fixed;;
+            /* left: -355px; */
+            left: 100px;
+            background: linear-gradient(315deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 25%, rgba(94, 94, 94, 1) 50%, rgba(90, 90, 90, 1) 100%);
+            box-sizing: border-box;
+            padding: 60px 70px 0 70px;
+            transition:.5s;
+        }
+        .nav_content.active{
+            left: 100px;
+        }
+        .search_box{
+            width: 315px;
+            height: 40px;
+            border: 2px solid #fff;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 6px 8px;
+        }
+        .search_box p{
+            /* font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 1.8px; */
+            color: rgba(255,255,255,.3);
+            /* letter-spacing: 1.5px; */
+            font-size: 18px;
+            font-family: MicrosoftJhengHeiRegular, Microsoft JhengHei;
+            /* letter-spacing: 0.1em; */
         }
         /**************************************/
 
         .container{
-            width: 90%;
-            margin: 0 auto;
+            width: 715px;
+            margin-left: 165px;
+            margin-right: 130px;
         }
 
         .content {
             flex: 1 1 45vw;
-            /* width: 40vw; */
             flex-direction: row;
-            /* background-color: red; */
             height: 100vh;
             overflow-y: scroll;
             color: #8A8A8A;
             font-size: 18px;
-            /* position: relative; */
         }
         .content::-webkit-scrollbar {
             display: none;
         }
-        .arrow_td{
-            position: fixed;
-            bottom: 0;
-            right: 46.5vw;
-            display: flex;
-            flex-direction:column;
-        }
-        .arrow_top,
-        .arrow_down{
-            width: 5vw;
-            max-width: 50px;
-            /* float: left; */
-            background-color: #CCCCCC;
-            color: #fff;
-            font-size: 30px;
-            line-height: 80px;
-            text-align: center;
-            /* box-shadow:4px 0px 15px 2px rgba(20%,20%,40%,0.5); */
-        }
-        .arrow_top{
-            border-bottom:1px solid #fff;
-        }
-        .arrow_down{
-            border-top:1px solid #fff;
-        }
+        
         .part_title{
             font-weight: 600;
             line-height: 24px;
@@ -165,21 +231,16 @@
         }
 
         .content_right {
-            flex: 1 1 45vw;
+            width: 910px;
             display: inline-flex;
             flex-wrap: nowrap;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            position: relative;
         }
 
         .content_img {
-            height:calc(100vh - 165px);
+            height:100vh;
             width: 100%;
-            /*background-color: #F4F4F4;*/
-            /* border-bottom: 1px solid #fff; */
-            background-image: url("img/A.jpg");
+            background-color: #F4F4F4;
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -188,33 +249,82 @@
             width: 100%;
             height: 100%;
         }
+       
+        /**arrow**/
+        .arrow_num{
+            display: flex;
+            flex-direction: row;
+            align-items:flex-end;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .arrow{
+            display:flex;
+            flex-wrap:nowrap;
+            flex: 8 1;
+            text-align: center;
+        }
+        .arrow_td{
+            flex: 1 1;
+            width: 100%;
+            display:flex;
+            flex-direction:column;
+            margin-right: 2px;
+        }
+        .arrow_top,
+        .arrow_down{
+            width: 63px;
+            height: 84px;
+            background-color: #CCCCCC;
+        }
+        .arrow_top::before,
+        .arrow_top::after,
+        .arrow_down::before,
+        .arrow_down::after{
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .arrow_top{
+            margin-bottom: 2px;
+        }
+        .arrow_top img,
+        .arrow_down img{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .arrow_lr{
+            flex: 7 1;
+            display:flex;
+        }
         .arrow_left,
         .arrow_right{
-            width: 15vw;
-            max-width: 350px;
-            float: left;
+            width: 226.5px;
+            height: 170px;
             background-color: #B3B3B3;
-            color: #fff;
-            font-size: 100px;
-            line-height: 165px;
-            text-align: center;
-            /* box-shadow:4px 0px 15px 2px rgba(20%,20%,40%,0.5); */
+        }
+        .arrow_left::before,
+        .arrow_left::after,
+        .arrow_right::before,
+        .arrow_right::after{
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
         }
         .arrow_left {
-            border-right:1px solid #fff;
+            margin-right: 2px;
         }
-        .arrow_right{
-            border-left:1px solid #fff;
+        .arrow_left img,
+        .arrow_right img{
+            display: inline-block;
+            vertical-align: middle;
         }
         .set_num{
-            width: 45%;
-            max-width: 500px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            /* box-shadow: 3px 3px 30px 2px rgba(20%,20%,40%,0.7); */
-            flex: 4 4 20vw;
-            height: 200px;
+            width: 455px;
+            height: 270px;
             background-color: #999999;
             cursor: default;
             text-align: center;
@@ -224,53 +334,69 @@
             font-size: 120px;
             line-height: 200px;
         }
+        .block {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .block::before {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #000;
+        }
+        .block .a {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
     </style>
 </head>
 
 <body>
     <div class="all">
-        <div class="nav">
-            <div class="navbar">
-                <a href="">
-                    <i class="fas fa-bars"></i>
-                </a>
+        <div class="nav_section">
+            <div class="nav">
+                <div class="navbar">
+                    <img src="img/Menu.svg" alt="" width="50">
+                </div>
+                <div class="page_dot">
+                    <ul>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <div class="youtube">
+                        <a href="">
+                            <img src="img/Youtube.svg" alt="" width="50">
+                        </a>
+                    </div>
+                    <div class="fb">
+                        <a href="">
+                            <img src="img/Facebook.svg" alt="" width="50">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="page_id">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="youtube">
-                <a href="">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <div class="fb">
-                <a href="">
-                     <i class="fab fa-facebook-square"></i>
-                </a>
-            </div>
+            <div class="nav_content">
+                <div class="search_box">
+                    <p>即將推出功能</p>
+                    <img src="img/Magnifier-B.svg" alt="" width="20">
+                </div>
+                <p style="font-size:18px;">
+                    即將推出功能
+                </p>
 
+            </div>
         </div>
         <div class="content">
-                <div class="arrow_td">
-                    <a href="">
-                        <div class="arrow_top">
-                            <i class="fas fa-arrow-up"></i>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="arrow_down">
-                            <i class="fas fa-arrow-down"></i>
-                        </div>
-                    </a>
-                </div>
-            <div class="container">
+            <!-- <div class="container">
                 <ul class="part_title">
                     <li>
                         <a href="">中台灣影視基地臺</a>
@@ -289,7 +415,7 @@
                     </li>
                 </ul>
             </div>
-            <hr class="space_line">
+            <hr class="space_line"> -->
             <div class="container">
                 <div class="title" id="">中台灣影視基地</div>
                 <p class="literary">
@@ -330,24 +456,40 @@
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
                 </p>
             </div>
-
         </div>
         <div class="content_right">
             <div class="content_img">
                 <!--<img class="img_size"src="/img/A.jpg" alt="">-->
             </div>
+        </div>
+        <div class="arrow_num">
             <div class="arrow">
-                <a href="">
-                    <div class="arrow_left">
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="arrow_right">
-                        <!-- <i class="fas fa-arrow-right"></i> -->
-                    </div>
-                </a>
-                <div style="clear:both;"></div>+
+                <div class="arrow_td">
+                    <a href="">
+                        <div class="arrow_top">
+                            <img src="img/Up.svg" alt="" height="15">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="arrow_down">
+                            <img src="img/Down.svg" alt="" height="15px"  >
+                        </div>
+                    </a>
+                </div>
+                <div class="arrow_lr">
+                        <div class="arrow_left">
+                                <img src="img/Left.svg" alt="" width="20px">
+                            </div>
+                    <a href="">
+                        <div class="arrow_right">
+                            <img src="img/Right.svg" alt="" width="20px" >
+                        </div>
+                    </a>
+                    <!-- <div style="clear:both;"></div> -->
+                </div>
+                <!-- <div class="block">
+                    <div class="a"></div>
+                </div> -->
             </div>
             <div class="set_num">
                <!-- <span>35#</span> -->
@@ -356,6 +498,20 @@
 
     </div>
 
+
+
+    <script src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script>
+    $(".navbar").click(function(){
+        $(".nav_content").toggleClass("active");
+    });
+    $(".content").click(function(){
+        $(".nav_content").removeClass("active");
+    });
+    $(".content_right").click(function(){
+        $(".nav_content").removeClass("active");
+    });
+    </script>
 </body>
 
 </html>
