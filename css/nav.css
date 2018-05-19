@@ -50,3 +50,58 @@
 .youtube{
     margin-bottom: 15px;
 }
+/***nav content***/
+.nav_content{
+    width: 455px;
+    height: 100vh;
+    position: fixed;;
+    left: -355px;
+    /*left: 100px;*/
+    background: linear-gradient(315deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 25%, rgba(94, 94, 94, 1) 50%, rgba(90, 90, 90, 1) 100%);
+    box-sizing: border-box;
+    padding: 60px 70px 0 70px;
+    transition:.5s;
+}
+.nav_content.active{
+    left: 100px;
+}
+.search_box{
+    width: 315px;
+    height: 40px;
+    border: 2px solid #fff;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 6px 8px;
+}
+.search_box p{
+    /* font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.8px; */
+    color: rgba(255,255,255,.3);
+    /* letter-spacing: 1.5px; */
+    font-size: 18px;
+    font-family: MicrosoftJhengHeiRegular, Microsoft JhengHei;
+    /* letter-spacing: 0.1em; */
+}
+.type{
+    font-size: 24px;
+    color:#fff;
+}
+.line_w{
+    background-color: #fff;
+    height: 2px;
+    border:0;
+    margin: 18px 0;
+}
+.type_select p{
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+.type_select p.active{
+    color: #FFDC78;
+}
+.type_select_last{
+    margin: 0;
+}
