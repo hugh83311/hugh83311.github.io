@@ -6,9 +6,9 @@ body {
     overflow: hidden;
 }
 
-img {
+/* img {
     display: block;
-}
+} */
 
 a,
 a:hover,
@@ -37,15 +37,24 @@ p{
     color: #929292;
     z-index: 5;
 }
+.nav img{
+    display: block;
+}
 .navbar{
     cursor: pointer;
+}
+.navbar:hover img{
+    filter: drop-shadow(2px 2px 4px rgba(90,90,90,.1));
+}
+.navbar img:active{
+    opacity: .8;
 }
 .page_dot > ul{
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-.page_dot > ul > li{
+.page_dot > ul > a > li{
     position: relative;
     width: 20px;
     height: 20px;
@@ -53,13 +62,29 @@ p{
     border-radius: 100%;
     cursor: pointer;
 }
-.page_dot > ul > li.active{
+.page_dot > ul > a > li:hover{
+    filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
+}
+.page_dot > ul > a > li.active{
     background : linear-gradient(-45deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 48.38%, rgba(255, 251, 238, 1) 65.97%, rgba(255, 254, 251, 1) 83.29%, rgba(255, 255, 255, 1) 100%);
 }
-.page_dot > ul > li:not(:last-child){
+/* .page_dot > ul > a > li:not(:last-child){
+    margin-bottom: 20px;
+} */
+.page_dot > ul > a > li{
     margin-bottom: 20px;
 }
-.page_dot > ul > li:not(:last-child)::after{
+/* .page_dot > ul > a > li:not(:last-child)::after{
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: white;
+    top:100%;
+    left:50%;
+    transform: translateX(-50%);
+} */
+.page_dot > ul > a > li::after{
     content:'';
     position: absolute;
     width: 2px;
@@ -69,8 +94,23 @@ p{
     left:50%;
     transform: translateX(-50%);
 }
+.page_dot > ul > a:nth-last-child(1) > li::after{
+    display: none;
+}
 .youtube{
     margin-bottom: 15px;
+}
+.youtube:hover img{
+    filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
+}
+.youtube img:active{
+    opacity: .9;
+}
+.fb:hover img{
+    filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
+}
+.fb img:active{
+    opacity: .9;
 }
 /***nav content***/
 .nav_content{
@@ -79,7 +119,7 @@ p{
     position: fixed;;
     left: -355px;
     /*left: 100px;*/
-    background: linear-gradient(315deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 25%, rgba(94, 94, 94, 1) 50%, rgba(90, 90, 90, 1) 100%);
+    background : linear-gradient(-45deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
     box-sizing: border-box;
     padding: 60px 70px 0 70px;
     z-index: 4;
@@ -111,6 +151,7 @@ p{
 .type{
     font-size: 24px;
     color:#fff;
+    letter-spacing: 1.9px;
 }
 .line_w{
     background-color: #fff;
@@ -122,9 +163,14 @@ p{
     margin-bottom: 9px;
     cursor: pointer;
 }
-.type_select p.active{
-    color: #FFDC78;
-}
 .type_select_last{
     margin: 0;
+}
+.type p:hover{
+    opacity: .8;
+}
+.type p:active,
+.type p.active{
+    color: #FFDC78;
+    opacity: 1;
 }
