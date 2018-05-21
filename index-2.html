@@ -242,7 +242,21 @@
             display: inline-block;
             vertical-align: middle;
         }
+        /* .set_num span{
+            color: #fff;
+            font-size: 160px;
+            line-height: 213px;
+            font-weight: bold;
+            letter-spacing: 10.7px;
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(3px 3px 9px rgba(90,90,90,.1));
+        } */
         .set_num span{
+            display: none;
+        }
+        .set_num .slet{
+            display: block;
             color: #fff;
             font-size: 160px;
             line-height: 213px;
@@ -255,12 +269,31 @@
         .set_num:hover span{
             filter: drop-shadow(3px 3px 9px rgba(90,90,90,.2));
         }
+        .set_num.active span,
+        .set_num.active .slet{
+            display: block;
+            color: #fff;
+            font-size: 37px;
+            line-height: 49px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(1px 1px 3px rgba(0,0,0,.1));
+            margin-right: 25px;
+        }
+        .set_num.active .slet{
+            color:rgba(255, 220, 120, 1);            
+        }
 
         /**content**/
+        #top{
+            height: 1px;
+        }
         .title_section{
             letter-spacing: 1.5px;
             line-height: 50px;
-            margin: 100px 0 0 0;
+            margin: 99px 0 0 0;
         }
         .title{
             font-size: 36px;
@@ -312,7 +345,7 @@
 
 <body>
     <div class="all">
-        <div class="nav_section" id="top">
+        <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
                     <img src="img/Menu.svg" alt="" width="50">
@@ -323,7 +356,7 @@
                             <li class="active"></li>
                         </a>
                         <a href="#A">
-                            <li class="active"></li>
+                            <li></li>
                         </a>
                         <a href="#B">
                             <li></li>
@@ -391,6 +424,7 @@
         </div>
         <div class="content">
             <div class="container">
+                <div id="top"></div>
                 <div class="title_section">
                     <p class="title title_blue">朝陽新聞第二集</p><img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
@@ -499,7 +533,10 @@
                 </div>
             </div>
             <div class="set_num">
-                <span>02#</span>
+                <span>01#</span>
+                <span class="slet">02#</span>
+                <span>03#</span>
+                <span>04#</span>
             </div>
         </div>
 
@@ -524,11 +561,22 @@
     //page_dot
     $(".page_dot li").click(function(){
         if($(this).hasClass("active")){
-            $(this).removeClass("active");
+          // $(this).removeClass("active");
         }else{
             $(".page_dot li").removeClass("active");
             $(this).addClass("active");
         }
+    });
+    </script>
+    <script>
+    //集數
+    $(".set_num").click(function(){
+        if($(this).hasClass("active")){
+            $(this).removeClass("active");
+        }else{
+           $(this).addClass("active");
+        }
+        
     });
     </script>
 </body>

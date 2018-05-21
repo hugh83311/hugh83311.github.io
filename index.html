@@ -257,6 +257,9 @@
         }
 
         /**content**/
+        #top{
+            height: 1px;
+        }
         .title_section{
             letter-spacing: 1.5px;
             line-height: 50px;
@@ -319,11 +322,11 @@
                 </div>
                 <div class="page_dot">
                     <ul>
-                        <a href="">
+                        <a href="#top">
                             <li class="active"></li>
                         </a>
                         <a href="#A">
-                            <li class="active"></li>
+                            <li></li>
                         </a>
                         <a href="#B">
                             <li></li>
@@ -394,6 +397,7 @@
         </div>
         <div class="content">
             <div class="container">
+                <div id="top"></div>
                 <div class="title_section">
                     <p class="title title_blue">朝陽新聞第一集</p><img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
@@ -557,11 +561,11 @@
         $(".nav_content").removeClass("active");
     });
     </script>
-    <script>
+   <script>
     //page_dot
     $(".page_dot li").click(function(){
         if($(this).hasClass("active")){
-            $(this).removeClass("active");
+            // $(this).removeClass("active");
         }else{
             $(".page_dot li").removeClass("active");
             $(this).addClass("active");
