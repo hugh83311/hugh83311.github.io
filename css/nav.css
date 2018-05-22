@@ -127,6 +127,7 @@ p{
 }
 .nav_content.active{
     left: 100px;
+    filter: drop-shadow(2px 0px 10px rgba(90,90,90,.8));
 }
 .search_box{
     width: 315px;
