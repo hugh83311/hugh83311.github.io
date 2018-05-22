@@ -74,22 +74,33 @@
 
         .content_right {
             width: 910px;
-            display: inline-flex;
+            height: 100vh;
+            overflow: auto;
+            /* display: inline-flex;
             flex-wrap: nowrap;
-            flex-direction: column;
+            flex-direction: column; */
+        }
+        .content_right::-webkit-scrollbar {
+            display: none;
         }
 
         .content_img {
             height:910px;
+            margin-bottom: 170px;
             width: 100%;
             background-color: rgba(130, 210, 255, .2);
-            background-size: cover;
+            background-size:cover;
+            background-position: center;
             background-repeat: no-repeat;
         }
-        .img_size{
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
+        .img_A{
+             background-image: url('img/01/01-1.jpg');
+        }
+        .img_B{
+            background-image: url('img/01/01-2.jpg');
+        }
+        .img_C{
+            background-image: url('img/01/01-3.jpg');
         }
        
         /**arrow**/
@@ -537,9 +548,9 @@
             </div>
         </div>
         <div class="content_right">
-            <div class="content_img">
-                <img class="img_size"src="img/01#/01-1.jpg" alt="">
-            </div>
+            <div class="content_img img_A"></div>
+            <div class="content_img img_B"></div>
+            <div class="content_img img_C"></div>
         </div>
         <div class="arrow_num">
             <div class="arrow">
