@@ -98,7 +98,7 @@ p{
     display: none;
 }
 .youtube{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .youtube:hover img{
     filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
