@@ -108,6 +108,7 @@
             color: #8A8A8A;
             font-size: 18px;
             margin-top: 180px;
+            height: 900px;
         }
         .content::-webkit-scrollbar {
             display: none; 
@@ -118,7 +119,7 @@
             margin-right: 138px;
         }
         
-        .part_title{
+        /* .part_title{
             font-weight: 600;
             line-height: 24px;
             padding-left: 20px;
@@ -138,7 +139,7 @@
         .literary{
             text-indent:60px;
             margin: 10px 0;
-        }
+        } */
 
         .content_right {
             width: 910px;
@@ -164,7 +165,7 @@
         .arrow_td{
             position: fixed;
             bottom: 0;
-            right:910px;
+            right:0;
             display:flex;
             flex-direction:column;
             margin-right: 2px;
@@ -173,47 +174,85 @@
         .arrow_td img.chg{
             display: none;
         }
-        .arrow_top,
-        .arrow_down{
+        .arrow_top{
             width: 68px;
             height: 84px;
             background : linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
         }
         .arrow_top::before,
-        .arrow_top::after,
-        .arrow_down::before,
-        .arrow_down::after{
+        .arrow_top::after{
             content: "";
             height: 100%;
             display: inline-block;
             vertical-align: middle;
         }
-        .arrow_top{
-            margin-bottom: 2px;
-        }
-        .arrow_top img,
-        .arrow_down img{
+        .arrow_top img{
             display: inline-block;
             vertical-align: middle;
         }
         .arrow_top:hover img.org,
-        .arrow_top:active img.org,
-        .arrow_down:hover img.org,
-        .arrow_down:active img.org{
+        .arrow_top:active img.org{
             display: none;
         }
-        .arrow_top:hover img,
-        .arrow_down:hover img{
+        .arrow_top:hover img{
             filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
         }
-        .arrow_top:hover img.chg,
-        .arrow_down:hover img.chg{
+        .arrow_top:hover img.chg{
             display: inline-block;
         }
-        .arrow_top:active img.chg,
-        .arrow_down:active img.chg{
+        .arrow_top:active img.chg{
             display: inline-block;
             opacity: .8;
+        }
+
+        /**content**/
+        .title_section{
+            letter-spacing: 1.5px;
+            line-height: 50px;
+            margin: 99px 0 0 0;
+        }
+        .title{
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .title_blue{
+            color: rgba(20,150,250,1);
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .title_orange{
+            color:rgba(250,110,10,1);
+        }
+        .subtitle{
+            color: rgba(255,170,70,1);
+            font-size: 18px;
+        }
+        ul.part_title{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .part_title{
+            font-size: 24px;
+            color: rgba(90,90,90,1);
+        }
+        ul.part_title li::before{ 
+            content: "◎"; 
+            padding-right: 8px;
+        }
+        .space_line{
+            background-color:transparent;
+            height: 100px;
+            border: none;
+            border-bottom:2px solid #1496FA ;
+            margin: 0 138px 40px 0;
+        }
+        .literary{
+            font-size: 24px;
+        }
+        .reporter{
+            font-weight: bold;
+             margin-bottom: 100px;
         }
     </style>
 </head>
@@ -306,64 +345,31 @@
         </div>
         <hr class="line_b">
         <div class="content">
-            <!-- <div class="container">
-                <ul class="part_title">
-                    <li>
-                        <a href="">中台灣影視基地臺</a>
-                    </li>
-                    <li>
-                        <a href="">福爾摩沙電影節</a>
-                    </li>
-                    <li>
-                        <a href="">電影與人生</a>
-                    </li>
-                    <li>
-                        <a href="">金馬最劇情短片放映</a>
-                    </li>
-                    <li>
-                        <a href="">場務工作訪</a>
-                    </li>
-                </ul>
-            </div>
-            <hr class="space_line"> -->
             <div class="container">
-                <div class="title" id="">中台灣影視基地</div>
+                <div class="title title_orange">校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</div>
+                <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導<br><br></div>
                 <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
+                    （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
+                    <br><br>（記者旁白）：133公車途經塗城路、成功路、徳芳路、文心南路等以前坐公車較不方便到達的地方。158公車則是往返朝陽科大、仁愛路、下內新、台中火車站、建國北路、台中高鐵站之間。
+                    <br><br>（記者旁白）：過去從學校還需要轉乘公車才可以到高鐵站，現在133公車只需要大約50分鐘車程並且直接到達高鐵站。158公車則大約需要1小時20分鐘，並且158公車還會經過火車站。票價方面，使用悠遊卡搭乘，133公車僅需要23元，而158則需要43元。
+                    <br><br>（記者旁白）： 新增的133和158號公車不但為周邊居民帶來方便，更是為學生上下學帶來了便利。下面是一些同學對於新增133和158號公車的看法。
+                    <br><br>石同學：“恩，有一點吧。
+                    <br><br>黃同學：“133的話是沒什麼幫助，158是有幫助，因為縮短了131的時間，因為我是住在3宿所以我還是比較經常搭131和158。”
+                </p>
+                <p class="title_orange literary ">
+                    <br>APP查詢公車位置更便利
                 </p>
                 <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
+                    （記者旁白）：學校的公車亭在今年安裝了電子公車時刻表，讓公車到站的時刻更加一目了然，同學們也可以多多利用智慧型手機的app來查詢公車準確的位置。
+                </p>
+                <p class="literary title_orange">
+                    <br>4路公車&nbsp;&nbsp;班次等待更省時
                 </p>
                 <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
+                    （記者旁白）：目前學校有131、132、133、158，總共4路公車每天合計225班次。尖峰時段平均每六至八分鐘、離峰時段每十至十五分鐘即有一班次，歡迎同學們多加利用大眾交通，便利出遊。
                 </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <div class="title" id="">福爾摩沙電影節</div>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
-                </p>
-                <p class="literary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo autem corporis eligendi quo provident tempore magni ab repudiandae iusto ea itaque exercitationem cupiditate assumenda, iure hic libero temporibus nihil cumque.
+                <p class="literary reporter">
+                    <br>記者&nbsp;林希希、李宜庭&nbsp;採訪報導
                 </p>
             </div>
         </div>
@@ -377,12 +383,6 @@
                 <div class="arrow_top">
                     <img class="org" src="img/Up.svg" alt="" height="15">
                     <img class="chg" src="img/Up-change.svg" alt="" height="15">
-                </div>
-            </a>
-            <a href="#!">
-                <div class="arrow_down">
-                    <img class="org" src="img/Down.svg" alt="" height="15px">
-                    <img class="chg" src="img/Down-change.svg" alt="" height="15px">
                 </div>
             </a>
         </div>

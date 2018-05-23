@@ -99,20 +99,29 @@
             padding: 0 25px;
             margin-bottom: 40px;                           
         }
-        .news-item:hover .news-item_bg{
-            background-size: auto;
-        }
+        
+      
         .news-item_content{
             box-shadow:2px 2px 10px rgba(90, 90, 90, 0.05);  
         }
         .news-item_bg{
             width: 100%;
             height: 355px;
+            overflow: hidden;          
+        }
+        .img{
+            width: 100%;
+            height: 100%;
             background-image: url('img/01/01-1.jpg');
             background-position-x: center;
             background-position-y: center;
             background-size: cover;
+            transition: all 0.5s ease;
         }
+        .news-item:hover .img{
+            transform: scale(1.2);
+        }
+
         .news-item_text{
             width: 100%;
             height: 100px;
@@ -137,6 +146,50 @@
             line-height: 25px;
             color:#FFAA46;
             letter-spacing: 1.3px;
+        }
+
+         /**arrow**/
+         .arrow_td{
+            position: fixed;
+            bottom: 0;
+            right:0;
+            display:flex;
+            flex-direction:column;
+            margin-right: 2px;
+            text-align: center;
+        }
+        .arrow_td img.chg{
+            display: none;
+        }
+        .arrow_top{
+            width: 68px;
+            height: 84px;
+            background : linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+        }
+        .arrow_top::before,
+        .arrow_top::after{
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .arrow_top img{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .arrow_top:hover img.org,
+        .arrow_top:active img.org{
+            display: none;
+        }
+        .arrow_top:hover img{
+            filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
+        }
+        .arrow_top:hover img.chg{
+            display: inline-block;
+        }
+        .arrow_top:active img.chg{
+            display: inline-block;
+            opacity: .8;
         }
     </style>
 </head>
@@ -226,12 +279,22 @@
                 <li><a href="#!">&nbsp;地方文化</a></li>
             </ul>
         </div>
+        <div class="arrow_td">
+            <a href="#!">
+                <div class="arrow_top">
+                    <img class="org" src="img/Up.svg" alt="" height="15">
+                    <img class="chg" src="img/Up-change.svg" alt="" height="15">
+                </div>
+            </a>
+        </div>
         <div class="content">            
             <div class="news-wrap">
                 <div href="index.html">
                     <div class="news-item">
                         <div class="news-item_content">
-                            <div class="news-item_bg"></div>
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
                             <div class="news-item_text">
                                 <p>校園新增133、158公車可抵高鐵站</p>                            
                                 <div class="date">2014/12/15</div>
@@ -242,7 +305,9 @@
                 <a href="index-3.html">
                     <div class="news-item">
                         <div class="news-item_content">
-                            <div class="news-item_bg"></div>
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
                             <div class="news-item_text">
                                 <p>物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</p>                            
                                 <div class="date">2014/12/15</div>
@@ -253,7 +318,9 @@
                 <a href="">
                     <div class="news-item">
                         <div class="news-item_content">
-                            <div class="news-item_bg"></div>
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
                             <div class="news-item_text">
                                 <p>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</p>                            
                                 <div class="date">2014/12/15</div>
@@ -264,7 +331,9 @@
                <a href="type_school.html">
                     <div class="news-item">
                         <div class="news-item_content">
-                            <div class="news-item_bg"></div>
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
                             <div class="news-item_text">
                                 <p>朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</p>                            
                                 <div class="date">2015/01/01</div>
@@ -274,7 +343,9 @@
                </a>
                 <div class="news-item">
                     <div class="news-item_content">
-                        <div class="news-item_bg"></div>
+                        <div class="news-item_bg">
+                            <div class="img"></div>
+                        </div>
                         <div class="news-item_text">
                             <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>                            
                             <div class="date">2015/01/01</div>
@@ -283,7 +354,9 @@
                 </div>
                 <div class="news-item">
                     <div class="news-item_content">
-                        <div class="news-item_bg"></div>
+                        <div class="news-item_bg">
+                            <div class="img"></div>
+                        </div>
                         <div class="news-item_text">
                             <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>                            
                             <div class="date">2015/03/04</div>
@@ -292,7 +365,9 @@
                 </div>
                 <div class="news-item">
                     <div class="news-item_content">
-                        <div class="news-item_bg"></div>
+                        <div class="news-item_bg">
+                            <div class="img"></div>
+                        </div>
                         <div class="news-item_text">
                             <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>                            
                             <div class="date">2015/03/04</div>
@@ -302,7 +377,9 @@
                 <a href="index-2.html">
                     <div class="news-item">
                         <div class="news-item_content">
-                            <div class="news-item_bg"></div>
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
                             <div class="news-item_text">
                                 <p>國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</p>                            
                                 <div class="date">2015/03/04</div>

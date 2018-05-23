@@ -225,6 +225,7 @@
             background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            width: auto !important;
         }
         .set_num.active{
             padding:0 40px;
@@ -280,7 +281,6 @@
             -webkit-align-items: center;
             align-items: center;
         }
-
 
         /**content**/
         #top{
@@ -556,10 +556,14 @@
         $(".nav_content").toggleClass("active");
     });
     $(".content").click(function(){
-        $(".nav_content").removeClass("active");
+        $(".nav_content").removeClass("active");        
+        $(".set_num").removeClass("active");
+        $(".slet").addClass("swiper-no-swiping");
     });
     $(".content_right").click(function(){
-        $(".nav_content").removeClass("active");
+        $(".nav_content").removeClass("active");        
+        $(".set_num").removeClass("active");
+        $(".slet").addClass("swiper-no-swiping");
     });
     </script>
     <script>
@@ -583,21 +587,22 @@
     //     }
         
     // });
-      $(".set_num").click(function(){
-          $(this).addClass("active");
-          if($(".set_num").hasClass("active")){
-              var swiper = new Swiper('.swiper-container', {
-                  slidesPerView: 4,
-                  spaceBetween: 25,
-                  freeMode: true,
-                  grabCursor:true,
-                  pagination: {
-                      el: '.swiper-pagination',
-                      clickable: true,
-                  },
-              });
-          }
-      })
+    $(".set_num").click(function(){
+            $(this).addClass("active");
+            if($(".set_num").hasClass("active")){
+                $(".slet").removeClass("swiper-no-swiping");
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                    freeMode: true,
+                    grabCursor:true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+         })
     </script>
 </body>
 
