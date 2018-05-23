@@ -231,7 +231,7 @@
             height: 270px;
             background-color: #999999;
             background : linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px -2px 20px rgba(90, 90, 90, 0.4);
             cursor: default;
             text-align: center;
         }
@@ -253,17 +253,19 @@
             filter: drop-shadow(3px 3px 9px rgba(90,90,90,.1));
         }
         .set_num:hover span{
-            filter: drop-shadow(3px 3px 9px rgba(90,90,90,.2));
+            background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /**content**/
-        #top{
+         /**content**/
+         #top{
             height: 1px;
         }
         .title_section{
             letter-spacing: 1.5px;
             line-height: 50px;
-            margin: 100px 0 0 0;
+            margin: 99px 0 0 0;
         }
         .title{
             font-size: 36px;
@@ -295,20 +297,20 @@
             padding-right: 8px;
         }
         .space_line{
-            background-color: #1496FA;
+            background-color:transparent;
+            height: 100px;
+            border: none;
+            border-bottom:2px solid #1496FA ;
             margin: 0 138px 40px 0;
-            height: 2px;
-            border: 0;
-            padding: 0;
         }
         .literary{
-            /* text-indent:60px; */
-            /* margin: 10px 0; */
             font-size: 24px;
         }
         .reporter{
             font-weight: bold;
-            margin-bottom: 80px;
+        }
+        .reporter_last{
+            margin-bottom: 100px;
         }
     </style>
 </head>
@@ -339,12 +341,12 @@
                 <div class="social">
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube.svg" alt="" width="50">
+                            <img src="img/Youtube.svg" alt="" width="45">
                         </a>
                     </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" width="50">
+                            <img src="img/Facebook.svg" alt="" width="45">
                         </a>
                     </div>
                 </div>
@@ -413,9 +415,9 @@
                     </ul>
                 </div>               
             </div>
-            <hr class="space_line">
+            <hr class="space_line" id="A">
             <div class="container">
-                <div class="title title_orange" id="A">化妝水只是水&nbsp;&nbsp;僅含微量保養成分</div>
+                <div class="title title_orange">化妝水只是水&nbsp;&nbsp;僅含微量保養成分</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2015/03/04&nbsp;採訪報導<br><br></div>
                 <p class="literary">
                     （記者旁白）愛漂亮不只是女性的專利，男性為了追求完美，也開始為自己的皮膚保養，但是天天保養的你，觀念是正確的嗎？
@@ -442,9 +444,9 @@
                 </p>
             </div>
             <!-- 篇幅2 -->
-            <hr class="space_line">
+            <hr class="space_line" id="B">
             <div class="container">
-                <div class="title title_orange" id="B">大學生活忙又忙&nbsp;&nbsp;小心壓力超標</div>
+                <div class="title title_orange">大學生活忙又忙&nbsp;&nbsp;小心壓力超標</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2015/03/04&nbsp;台中報導<br><br></div>
                 <p class="literary">
                     （記者旁白）大學生活是一個漸漸從學生身分步入職場的重要階段，許多同學對於自己將來要做什麼不是很清楚，對就讀科系的出路也有許多疑惑。在這個成長階段也常遇到家庭、人際、情感與生涯部分的問題。令人擔憂的是有的人遇到問題時往往會選擇逃避，然而問題積壓久了累積越多也會變得更加嚴重，我們要如何判斷自己的壓力已經過大了呢？
@@ -468,9 +470,9 @@
                 </p>
             </div>
             <!-- 篇幅3 -->
-            <hr class="space_line">
+            <hr class="space_line" id="C">
 		    <div class="container">
-                <div class="title title_orange" id="C">國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</div>
+                <div class="title title_orange">國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2015/03/04&nbsp;採訪報導<br><br></div>
                 <p class="literary">
                     （記者旁白）自2013-2014年，朝陽科大的同學們先後參加了澳門、韓國、馬來西亞、美國等地舉辦的發明展，在這些發明展中，一共奪得19金，20銀，3銅，及9個特別獎的好成績。學生的發明作品在國際發明展上嶄露頭角，獲得了來自國際的肯定。
@@ -493,7 +495,7 @@
                     <br><br>鄧鴻吉老師：現在我們學校目前的參賽管道有：第一個是像我上課的過程。第二個學生有什麼好的想法都可以直接投稿到我們的發明創意中心去。那這些管道都是非常暢通的，所以在這邊要值得我們朝陽的學生，多多鼓勵你們，要一直來參加這個比賽。
 		            <br><br>（記者旁白）生活創意無處不在，只要將你的創意記錄表達出來，也許哪一天得獎的就是你。
 	            </p>
-                <p class="literary reporter">
+                <p class="literary reporter reporter_last">
                     <br>記者&nbsp;林希希、李宜庭、曾芳子&nbsp;採訪報導
                 </p>
             </div>

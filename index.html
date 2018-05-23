@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="/css/fontawesome-all.min.css"  integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
         <link rel="stylesheet" href="css/nav.css">
     <style>
         body {
@@ -70,47 +71,36 @@
 　          -moz-text-align-last:justify; /*Firefox*/
 　          -webkit-text-align-last:justify; /*Chrome*/
         }
-        
-        /* .part_title{
-            font-weight: 600;
-            line-height: 24px;
-            padding-left: 20px;
-        }
-        .space_line{
-            margin-right: 50px;
-            color: #8A8A8A; 
-            background-color: #8A8A8A;
-            height: 2px;
-        }
-        .title{
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 29px;
-            margin: 30px 0;
-        }
-        .literary{
-            text-indent:60px;
-            margin: 10px 0;
-        } */
 
         .content_right {
             width: 910px;
-            display: inline-flex;
+            height: 100vh;
+            overflow: auto;
+            /* display: inline-flex;
             flex-wrap: nowrap;
-            flex-direction: column;
+            flex-direction: column; */
+        }
+        .content_right::-webkit-scrollbar {
+            display: none;
         }
 
         .content_img {
-            height:100vh;
+            height:910px;
+            margin-bottom: 170px;
             width: 100%;
             background-color: rgba(130, 210, 255, .2);
-            background-size: cover;
+            background-size:cover;
+            background-position: center;
             background-repeat: no-repeat;
         }
-        .img_size{
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
+        .img_A{
+             background-image: url('img/01/01-1.jpg');
+        }
+        .img_B{
+            background-image: url('img/01/01-2.jpg');
+        }
+        .img_C{
+            background-image: url('img/01/01-3.jpg');
         }
        
         /**arrow**/
@@ -231,18 +221,15 @@
             height: 270px;
             background-color: #999999;
             background : linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px -2px 20px rgba(90, 90, 90, 0.4);
             cursor: default;
             text-align: center;
+            vertical-align:middle;
         }
-        .set_num::before,
-        .set_num::after{
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
+        .set_num .swiper-slide{
+            display: none;
         }
-        .set_num span{
+        .set_num .slet{
             color: #fff;
             font-size: 160px;
             line-height: 213px;
@@ -251,19 +238,78 @@
             display: inline-block;
             vertical-align: middle;
             filter: drop-shadow(3px 3px 9px rgba(90,90,90,.1));
+            padding: 28px 65px;
         }
-        .set_num:hover span{
-            filter: drop-shadow(3px 3px 9px rgba(90,90,90,.2));
+        
+        .set_num:hover .slet{
+            background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .set_num.active{
+            padding:0 40px;
+            box-sizing: border-box;
+          
+        }
+        .set_num.active .swiper-slide{
+            display: flex;
+            letter-spacing: 2.4px;
+            /*width: auto !important;*/
+        }
+        
+        
+        .set_num.active .slet{
+            color:#FFDC78;
+            font-size: 37px;
+            line-height: 49px;
+            padding: 0;
         }
 
-        /**content**/
-        #top{
+
+
+        .set_num.active .swiper-container,
+        .set_num.active .swiper-wrapper,
+        .set_num.active .swiper-slide{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-container,
+        .swiper-wrapper,
+        .swiper-slide{
+            width: auto;
+            height: auto;
+        }
+        .swiper-slide {
+            font-size: 37px;
+            line-height: 49px;
+            font-weight: bold;
+            color: #fff;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.1));
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+
+         /**content**/
+         #top{
             height: 1px;
         }
         .title_section{
             letter-spacing: 1.5px;
             line-height: 50px;
-            margin: 100px 0 0 0;
+            margin: 99px 0 0 0;
         }
         .title{
             font-size: 36px;
@@ -295,20 +341,20 @@
             padding-right: 8px;
         }
         .space_line{
-            background-color: #1496FA;
+            background-color:transparent;
+            height: 100px;
+            border: none;
+            border-bottom:2px solid #1496FA ;
             margin: 0 138px 40px 0;
-            height: 2px;
-            border: 0;
-            padding: 0;
         }
         .literary{
-            /* text-indent:60px; */
-            /* margin: 10px 0; */
             font-size: 24px;
         }
         .reporter{
             font-weight: bold;
-            margin-bottom: 80px;
+        }
+        .reporter_last{
+            margin-bottom: 100px;
         }
     </style>
 </head>
@@ -339,12 +385,12 @@
                 <div class="social">
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube.svg" alt="" width="50">
+                            <img src="img/Youtube.svg" alt="" width="45">
                         </a>
                     </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" width="50">
+                            <img src="img/Facebook.svg" alt="" width="45">
                         </a>
                     </div>
                 </div>
@@ -413,9 +459,9 @@
                     </ul>
                 </div>               
             </div>
-            <hr class="space_line">
+            <hr class="space_line" id="A">
             <div class="container">
-                <div class="title title_orange" id="A">校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</div>
+                <div class="title title_orange">校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導<br><br></div>
                 <p class="literary">
                     （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
@@ -442,9 +488,9 @@
                 </p>
             </div>
             <!-- 篇幅2 -->
-            <hr class="space_line">
+            <hr class="space_line" id="B">
             <div class="container">
-                <div class="title title_orange" id="B">物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</div>
+                <div class="title title_orange">物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;台中報導<br><br></div>
                 <p class="literary">
                     （記者旁白）一到中午，學校餐廳就湧進數百人潮，走一趟餐廳，發現很多家招牌都有改變，原來是店家承受不起物價上漲的壓力，在暑假過後將菜單悄悄的調漲。
@@ -470,9 +516,9 @@
                 </p>
             </div>
             <!-- 篇幅3 -->
-            <hr class="space_line">
+            <hr class="space_line" id="C">
             <div class="container">
-                <div class="title title_orange" id="C">基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</div>
+                <div class="title title_orange">基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</div>
                 <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導<br><br></div>
                 <p class="literary title_orange">
                     自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
@@ -498,15 +544,15 @@
                     <br>居民林小姐：我們這個是住宅區，不應該有這樣子的東西在我們住宅區裡。
                     <br><br>記者旁白）：台灣各地基地台抗爭事件層出不窮，也有人在網路上呼籲，若是因為收訊問題想在自家架設基地台，應當先與附近居民達成共識，以免造成不必要的麻煩。
                 </p>
-                <p class="literary reporter">
+                <p class="literary reporter reporter_last">
                     <br>記者&nbsp;許喨瑜、游婷雅&nbsp;台中報導
                 </p>
             </div>
         </div>
         <div class="content_right">
-            <div class="content_img">
-                <!--<img class="img_size"src="/img/A.jpg" alt="">-->
-            </div>
+            <div class="content_img img_A"></div>
+            <div class="content_img img_B"></div>
+            <div class="content_img img_C"></div>
         </div>
         <div class="arrow_num">
             <div class="arrow">
@@ -540,7 +586,19 @@
                 </div>
             </div>
             <div class="set_num">
-                <span>01#</span>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slet">01#</div>
+                        <div class="swiper-slide">02#</div>
+                        <div class="swiper-slide">03#</div>
+                        <div class="swiper-slide">04#</div>
+                        <div class="swiper-slide">05#</div>
+                        <div class="swiper-slide">06#</div>
+                        <div class="swiper-slide">07#</div>
+                        <div class="swiper-slide">08#</div>
+                        <div class="swiper-slide">09#</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -549,6 +607,7 @@
 
 
     <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <script>
     // navbar
     $(".navbar").click(function(){
@@ -556,9 +615,13 @@
     });
     $(".content").click(function(){
         $(".nav_content").removeClass("active");
+        $(".set_num").removeClass("active");
+        $(".slet").addClass("swiper-no-swiping");
     });
     $(".content_right").click(function(){
         $(".nav_content").removeClass("active");
+        $(".set_num").removeClass("active");
+        $(".slet").addClass("swiper-no-swiping");
     });
     </script>
    <script>
@@ -572,6 +635,33 @@
         }
     });
     </script>
+     <script>
+        //集數
+        // $(".set_num").click(function(){
+        //     if($(this).hasClass("active")){
+        //         $(this).removeClass("active");
+        //     }else{
+        //        $(this).addClass("active");
+        //     }
+            
+        // });
+        $(".set_num").click(function(){
+            $(this).addClass("active");
+            if($(".set_num").hasClass("active")){
+                $(".slet").removeClass("swiper-no-swiping");
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                    freeMode: true,
+                    grabCursor:true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+         })
+        </script>
 </body>
 
 </html>

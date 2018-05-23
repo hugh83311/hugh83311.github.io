@@ -201,7 +201,7 @@
             height: 270px;
             background-color: #999999;
             background : linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px -2px 20px rgba(90, 90, 90, 0.4);
             cursor: default;
             text-align: center;
             vertical-align:middle;
@@ -222,7 +222,9 @@
         }
         
         .set_num:hover .slet{
-            filter: drop-shadow(3px 3px 9px rgba(90,90,90,.2));
+            background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .set_num.active{
             padding:0 40px;
@@ -331,6 +333,9 @@
         .reporter{
             font-weight: bold;
         }
+        .reporter_last{
+            margin-bottom: 100px;
+        }
     </style>
 </head>
 
@@ -357,12 +362,12 @@
                 <div class="social">
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube.svg" alt="" width="50">
+                            <img src="img/Youtube.svg" alt="" width="45">
                         </a>
                     </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" width="50">
+                            <img src="img/Facebook.svg" alt="" width="45">
                         </a>
                     </div>
                 </div>
@@ -482,7 +487,7 @@
                     <br><br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
 		            <br><br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
 	            </p>
-                <p class="literary reporter">
+                <p class="literary reporter reporter_last">
                     <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
                 </p>
             </div>

@@ -70,28 +70,6 @@
 　          -moz-text-align-last:justify; /*Firefox*/
 　          -webkit-text-align-last:justify; /*Chrome*/
         }
-        
-        /* .part_title{
-            font-weight: 600;
-            line-height: 24px;
-            padding-left: 20px;
-        }
-        .space_line{
-            margin-right: 50px;
-            color: #8A8A8A; 
-            background-color: #8A8A8A;
-            height: 2px;
-        }
-        .title{
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 29px;
-            margin: 30px 0;
-        }
-        .literary{
-            text-indent:60px;
-            margin: 10px 0;
-        } */
 
         .content_right {
             width: 910px;
@@ -232,7 +210,7 @@
             height: 270px;
             background-color: #999999;
             background : linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px -2px 20px rgba(90, 90, 90, 0.4);
             cursor: default;
             text-align: center;
         }
@@ -254,14 +232,19 @@
             filter: drop-shadow(3px 3px 9px rgba(90,90,90,.1));
         }
         .set_num:hover span{
-            filter: drop-shadow(3px 3px 9px rgba(90,90,90,.2));
+            background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /**content**/
+        #top{
+            height: 1px;
+        }
         .title_section{
             letter-spacing: 1.5px;
             line-height: 50px;
-            margin: 100px 0 0 0;
+            margin: 99px 0 0 0;
         }
         .title{
             font-size: 36px;
@@ -293,20 +276,20 @@
             padding-right: 8px;
         }
         .space_line{
-            background-color: #1496FA;
+            background-color:transparent;
+            height: 100px;
+            border: none;
+            border-bottom:2px solid #1496FA ;
             margin: 0 138px 40px 0;
-            height: 2px;
-            border: 0;
-            padding: 0;
         }
         .literary{
-            /* text-indent:60px; */
-            /* margin: 10px 0; */
             font-size: 24px;
         }
         .reporter{
             font-weight: bold;
-            margin-bottom: 80px;
+        }
+        .reporter_last{
+            margin-bottom: 100px;
         }
          .set-warp{
               position: relative;
@@ -380,12 +363,12 @@
                 <div class="social">
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube.svg" alt="" width="50">
+                            <img src="img/Youtube.svg" alt="" width="45">
                         </a>
                     </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" width="50">
+                            <img src="img/Facebook.svg" alt="" width="45">
                         </a>
                     </div>
                 </div>
@@ -599,6 +582,7 @@
                     </div>
                     <!-- 篇幅3 -->
                     <hr class="space_line">
+<<<<<<< HEAD
                     <div class="news_item">
                         <div class="container">
                             <div class="title title_orange">基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</div>
@@ -631,6 +615,38 @@
                                 <br>記者&nbsp;許喨瑜、游婷雅&nbsp;台中報導
                             </p>
                         </div>
+=======
+                    <div class="container">
+                        <div class="title title_orange" id="C">基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</div>
+                        <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導<br><br></div>
+                        <p class="literary title_orange">
+                            自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
+                        </p>
+                        <p class="literary">
+                            （記者旁白）：鄰近朝陽科技大學的自強路居民表示，有屋主與電信業者簽約，並在附近住戶完全不知情的情況下，在住宅頂樓架設基地台，甚至意圖出租給學生作為宿舍。
+                            <br><br>居民郭小姐：（有人問）是哪一家？我說後面那一家，我們住那一家耶！真的喔？我看到布條只是不知道是哪一家。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙
+                        </p>
+                        <p class="literary">
+                                （記者旁白）：居民表示基地台常在深夜發出噪音，使他們睡眠品質出現嚴重的障礙。
+                            <br><br>居民莊小姐：在睡覺的時候鄰居都會一直聽到（噪音），大家都睡不著。
+                            <br>居民黃太太：大家都說頭暈暈的，就是有那個聲音，我也有反應就是頭會痛／７座（基地台），中華電信最主要。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>電磁波對人體無危害？&nbsp;&nbsp;當地居民人心惶惶
+                        </p>
+                        <p class="literary">
+                            （記者旁白）：雖然目前包括NCC、衛生署國民健康局及電信產業界的各種電磁波宣導，一再強調各基地台功率均符合國家標準及法規上限，但仍舊無法消弭大眾對基地台的疑慮以及恐慌。
+                            <br><br>居民林先生：電磁波最威脅的就是（我們的）免疫力。
+                            <br>居民林小姐：我們這個是住宅區，不應該有這樣子的東西在我們住宅區裡。
+                            <br><br>記者旁白）：台灣各地基地台抗爭事件層出不窮，也有人在網路上呼籲，若是因為收訊問題想在自家架設基地台，應當先與附近居民達成共識，以免造成不必要的麻煩。
+                        </p>
+                        <p class="literary reporter reporter_last">
+                            <br>記者&nbsp;許喨瑜、游婷雅&nbsp;台中報導
+                        </p>
+>>>>>>> 74d1b974c776003812c7fdc5d4eefe69fd83fcbe
                     </div>
                 </div>
                 <div class="content_right">
@@ -646,6 +662,7 @@
                             <p class="title title_blue">朝陽新聞第三集</p><img src="img/Youtube-R.svg" alt="" height="20">
                             <ul class="part_title">
                                 <li>
+<<<<<<< HEAD
                                     <a>校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</a>
                                 </li>
                                 <li>
@@ -653,10 +670,17 @@
                                 </li>
                                 <li>
                                     <a>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</a>
+=======
+                                    <a href="#A">朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</a>
+                                </li>
+                                <li>
+                                    <a href="#B">勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</a>
+>>>>>>> 74d1b974c776003812c7fdc5d4eefe69fd83fcbe
                                 </li>
                             </ul>
                         </div>               
                     </div>
+<<<<<<< HEAD
                     <hr class="space_line">
                         <div class="news_item">
                         <div class="container">
@@ -835,6 +859,65 @@
                                 </p>
                             </div>
                         </div>
+=======
+                    <hr class="space_line" id="A">
+                    <div class="container">
+                        <div class="title title_orange">朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</div>
+                        <div class="subtitle">朝陽新聞台&nbsp;2015/01/01&nbsp;採訪報導<br><br></div>
+                        <p class="literary">
+                            （記者旁白）：今年的停車證與以往大不相同，車主的學號姓名以及車牌號碼都是印刷上去的，整體設計也簡約了不少。停車證上面還多了現代化的QRcode，校方可以把所有資料放在QRcode系統上做自動列印，節省了大量的人力。
+                            <br><br>教官：我們在查證的時候會很方便，譬如說我們的QRcode裡面有內建的所有申請同學的車籍資料在裡面。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>QRcode加設管理階層&nbsp;&nbsp;並具防偽功能
+                        </p>
+                        <p class="literary">
+                            （記者旁白）現在科技發達，部分同學也許會擔心掃描條碼導致個人資料外洩的問題，而當初在設計這個QRcode時，有加上管理階層的設置，一般人無法透過條碼的掃描取得車籍資料。另外，教官也特別呼籲，這個新型停車證設有多道防偽功能，少數偽造停車證的同學不要有貪小便宜的心態。
+                            <br><br>教官：那這個部分不但對正常使用的同學上來講是不公平，而且會影響到校內的停車秩序，那更深遠這是學校我認為應該要教育同學的觀念跟態度，這可能會造成同學投機取巧的，甚至到社會上可能會有些違法的行為。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>新型停車證&nbsp;&nbsp;美觀易撕不留膠
+                        </p>
+                        <p class="literary">
+                            （記者旁白）教官表示以前經常聽見學生反應停車證面積太大、設計得不好看，甚至貼紙黏性太強，導致撕除後還會留下貼紙殘膠在機車車體上，十分不美觀。
+                            <br><br>學生：優點的話可能就是變比較好看，那缺點的話可能就是，因為去洗車時水沖下來就比較容易掉，黏性可能比較差。
+		                    <br><br>在教官與上層匯報之後，校方也聽見學生的聲音，改良了停車證，也大幅提高了學生們對停車證的印象分數 。
+		                </p>
+                        <p class="literary reporter">
+                            <br>記者&nbsp;彭郁珵、李宜庭&nbsp;採訪報導
+                        </p>
+                    </div>
+                    <!-- 篇幅2 -->
+                    <hr class="space_line" id="B">
+                    <div class="container">
+                        <div class="title title_orange">勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</div>
+                        <div class="subtitle">朝陽新聞台&nbsp;2015/01/01&nbsp;採訪報導<br><br></div>
+                        <p class="literary">
+                            〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
+                            <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
+                            <br><br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
+                            <br><br>〈傳播系師長─陳勇瑞老師〉她會不斷堅持自己的理想，然後去找到一個辦法，然後去完成她的作品。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>邁向成功之路&nbsp;&nbsp;李宜珊：惟有堅持
+                        </p>
+                        <p class="literary">
+                            〈記者旁白〉成功的方法沒有捷徑，只有堅持。李宜珊學姊在就學時期就不斷朝著導演之路邁進，在畢業作品「下一秒。無限」，獲得許多評審的肯定，但是畢業的李宜珊學姊投入傳播圈，卻選擇了剪輯這一條自己很不擅長的路。
+                            <br><br>〈傳播系傑出校友─李宜珊學姊〉我只要在剪接的過程跟那個時間，我都會睡不好，因為隨時都會擔心檔案轉壞掉，或是要交片的那天檔案沒有辦法輸出，就是各種各種麻煩的問題，都會在後製的時候出現，所以其實我每天都在剪接的狀態時候都很提心吊膽，可是做每個工作都是這樣，就像是今天一個藝術家，他也會面臨他創作枯竭的時候，他也必須解決他這樣的恐懼，才有辦法去生出下一個作品，所以面對恐懼最好的辦法就是跟它共存，沒有別的辦法。
+                            <br><br>〈傳播系師長─安碧芸老師〉我覺得她一直去衝撞，一直去挑戰自己，然後不安於現狀，或者是不滿於現狀，我覺得這是她能夠不斷進步很重要的因素。
+                        </p>
+                        <p class="literary title_orange">
+                            <br>美感培養&nbsp;&nbsp;范家綺：由日常生活中累積
+                        </p>
+                        <p class="literary">
+                            〈記者旁白〉范家綺學姊則是就學時期就專注在美術上面，更在畢業製作「少年不戴花」擔任美術，獲得一致好評，而學姊認為，美感的培養是可以在日常生活中記錄累積下來的。
+                            <br><br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
+		                    <br><br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
+	                    </p>
+                        <p class="literary reporter reporter_last">
+                            <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
+                        </p>
+>>>>>>> 74d1b974c776003812c7fdc5d4eefe69fd83fcbe
                     </div>
                 </div>
                 <div class="content_right">
@@ -944,8 +1027,12 @@
                     now_set = set;
                 }
                 $('.set-warp').css('transform','translate3d(' + set_postion + '%, 0px, 0px)');
+<<<<<<< HEAD
                
                  update_pagination();
+=======
+                $('.set_num > span').text('0' + now_set + '#');
+>>>>>>> 74d1b974c776003812c7fdc5d4eefe69fd83fcbe
              });
              $('.arrow_left').click(function(){
                set_postion += 100;
@@ -955,7 +1042,11 @@
                     now_set = 1;
                 }
                 $('.set-warp').css('transform','translate3d(' + set_postion + '%, 0px, 0px)');
+<<<<<<< HEAD
                  update_pagination();
+=======
+                $('.set_num > span').text('0' + now_set + '#');
+>>>>>>> 74d1b974c776003812c7fdc5d4eefe69fd83fcbe
             });
             //  $('.arrow_top').click(function(){
             //     var $this = $(".set-warp").find(".set").eq(now_set - 1) ;
