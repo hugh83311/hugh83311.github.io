@@ -546,9 +546,8 @@
                     <p class="title title_blue">朝陽新聞第一集</p>
                     <img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
-                        <li v-for="item in items">
-                            <a href="#">{{ item.title }}</a>
-
+                        <li v-for="(item, index) in items">
+                            <a  v-on:click="changeItemsIndex(index)" href="#">{{ item.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -714,6 +713,12 @@
             created: function () {
                 // `this` points to the vm instance
                 console.log('a is: ' + this.a)
+            },
+            methods:{
+                changeItemsIndex:function(index,event) {
+                    // console.log(index);
+                    this.currentItemsIndex = index;
+                }
             }
         })
 
