@@ -469,7 +469,7 @@
                         </a>
                         <a v-for="(item, index) in chapter" v-bind:href="'#'+ item.id">
                             <li></li>
-                        </a>                       
+                        </a>
                     </ul>
                 </div>
                 <div class="social">
@@ -604,7 +604,7 @@
         <div class="set_num">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-on:click="changeChapter(index);"  v-bind:class="{'slet': isCurrent(index)}"  v-for="(item, index) in chapter">0{{ index+1 }}#</div>
+                    <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in chapter">0{{ index+1 }}#</div>
                 </div>
             </div>
         </div>
@@ -884,11 +884,11 @@
                         $(".content").animate({ scrollTop: 0 }, 600);
                     }
                 },
-                isCurrent:function(index){
-                    if(index == this.chapterIndex)
-                    return true;
+                isCurrent: function (index) {
+                    if (index == this.chapterIndex)
+                        return true;
                 },
-                changeChapter:function(index){
+                changeChapter: function (index) {
                     console.log(index);
                     if (index == 1) {
                         this.chapterIndex = 1;
@@ -981,6 +981,13 @@
                 });
             }
         })
+    </script>
+    <script>
+        //圖片位置置中
+        $(document).ready(function () {
+            $(".dragscroll").scrollLeft(420);
+            $(".dragscroll").scrollTop(150);
+        });
     </script>
 </body>
 
