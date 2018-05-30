@@ -452,7 +452,7 @@
                 </div>
                 <div class="page_dot">
                     <ul>
-                        <a href="#top">
+                        <!-- <a href="#top">
                             <li class="active"></li>
                         </a>
                         <a href="#A">
@@ -463,7 +463,13 @@
                         </a>
                         <a href="#C">
                             <li></li>
+                        </a> -->
+                        <a href="#top">
+                            <li class="active"></li>
                         </a>
+                        <a v-for="(item, index) in chapter" v-bind:href="'#'+ item.id">
+                            <li></li>
+                        </a>                       
                     </ul>
                 </div>
                 <div class="social">
@@ -543,44 +549,50 @@
                     </a>
                 </div>
                 <div class="title_section">
-                    <p class="title title_blue">朝陽新聞第一集</p>
+                    <p class="title title_blue">朝陽新聞第{{ chinessChapterName }}集</p>
                     <img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
-                        <li v-for="(item, index) in items">
-                            <a v-on:click="changeItemsIndex(index)" href="#">{{ item.title }}</a>
+                        <li v-for="(item, index) in chapter">
+                            <a v-bind:href="'#'+ item.id">{{ item.title }}</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <hr class="space_line">
 
-            <div class="container">
-                <div class="title title_orange">{{items[currentItemsIndex].title}}</div>
-                <div class="subtitle">{{items[currentItemsIndex].author}}&nbsp;{{items[currentItemsIndex].time}}&nbsp;{{items[currentItemsIndex].type}}
-                    <br>
-                    <br>
+            <div v-for="(item, index) in chapter">
+                <div v-bind:id="item.id">
+                    <hr class="space_line">
+                    <div class="container">
+                        <div class="title title_orange">{{ item.title}}</div>
+                        <div class="subtitle">{{ item.author}}&nbsp;{{ item.time}}&nbsp;{{ item.type}}
+                            <br>
+                            <br>
+                        </div>
+                        <span v-html="item.content"></span>
+                    </div>
                 </div>
-
-                <span v-html="items[currentItemsIndex].content"></span>
             </div>
+
+
+
         </div>
         <div class="content_right">
             <div class="content_img dragscroll">
-                <img :src="items[currentItemsIndex].image" alt="" />
+                <img :src="chapter[currentItemsIndex].image" alt="" />
             </div>
         </div>
         <div class="arrow_num">
             <div class="arrow">
                 <div class="arrow_lr">
-                    <a href="#!">
-                        <div class="arrow_left">
+                    <a href="#">
+                        <div class="arrow_left" v-on:click="preChapter();">
                             <img class="org" src="img/Left.svg" alt="" width="20px">
                             <img class="chg" src="img/Left-change.svg" alt="" width="20px">
                         </div>
                     </a>
-                    <a href="#!">
-                        <div class="arrow_right">
+                    <a href="#">
+                        <div class="arrow_right" v-on:click="nextChapter();">
                             <img class="org" src="img/Right.svg" alt="" width="20px">
                             <img class="chg" src="img/Right-change.svg" alt="" width="20px">
                         </div>
@@ -592,15 +604,7 @@
         <div class="set_num">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slet">01#</div>
-                    <div class="swiper-slide">02#</div>
-                    <div class="swiper-slide">03#</div>
-                    <div class="swiper-slide">04#</div>
-                    <div class="swiper-slide">05#</div>
-                    <div class="swiper-slide">06#</div>
-                    <div class="swiper-slide">07#</div>
-                    <div class="swiper-slide">08#</div>
-                    <div class="swiper-slide">09#</div>
+                    <div class="swiper-slide" v-on:click="changeChapter(index);"  v-bind:class="{'slet': isCurrent(index)}"  v-for="(item, index) in chapter">0{{ index+1 }}#</div>
                 </div>
             </div>
         </div>
@@ -609,7 +613,7 @@
 
 
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <!--圖片滑動-->
@@ -620,9 +624,11 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                //currentItemsIndex: '0',
-                first: [
-                    '校園新增133、158公車 可抵高鐵站'{
+                currentItemsIndex: '0',
+                chapterIndex: 0,
+                chapter: [],
+                firstChapter: [
+                    {
                         id: 'A', title: '校園新增133、158公車 可抵高鐵站', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導', image: '/img/01/01-1.jpg', content: `<p class="literary">
                     （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
                     <br>
@@ -652,7 +658,7 @@
                     <br>記者&nbsp;林希希、李宜庭&nbsp;採訪報導
                 </p>`
                     },
-                    '物價上漲壓力 學生餐廳撐不住'{
+                    {
                         id: 'B', title: '物價上漲壓力 學生餐廳撐不住', author: '朝陽新聞台', time: '2014/12/15', type: '台中報導', image: '/img/01/01-2.jpg', content: `<p class="literary">
                     （記者旁白）一到中午，學校餐廳就湧進數百人潮，走一趟餐廳，發現很多家招牌都有改變，原來是店家承受不起物價上漲的壓力，在暑假過後將菜單悄悄的調漲。
                     <br>
@@ -678,7 +684,7 @@
                     <br>記者&nbsp;田芳昕、陳怡君&nbsp;台中報導
                 </p>`
                     },
-                    '基地台深夜發出噪音 造成居民睡眠障礙'{
+                    {
                         id: 'C', title: '基地台深夜發出噪音 造成居民睡眠障礙', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導', image: '/img/01/01-3.jpg', content: `<p class="literary title_orange">
                     自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
                 </p>
@@ -712,8 +718,8 @@
                 </p>`
                     }
                 ],
-                second: [
-                    '朝陽新型停車證 跟上QRcode潮流'{
+                secondChapter: [
+                    {
                         id: 'A', title: '朝陽新型停車證 跟上QRcode潮流', author: '朝陽新聞台', time: '2015/01/01', type: '採訪報導', image: '/img/01/01-3.jpg', content: `<p class="literary">
                     （記者旁白）：今年的停車證與以往大不相同，車主的學號姓名以及車牌號碼都是印刷上去的，整體設計也簡約了不少。停車證上面還多了現代化的QRcode，校方可以把所有資料放在QRcode系統上做自動列印，節省了大量的人力。
                     <br><br>教官：我們在查證的時候會很方便，譬如說我們的QRcode裡面有內建的所有申請同學的車籍資料在裡面。
@@ -737,7 +743,7 @@
                     <br>記者&nbsp;彭郁珵、李宜庭&nbsp;採訪報導
                 </p>`
                     },
-                    '勇奪金鐘 李宜珊、范家綺返校回饋'{
+                    {
                         id: 'B', title: '勇奪金鐘 李宜珊、范家綺返校回饋', author: '朝陽新聞台', time: '2015/01/01', type: '採訪報導', image: '/img/01/01-3.jpg', content: `<p class="literary">
                     〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
                     <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
@@ -765,8 +771,8 @@
                 </p>`
                     }
                 ],
-                third: [
-                    '化妝水只是水 僅含微量保養成分'{
+                thirdChapter: [
+                    {
                         id: 'A', title: '化妝水只是水 僅含微量保養成分', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: '/img/01/01-3.jpg', content: `<p class="literary">
                     〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
                     <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
@@ -793,7 +799,7 @@
                     <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
                 </p>`
                     },
-                    '大學生活忙又忙 小心壓力超標'{
+                    {
                         id: 'B', title: '大學生活忙又忙 小心壓力超標', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: '/img/01/01-3.jpg', content: ` <p class="literary">
                     （記者旁白）大學生活是一個漸漸從學生身分步入職場的重要階段，許多同學對於自己將來要做什麼不是很清楚，對就讀科系的出路也有許多疑惑。在這個成長階段也常遇到家庭、人際、情感與生涯部分的問題。令人擔憂的是有的人遇到問題時往往會選擇逃避，然而問題積壓久了累積越多也會變得更加嚴重，我們要如何判斷自己的壓力已經過大了呢？
                     <br><br>蘇真以老師：如果這個問題放在心裡面只要一想到就會頭痛失眠睡不著，腸胃問題發生，越來越沒有想要動的活力，那你就要注意了，這個壓力已經超出你可以負荷的重量。               
@@ -815,7 +821,7 @@
                     <br>記者&nbsp;彭郁珵、許喨瑜、李宜庭&nbsp;台中報導
                 </p>`
                     },
-                    '國際發明展爭光 朝陽2年奪51獎座'{
+                    {
                         id: 'C', title: '國際發明展爭光 朝陽2年奪51獎座', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: '/img/01/01-3.jpg', content: `<p class="literary">
                     （記者旁白）自2013-2014年，朝陽科大的同學們先後參加了澳門、韓國、馬來西亞、美國等地舉辦的發明展，在這些發明展中，一共奪得19金，20銀，3銅，及9個特別獎的好成績。學生的發明作品在國際發明展上嶄露頭角，獲得了來自國際的肯定。
                     <br><br>（記者旁白）而在2014年韓國首爾發明展上，朝陽更是以「拉扣─單車踏板」和「安全氣囊式安全帽」這兩件作品，大放異彩。
@@ -842,103 +848,79 @@
                 </p>`
                     }
                 ]
-                /*items: [
-                    {
-                        title: '校園新增133、158公車 可抵高鐵站', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導',image:'/img/01/01-1.jpg', content: `<p class="literary">
-                    （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
-                    <br>
-                    <br>（記者旁白）：133公車途經塗城路、成功路、徳芳路、文心南路等以前坐公車較不方便到達的地方。158公車則是往返朝陽科大、仁愛路、下內新、台中火車站、建國北路、台中高鐵站之間。
-                    <br>
-                    <br>（記者旁白）：過去從學校還需要轉乘公車才可以到高鐵站，現在133公車只需要大約50分鐘車程並且直接到達高鐵站。158公車則大約需要1小時20分鐘，並且158公車還會經過火車站。票價方面，使用悠遊卡搭乘，133公車僅需要23元，而158則需要43元。
-                    <br>
-                    <br>（記者旁白）： 新增的133和158號公車不但為周邊居民帶來方便，更是為學生上下學帶來了便利。下面是一些同學對於新增133和158號公車的看法。
-                    <br>
-                    <br>石同學：“恩，有一點吧。
-                    <br>
-                    <br>黃同學：“133的話是沒什麼幫助，158是有幫助，因為縮短了131的時間，因為我是住在3宿所以我還是比較經常搭131和158。”
-                </p>
-                <p class="title_orange literary ">
-                    <br>APP查詢公車位置更便利
-                </p>
-                <p class="literary">
-                    （記者旁白）：學校的公車亭在今年安裝了電子公車時刻表，讓公車到站的時刻更加一目了然，同學們也可以多多利用智慧型手機的app來查詢公車準確的位置。
-                </p>
-                <p class="literary title_orange">
-                    <br>4路公車&nbsp;&nbsp;班次等待更省時
-                </p>
-                <p class="literary">
-                    （記者旁白）：目前學校有131、132、133、158，總共4路公車每天合計225班次。尖峰時段平均每六至八分鐘、離峰時段每十至十五分鐘即有一班次，歡迎同學們多加利用大眾交通，便利出遊。
-                </p>
-                <p class="literary reporter">
-                    <br>記者&nbsp;林希希、李宜庭&nbsp;採訪報導
-                </p>`},
-                    {
-                        title: '物價上漲壓力 學生餐廳撐不住', author: '朝陽新聞台', time: '2014/12/15', type: '台中報導',image:'/img/01/01-2.jpg', content: `<p class="literary">
-                    （記者旁白）一到中午，學校餐廳就湧進數百人潮，走一趟餐廳，發現很多家招牌都有改變，原來是店家承受不起物價上漲的壓力，在暑假過後將菜單悄悄的調漲。
-                    <br>
-                    <br>（餐廳老闆）成本一直在漲，但是我們的訂價沒有跟著去漲，所以對我們相對是壓縮我們的獲利。菜，他漲價的幅度是最大的，漲了幾乎有一倍以上。
-                </p>
-                <p class="literary title_orange">
-                    <br>便當、小菜全數漲價&nbsp;&nbsp;貴5-10塊錢
-                </p>
-                <p class="literary">
-                    （記者旁白）不只是原物料上漲，看看菜單上學生最愛的蒜泥白肉飯，原本45元現在漲到50元，還有人氣熱賣的豬排飯，在暑假前只要50元就可以吃得到，但是暑假過後就得多花五塊錢。架上各式各樣的小菜，任由學生挑選組成三菜一主菜的便當，一向被認為是最經濟實惠的，但是現在吃便當至少得準備65元才吃得起，店家漲價主要是因為原物料，像是小白菜在暑假前成本一捆90元，暑假後變成一捆180元，足足漲了一倍多，還有蛋在暑假前後的成本更是差了快100元，這些原物料不斷的上漲，讓店家不得不把菜單調整價格。
-                    <br>
-                    <br>（朝陽學生一）雖然（漲價）五塊十塊，每個禮拜下來也是很多錢。
-                    <br>（朝陽學生二）其實學校一個便當的分量是跟外面差不多，但是外面一個便當可能就要75或80元這樣。
-                    <br>（餐廳老闆）但是一漲價，學校就會來關心，為什麼你的那個定價會漲價，學校也會關心。
-                </p>
-                <p class="literary title_orange">
-                    <br>物價飆漲&nbsp;&nbsp;學生規劃用錢更要精打細算
-                </p>
-                <p class="literary">
-                    (記者旁白）蛋、油、蔬菜等原物料的上漲，讓主打比外食便宜的學校餐廳撐不住，只好調整價格，只是生活費本來就不多的學生們，在吃的消費規劃上，比起以前更要斤斤計較了。
-                </p>
-                <p class="literary reporter">
-                    <br>記者&nbsp;田芳昕、陳怡君&nbsp;台中報導
-                </p>`},
-                    {
-                        title: '基地台深夜發出噪音 造成居民睡眠障礙', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導',image:'/img/01/01-3.jpg', content: `<p class="literary title_orange">
-                    自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
-                </p>
-                <p class="literary">
-                    （記者旁白）：鄰近朝陽科技大學的自強路居民表示，有屋主與電信業者簽約，並在附近住戶完全不知情的情況下，在住宅頂樓架設基地台，甚至意圖出租給學生作為宿舍。
-                    <br>
-                    <br>居民郭小姐：（有人問）是哪一家？我說後面那一家，我們住那一家耶！真的喔？我看到布條只是不知道是哪一家。
-                </p>
-                <p class="literary title_orange">
-                    <br>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙
-                </p>
-                <p class="literary">
-                    （記者旁白）：居民表示基地台常在深夜發出噪音，使他們睡眠品質出現嚴重的障礙。
-                    <br>
-                    <br>居民莊小姐：在睡覺的時候鄰居都會一直聽到（噪音），大家都睡不著。
-                    <br>居民黃太太：大家都說頭暈暈的，就是有那個聲音，我也有反應就是頭會痛／７座（基地台），中華電信最主要。
-                </p>
-                <p class="literary title_orange">
-                    <br>電磁波對人體無危害？&nbsp;&nbsp;當地居民人心惶惶
-                </p>
-                <p class="literary">
-                    （記者旁白）：雖然目前包括NCC、衛生署國民健康局及電信產業界的各種電磁波宣導，一再強調各基地台功率均符合國家標準及法規上限，但仍舊無法消弭大眾對基地台的疑慮以及恐慌。
-                    <br>
-                    <br>居民林先生：電磁波最威脅的就是（我們的）免疫力。
-                    <br>居民林小姐：我們這個是住宅區，不應該有這樣子的東西在我們住宅區裡。
-                    <br>
-                    <br>記者旁白）：台灣各地基地台抗爭事件層出不窮，也有人在網路上呼籲，若是因為收訊問題想在自家架設基地台，應當先與附近居民達成共識，以免造成不必要的麻煩。
-                </p>
-                <p class="literary reporter reporter_last">
-                    <br>記者&nbsp;許喨瑜、游婷雅&nbsp;台中報導
-                </p>`}
-                ]*/
             },
             created: function () {
                 // `this` points to the vm instance
-                console.log('a is: ' + this.a)
+                this.chapter = this.firstChapter;
             },
             methods: {
                 changeItemsIndex: function (index, event) {
-                    // console.log(index);
                     this.currentItemsIndex = index;
+                },
+                nextChapter: function () {
+                    if (this.chapterIndex === 1) {
+                        this.chapterIndex = 2;
+                        this.chapter = this.thirdChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
+                    if (this.chapterIndex === 0) {
+                        this.chapterIndex = 1;
+                        this.chapter = this.secondChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
+                },
+                preChapter: function () {
+                    if (this.chapterIndex === 1) {
+                        this.chapterIndex = 0;
+                        this.chapter = this.firstChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
+                    if (this.chapterIndex === 2) {
+                        this.chapterIndex = 1;
+                        this.chapter = this.secondChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+                },
+                isCurrent:function(index){
+                    if(index == this.chapterIndex)
+                    return true;
+                },
+                changeChapter:function(index){
+                    console.log(index);
+                    if (index == 1) {
+                        this.chapterIndex = 1;
+                        this.chapter = this.firstChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
+                    if (index == 2) {
+                        this.chapterIndex = 2;
+                        this.chapter = this.secondChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
+                    if (index == 3) {
+                        this.chapterIndex = 3;
+                        this.chapter = this.thirdChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+                }
+            },
+            computed: {
+                // a computed getter
+                chinessChapterName: function () {
+                    // `this` points to the vm instance
+                    if (this.chapterIndex == 0)
+                        return "一"
+
+                    if (this.chapterIndex == 1)
+                        return "二"
+
+                    if (this.chapterIndex == 2)
+                        return "三"
                 }
             }
         })
