@@ -17,7 +17,7 @@
             padding: 0;
             font-family: Microsoft JhengHei;
             letter-spacing: 1px;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
 
         /* img {
@@ -51,6 +51,7 @@
         /**************************************/
 
         .content {
+            flex: 1;
             /*flex: 1 1 45vw;*/
             flex-direction: row;
             height: 100vh;
@@ -65,7 +66,8 @@
         }
 
         .container {
-            width: 704px;
+            width: 69.702%;
+            /* width: 704px; */
             margin-left: 168px;
             margin-right: 138px;
             letter-spacing: 1.5px;
@@ -82,9 +84,11 @@
         }
 
         .content_right {
+            flex: 0.90099009;
+
             width: 47.396vw;
             height: 100vh;
-            overflow: auto;
+            /* overflow: auto; */
             position: relative;
             /* display: inline-flex;
             flex-wrap: nowrap;
@@ -114,13 +118,13 @@
         /**arrow**/
 
         .arrow_num {
-            width: 23.698vw;
+            width: 100%;
             /* width: 47.396vw; */
             display: flex;
             flex-direction: row;
             align-items: flex-end;
-            position: fixed;
-            left: 1010px;
+            position: absolute;
+            right: 0;
             bottom: 0;
         }
 
@@ -146,12 +150,10 @@
         }
 
         .arrow_td {
-            position: absolute;
+            position: fixed;
             bottom: 0;
-            right: 0;
-            /* position: fixed;
-            bottom: 0;
-            left: 48.9583vw; */
+            left: 48.95833333vw;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             margin-right: 2px;
@@ -162,9 +164,10 @@
             width: 68px;
             height: 84px;
             background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+            position: relative;
         }
 
-        .arrow_top::before,
+        /*.arrow_top::before,
         .arrow_top::after,
         .arrow_down::before,
         .arrow_down::after {
@@ -172,7 +175,7 @@
             height: 100%;
             display: inline-block;
             vertical-align: middle;
-        }
+        }*/
 
         .arrow_top {
             margin-bottom: 2px;
@@ -180,8 +183,13 @@
 
         .arrow_top img,
         .arrow_down img {
+            position: absolute;
+            /* left : 19px; */
+            left: 32.3529%;
+	        /* top : 35px; */
+            top:41.6%;
             display: inline-block;
-            vertical-align: middle;
+            /* vertical-align: middle; */
         }
 
         .arrow_top:hover img.org,
@@ -199,7 +207,6 @@
         .arrow_top:hover img.chg,
         .arrow_down:hover img.chg {
             display: inline-block;
-            
         }
 
         .arrow_top:active img.chg,
@@ -215,7 +222,9 @@
 
         .arrow_left,
         .arrow_right {
+            flex: 1;
             width: calc((47.396vw - 457px)/2);
+            min-width: 68px;
             /* width: 11.7969vw; */
             height: 170px;
             background-color: #B3B3B3;
@@ -267,10 +276,13 @@
 
         .set_num {
             position: fixed;
-            bottom: 0;
             right: 0;
-            /* z-index: 2; */
+            bottom: 0;
+            flex: 2.008830022;
+
+
             width: 455px;
+            /* min-width: 455px; */
             height: 270px;
             background-color: #999999;
             background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
@@ -286,27 +298,35 @@
 
         .set_num .slet {
             color: #fff;
-            font-size: 160px;
-            line-height: 213px;
+            /* font-size: 160px; */
+            font-size: 8.333vw;
+            /* line-height: 213px; */
+            line-height: 11.309375vw;
             font-weight: bold;
             letter-spacing: 10.7px;
             display: inline-block;
             vertical-align: middle;
             filter: drop-shadow(3px 3px 9px rgba(90, 90, 90, .1));
-            padding: 28px 65px;
+            padding: 10.3% 14.28%;
+            width: 100%;
+            /* padding: 10.3% 0; */
+            box-sizing: border-box;
+
         }
 
         .set_num:hover .slet {
             background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            width: auto !important;
+            /* width: auto !important; */
+            width: 100% !important;
+            padding: 10.3% 0;
         }
 
         .set_num.active {
             padding: 0 40px;
+            /* padding: 10.3% 14.28%; */
             box-sizing: border-box;
-
         }
 
         .set_num.active .swiper-slide {
@@ -315,11 +335,15 @@
             /*width: auto !important;*/
         }
 
-        .set_num.active .slet {
+        .set_num.active .slet,
+        .set_num:hover.active .slet {
             color: #FFDC78;
             font-size: 37px;
             line-height: 49px;
             padding: 0;
+            width: auto !important;
+            background-color: transparent;
+            -webkit-text-fill-color: #FFDC78;
         }
 
         .set_num.active .swiper-container,
@@ -414,7 +438,8 @@
             height: 100px;
             border: none;
             border-bottom: 2px solid #1496FA;
-            margin: 0 138px 40px 0;
+            margin: 0 13.66% 40px 0;
+            /* margin: 0 138px 40px 0; */
         }
 
         .literary {
@@ -445,7 +470,7 @@
 </head>
 
 <body>
-    <div id="app" class="all">
+    <div class="all" id="app">
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
@@ -453,18 +478,6 @@
                 </div>
                 <div class="page_dot">
                     <ul>
-                        <!-- <a href="#top">
-                            <li class="active"></li>
-                        </a>
-                        <a href="#A">
-                            <li></li>
-                        </a>
-                        <a href="#B">
-                            <li></li>
-                        </a>
-                        <a href="#C">
-                            <li></li>
-                        </a> -->
                         <a href="#top">
                             <li class="active"></li>
                         </a>
@@ -532,41 +545,40 @@
 
             </div>
         </div>
+        <div class="arrow_td">
+            <a href="#!">
+                <div class="arrow_top">
+                    <img class="org" src="img/Up.svg" alt="" height="15">
+                    <img class="chg" src="img/Up-change.svg" alt="" height="15">
+                </div>
+            </a>
+            <a href="#!">
+                <div class="arrow_down">
+                    <img class="org" src="img/Down.svg" alt="" height="15px">
+                    <img class="chg" src="img/Down-change.svg" alt="" height="15px">
+                </div>
+            </a>
+        </div>
         <div class="content">
             <div class="container">
                 <div id="top"></div>
-                <div class="arrow_td">
-                    <a href="#!">
-                        <div class="arrow_top">
-                            <img class="org" src="img/Up.svg" alt="" height="15">
-                            <img class="chg" src="img/Up-change.svg" alt="" height="15">
-                        </div>
-                    </a>
-                    <a href="#!">
-                        <div class="arrow_down">
-                            <img class="org" src="img/Down.svg" alt="" height="15px">
-                            <img class="chg" src="img/Down-change.svg" alt="" height="15px">
-                        </div>
-                    </a>
-                </div>
+                
                 <div class="title_section">
-                    <p class="title title_blue">朝陽新聞第{{ chinessChapterName }}集</p>
+                    <p class="title title_blue">朝陽新聞第{{chinessChapterName}}集</p>
                     <img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
                         <li v-for="(item, index) in chapter">
-                            <a v-bind:href="'#'+ item.id">{{ item.title }}</a>
+                            <a v-bind:href="'#'+ item.id">{{item.title}}</a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-
             <div v-for="(item, index) in chapter">
                 <div v-bind:id="item.id">
                     <hr class="space_line">
                     <div class="container">
-                        <div class="title title_orange">{{ item.title}}</div>
-                        <div class="subtitle">{{ item.author}}&nbsp;{{ item.time}}&nbsp;{{ item.type}}
+                        <div class="title title_orange">{{item.title}}</div>
+                        <div class="subtitle">{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}
                             <br>
                             <br>
                         </div>
@@ -574,54 +586,49 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
         <div class="content_right">
+            <div class="arrow_num">
+                <div class="arrow">
+                    <div class="arrow_lr">
+                        <a href="#!">
+                            <div class="arrow_left">
+                                <img class="org" src="img/Left.svg" alt="" width="20px">
+                                <img class="chg" src="img/Left-change.svg" alt="" width="20px">
+                            </div>
+                        </a>
+                        <a href="#!">
+                            <div class="arrow_right">
+                                <img class="org" src="img/Right.svg" alt="" width="20px">
+                                <img class="chg" src="img/Right-change.svg" alt="" width="20px">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="set_num">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in chapter">0{{ index+1 }}#</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content_img dragscroll" v-for="(item, index) in chapter">
                 <img :src="item.image" alt="" />
             </div>
         </div>
-        <div class="arrow_num">
-            <div class="arrow">
-                <div class="arrow_lr">
-                    <a href="#">
-                        <div class="arrow_left" v-on:click="preChapter();">
-                            <img class="org" src="img/Left.svg" alt="" width="20px">
-                            <img class="chg" src="img/Left-change.svg" alt="" width="20px">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="arrow_right" v-on:click="nextChapter();">
-                            <img class="org" src="img/Right.svg" alt="" width="20px">
-                            <img class="chg" src="img/Right-change.svg" alt="" width="20px">
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <div class="set_num">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in chapter">0{{ index+1 }}#</div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <!--圖片滑動-->
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
 
-    <!-- Vue -->
-    <script>
+     <!-- Vue -->
+     <script>
         var vm = new Vue({
             el: '#app',
             data: {
@@ -928,7 +935,6 @@
 
 
     </script>
-
     <script>
         // navbar
         $(".navbar").click(function () {
@@ -941,8 +947,7 @@
         });
         $(".content_right").click(function () {
             $(".nav_content").removeClass("active");
-            $(".set_num").removeClass("active");
-            $(".slet").addClass("swiper-no-swiping");
+
         });
     </script>
     <script>
