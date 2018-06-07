@@ -66,10 +66,13 @@
         }
 
         .container {
-            width: 69.702%;
             /* width: 704px; */
-            margin-left: 168px;
-            margin-right: 138px;
+            width: 36.6667vw;
+            /* margin-left: 168px; */
+            margin-left: 8.75vw;
+            /* margin-right: 138px; */
+            margin-right: 7.1875vw;
+            width: 69.702%;
             letter-spacing: 1.5px;
             line-height: 40px;
 
@@ -85,10 +88,10 @@
 
         .content_right {
             flex: 0.90099009;
-
+            /* width: 910px; */
             width: 47.396vw;
             height: 100vh;
-            /* overflow: auto; */
+            overflow: auto;
             position: relative;
             /* display: inline-flex;
             flex-wrap: nowrap;
@@ -100,7 +103,7 @@
         }
 
         .content_img {
-            height: calc(100% - 170px);
+            height: calc(100% - 166px);
             margin-bottom: 170px;
             width: 100%;
             background-color: rgba(130, 210, 255, .2);
@@ -116,14 +119,14 @@
         }
 
         /**arrow**/
-
         .arrow_num {
-            width: 100%;
-            /* width: 47.396vw; */
+            /* width: 100%; */
+            width: 47.39583vw;
             display: flex;
             flex-direction: row;
             align-items: flex-end;
-            position: absolute;
+            /* position: absolute; */
+            position: fixed;
             right: 0;
             bottom: 0;
         }
@@ -166,17 +169,6 @@
             background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
             position: relative;
         }
-
-        /*.arrow_top::before,
-        .arrow_top::after,
-        .arrow_down::before,
-        .arrow_down::after {
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
-        }*/
-
         .arrow_top {
             margin-bottom: 2px;
         }
@@ -298,20 +290,19 @@
 
         .set_num .slet {
             color: #fff;
-            /* font-size: 160px; */
-            font-size: 8.333vw;
-            /* line-height: 213px; */
-            line-height: 11.309375vw;
+            font-size: 160px;
+            /* font-size: 8.333vw; */
+            line-height: 213px;
+            /* line-height: 11.09375vw; */
             font-weight: bold;
             letter-spacing: 10.7px;
             display: inline-block;
             vertical-align: middle;
             filter: drop-shadow(3px 3px 9px rgba(90, 90, 90, .1));
-            padding: 10.3% 14.28%;
+            padding: 28px 65px;
+            padding: 6.1538% 14.2857%;
             width: 100%;
-            /* padding: 10.3% 0; */
             box-sizing: border-box;
-
         }
 
         .set_num:hover .slet {
@@ -320,7 +311,6 @@
             -webkit-text-fill-color: transparent;
             /* width: auto !important; */
             width: 100% !important;
-            padding: 10.3% 0;
         }
 
         .set_num.active {
@@ -381,9 +371,6 @@
             -webkit-align-items: center;
             align-items: center;
         }
-
-
-
 
         /**content**/
 
@@ -592,13 +579,13 @@
                 <div class="arrow">
                     <div class="arrow_lr">
                         <a href="#!">
-                            <div class="arrow_left">
+                            <div class="arrow_left" v-on:click="preChapter();">
                                 <img class="org" src="img/Left.svg" alt="" width="20px">
                                 <img class="chg" src="img/Left-change.svg" alt="" width="20px">
                             </div>
                         </a>
                         <a href="#!">
-                            <div class="arrow_right">
+                            <div class="arrow_right" v-on:click="nextChapter();">
                                 <img class="org" src="img/Right.svg" alt="" width="20px">
                                 <img class="chg" src="img/Right-change.svg" alt="" width="20px">
                             </div>
@@ -608,7 +595,7 @@
                 <div class="set_num">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in chapter">0{{ index+1 }}#</div>
+                            <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">0{{ index+1 }}#</div>
                         </div>
                     </div>
                 </div>
@@ -621,7 +608,7 @@
 
 
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <!--圖片滑動-->
@@ -898,20 +885,20 @@
                 },
                 changeChapter: function (index) {
                     console.log(index);
+                    if (index == 0) {
+                        this.chapterIndex = 0;
+                        this.chapter = this.firstChapter;
+                        $(".content").animate({ scrollTop: 0 }, 600);
+                    }
+
                     if (index == 1) {
                         this.chapterIndex = 1;
-                        this.chapter = this.firstChapter;
+                        this.chapter = this.secondChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
                     }
 
                     if (index == 2) {
                         this.chapterIndex = 2;
-                        this.chapter = this.secondChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                    }
-
-                    if (index == 3) {
-                        this.chapterIndex = 3;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
                     }
