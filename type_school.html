@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="/css/fontawesome-all.min.css"  integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/nav.css">
     <style>
         body {
             margin: 0;
@@ -30,29 +30,27 @@
             color: inherit;
             text-decoration: none;
         }
-        p{
+
+        p {
             margin: 0;
         }
-
-        /* ul {
-            margin: 0;
-            padding-left: 0;
-            list-style-type: none;
-        } */
 
         .all {
             flex-direction: row;
             display: inline-flex;
             width: 100%;
         }
+
         /**************************************/
-        .type_section{
+
+        .type_section {
             position: fixed;
-            top:0;
+            top: 0;
             left: 168px;
             display: flex;
         }
-        .type_section .type{
+
+        .type_section .type {
             margin: 0;
             padding-left: 0;
             padding-top: 68px;
@@ -60,199 +58,234 @@
             margin-bottom: 40px;
             /*margin-left:160px;*/
         }
-        .type_section > .type > li{
+
+        .type_section>.type>li {
             display: inline-block;
             font-size: 24px;
             color: #1496FA;
         }
-         .type_section > .type > li:hover{
+
+        .type_section>.type>li:hover {
             opacity: .8;
         }
-         .type_section > .type > li:active,
-         .type_section > .type > li.active{
+
+        .type_section>.type>li:active,
+        .type_section>.type>li.active {
             opacity: 1;
-            color:#FA6E0A;
+            color: #FA6E0A;
         }
-        .type_section > .type > li:not(:last-child){
+
+        .type_section>.type>li:not(:last-child) {
             margin-right: 20px;
         }
-        .type_section > .type > li::before{
-            content:'‧';
+
+        .type_section>.type>li::before {
+            content: '‧';
             font-size: 24px;
             color: #1496FA;
             display: inline-block;
         }
-        .type_section > .type > li:hover::before{
+
+        .type_section>.type>li:hover::before {
             opacity: .8;
         }
-        .type_section > .type > li:active::before,
-        .type_section > .type > li.active::before{
+
+        .type_section>.type>li:active::before,
+        .type_section>.type>li.active::before {
             opacity: 1;
-            color:#FA6E0A;
+            color: #FA6E0A;
         }
-        .line_b{
+
+        .line_b {
             margin: 0;
-            margin-right: 138px;
+            /* margin-right: 138px; */
+            margin-right: 13.66%;
             height: 2px;
-            width: 772px;
+            width: 872px;
+            width: 45.41666666666666666666666vw;
             border: 0;
             background-color: #1496FA;
             position: fixed;
-            left: 100px;
-            top:140px;
+            left: 0;
+            top: 140px;
         }
 
         .content {
-            flex-direction: row;
+            /* flex-direction: row;
             overflow-y: scroll;
             color: #8A8A8A;
-            font-size: 18px;
+            font-size: 18px;            
+            height: 900px; */
+            flex: 1;
+            flex-direction: row;
+            height:calc(100vh - 180px);
+            /* height: 900px; */
+            overflow-y: scroll;
+            color: rgba(90, 90, 90, 1);
+            font-size: 0.9375vw;
             margin-top: 180px;
-            height: 900px;
         }
+
         .content::-webkit-scrollbar {
             display: none; 
         }
-        .container{
-            width: 704px;
-            margin-left: 168px;
-            margin-right: 138px;
+
+        .container {
+           /* width: 704px; */
+           width: 36.6667vw;
+           width: 69.702%;
+            /* margin-left: 168px; */
+            margin-left: 8.75vw;
+            /* margin-right: 138px; */
+            margin-right: 7.1875vw;
+            
         }
-        
-        /* .part_title{
-            font-weight: 600;
-            line-height: 24px;
-            padding-left: 20px;
-        }
-        .space_line{
-            margin-right: 50px;
-            color: #8A8A8A; 
-            background-color: #8A8A8A;
-            height: 2px;
-        }
-        .title{
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 29px;
-            margin: 30px 0;
-        }
-        .literary{
-            text-indent:60px;
-            margin: 10px 0;
-        } */
 
         .content_right {
-            width: 910px;
-            display: inline-flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
+            overflow: auto;
+            flex: 0.90099009;
+            /* width: 910px; */
+            width: 47.396vw;
+            width: calc(100% - 69.702%);
+        }
+
+        .content_right::-webkit-scrollbar {
+            display: none;
         }
 
         .content_img {
-            height:100vh;
             width: 100%;
-            background-color: #F4F4F4;
+            background-color: rgba(130, 210, 255, .2);
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
+            cursor: move;
+            overflow: scroll;
         }
-        .img_size{
-            max-width: 100%;
-            width: 100%;
-            height: 100%;
-        }
-       
-        /**arrow**/
-        .arrow_td{
-            position: fixed;
-            bottom: 0;
-            right:0;
-            display:flex;
-            flex-direction:column;
-            margin-right: 2px;
-            text-align: center;
-        }
-        .arrow_td img.chg{
+
+        .content_img::-webkit-scrollbar {
             display: none;
         }
-        .arrow_top{
+
+        .content_img img {
+            height: 100vh;
+        }
+
+
+        /**arrow**/
+
+        .arrow_td {
+            position: fixed;
+            bottom: 0;
+            left: 940px;
+            left: 48.95833333vw;
+            display: flex;
+            flex-direction: column;
+            margin-right: 2px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arrow_td img.chg {
+            display: none;
+        }
+
+        .arrow_top {
             width: 68px;
             height: 84px;
-            background : linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+            background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
         }
+
         .arrow_top::before,
-        .arrow_top::after{
+        .arrow_top::after {
             content: "";
             height: 100%;
             display: inline-block;
             vertical-align: middle;
         }
-        .arrow_top img{
+
+        .arrow_top img {
             display: inline-block;
             vertical-align: middle;
         }
+
         .arrow_top:hover img.org,
-        .arrow_top:active img.org{
+        .arrow_top:active img.org {
             display: none;
         }
-        .arrow_top:hover img{
-            filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
+
+        .arrow_top:hover img {
+            filter: drop-shadow(2px 2px 4px rgba(90, 90, 90, .2));
         }
-        .arrow_top:hover img.chg{
+
+        .arrow_top:hover img.chg {
             display: inline-block;
         }
-        .arrow_top:active img.chg{
+
+        .arrow_top:active img.chg {
             display: inline-block;
             opacity: .8;
         }
 
         /**content**/
-        .title_section{
+
+        .title_section {
             letter-spacing: 1.5px;
             line-height: 50px;
             margin: 99px 0 0 0;
         }
-        .title{
+
+        .title {
             font-size: 36px;
             font-weight: bold;
         }
-        .title_blue{
-            color: rgba(20,150,250,1);
+
+        .title_blue {
+            color: rgba(20, 150, 250, 1);
             display: inline-block;
             margin-right: 15px;
         }
-        .title_orange{
-            color:rgba(250,110,10,1);
+
+        .title_orange {
+            color: rgba(250, 110, 10, 1);
         }
-        .subtitle{
-            color: rgba(255,170,70,1);
+
+        .subtitle {
+            color: rgba(255, 170, 70, 1);
             font-size: 18px;
         }
-        ul.part_title{
+
+        ul.part_title {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .part_title{
+
+        .part_title {
             font-size: 24px;
-            color: rgba(90,90,90,1);
+            color: rgba(90, 90, 90, 1);
         }
-        ul.part_title li::before{ 
-            content: "◎"; 
+
+        ul.part_title li::before {
+            content: "◎";
             padding-right: 8px;
         }
-        .space_line{
-            background-color:transparent;
+
+        .space_line {
+            background-color: transparent;
             height: 100px;
             border: none;
-            border-bottom:2px solid #1496FA ;
+            border-bottom: 2px solid #1496FA;
             margin: 0 138px 40px 0;
         }
-        .literary{
+
+        .literary {
             font-size: 24px;
         }
-        .reporter{
+
+        .reporter {
             font-weight: bold;
-             margin-bottom: 100px;
+            margin-bottom: 100px;
         }
     </style>
 </head>
@@ -290,7 +323,7 @@
                     <img src="img/Magnifier-B.svg" alt="" width="20">
                 </div>
                 <!--<p style="font-size:18px;">-->
-                    <!--即將推出功能-->
+                <!--即將推出功能-->
                 <!--</p>-->
                 <div class="type">
                     <a href="">
@@ -335,26 +368,46 @@
         </div>
         <div class="type_section">
             <ul class="type">
-                <li class="active"><a href="directory.html">&nbsp;校園</a></li>
-                <li><a href="#!">&nbsp;體育</a></li>
-                <li><a href="#!">&nbsp;藝文</a></li>
-                <li><a href="#!">&nbsp;科技</a></li>
-                <li><a href="#!">&nbsp;醫藥</a></li>
-                <li><a href="#!">&nbsp;地方文化</a></li>
+                <li class="active">
+                    <a href="directory.html">&nbsp;校園</a>
+                </li>
+                <li>
+                    <a href="#!">&nbsp;體育</a>
+                </li>
+                <li>
+                    <a href="#!">&nbsp;藝文</a>
+                </li>
+                <li>
+                    <a href="#!">&nbsp;科技</a>
+                </li>
+                <li>
+                    <a href="#!">&nbsp;醫藥</a>
+                </li>
+                <li>
+                    <a href="#!">&nbsp;地方文化</a>
+                </li>
             </ul>
         </div>
         <hr class="line_b">
         <div class="content">
             <div class="container">
                 <div class="title title_orange">校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</div>
-                <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導<br><br></div>
+                <div class="subtitle">朝陽新聞台&nbsp;2014/12/15&nbsp;採訪報導
+                    <br>
+                    <br>
+                </div>
                 <p class="literary">
                     （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
-                    <br><br>（記者旁白）：133公車途經塗城路、成功路、徳芳路、文心南路等以前坐公車較不方便到達的地方。158公車則是往返朝陽科大、仁愛路、下內新、台中火車站、建國北路、台中高鐵站之間。
-                    <br><br>（記者旁白）：過去從學校還需要轉乘公車才可以到高鐵站，現在133公車只需要大約50分鐘車程並且直接到達高鐵站。158公車則大約需要1小時20分鐘，並且158公車還會經過火車站。票價方面，使用悠遊卡搭乘，133公車僅需要23元，而158則需要43元。
-                    <br><br>（記者旁白）： 新增的133和158號公車不但為周邊居民帶來方便，更是為學生上下學帶來了便利。下面是一些同學對於新增133和158號公車的看法。
-                    <br><br>石同學：“恩，有一點吧。
-                    <br><br>黃同學：“133的話是沒什麼幫助，158是有幫助，因為縮短了131的時間，因為我是住在3宿所以我還是比較經常搭131和158。”
+                    <br>
+                    <br>（記者旁白）：133公車途經塗城路、成功路、徳芳路、文心南路等以前坐公車較不方便到達的地方。158公車則是往返朝陽科大、仁愛路、下內新、台中火車站、建國北路、台中高鐵站之間。
+                    <br>
+                    <br>（記者旁白）：過去從學校還需要轉乘公車才可以到高鐵站，現在133公車只需要大約50分鐘車程並且直接到達高鐵站。158公車則大約需要1小時20分鐘，並且158公車還會經過火車站。票價方面，使用悠遊卡搭乘，133公車僅需要23元，而158則需要43元。
+                    <br>
+                    <br>（記者旁白）： 新增的133和158號公車不但為周邊居民帶來方便，更是為學生上下學帶來了便利。下面是一些同學對於新增133和158號公車的看法。
+                    <br>
+                    <br>石同學：“恩，有一點吧。
+                    <br>
+                    <br>黃同學：“133的話是沒什麼幫助，158是有幫助，因為縮短了131的時間，因為我是住在3宿所以我還是比較經常搭131和158。”
                 </p>
                 <p class="title_orange literary ">
                     <br>APP查詢公車位置更便利
@@ -371,36 +424,50 @@
                 <p class="literary reporter">
                     <br>記者&nbsp;林希希、李宜庭&nbsp;採訪報導
                 </p>
+                <div class="arrow_td" id="myBtn">
+                    <div class="arrow_top">
+                        <img class="org" src="img/Up.svg" alt="" height="15">
+                        <img class="chg" src="img/Up-change.svg" alt="" height="15">
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="content_right">
-            <div class="content_img">
-                <!--<img class="img_size"src="/img/A.jpg" alt="">-->
+            <div class="content_img dragscroll">
+                <img src="/img/01/01-1.jpg" alt="">
             </div>
-        </div>
-        <div class="arrow_td">
-            <a href="#!">
-                <div class="arrow_top">
-                    <img class="org" src="img/Up.svg" alt="" height="15">
-                    <img class="chg" src="img/Up-change.svg" alt="" height="15">
-                </div>
-            </a>
         </div>
     </div>
 
 
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--圖片滑動-->
+    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
     <script>
-    $(".navbar").click(function(){
-        $(".nav_content").toggleClass("active");
-    });
-    $(".content").click(function(){
-        $(".nav_content").removeClass("active");
-    });
-    $(".content_right").click(function(){
-        $(".nav_content").removeClass("active");
-    });
+        $(".navbar").click(function () {
+            $(".nav_content").toggleClass("active");
+        });
+        $(".content").click(function () {
+            $(".nav_content").removeClass("active");
+        });
+        $(".content_right").click(function () {
+            $(".nav_content").removeClass("active");
+        });
+    </script>
+    <script>
+        //圖片位置置中
+        $(document).ready(function () {
+            $(".dragscroll").scrollLeft(420);
+            $(".dragscroll").scrollTop(150);
+        });
+    </script>
+    <!-- back to top -->
+    <script>
+        $('#myBtn').click(function () {      // When arrow is clicked
+            $(".content").animate({ scrollTop: 0 }, 600);
+        });
     </script>
 </body>
 

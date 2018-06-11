@@ -20,10 +20,6 @@
             /* overflow: hidden; */
         }
 
-        /* img {
-            display: block;
-        } */
-
         a,
         a:hover,
         a:focus,
@@ -35,12 +31,6 @@
         p {
             margin: 0;
         }
-
-        /* ul {
-            margin: 0;
-            padding-left: 0;
-            list-style-type: none;
-        } */
 
         .all {
             flex-direction: row;
@@ -90,9 +80,10 @@
             flex: 0.90099009;
             /* width: 910px; */
             width: 47.396vw;
+            width: calc(100% - 69.702%);
             height: 100vh;
             overflow: auto;
-            position: relative;
+            /* position: relative; */
             /* display: inline-flex;
             flex-wrap: nowrap;
             flex-direction: column; */
@@ -857,12 +848,14 @@
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
 
                     if (this.chapterIndex === 0) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
 
                 },
@@ -871,12 +864,14 @@
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
 
                     if (this.chapterIndex === 2) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
                 },
                 isCurrent: function (index) {
@@ -889,18 +884,21 @@
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
 
                     if (index == 1) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
 
                     if (index == 2) {
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({ scrollTop: 0 }, 600);
+                        $(".content_right").animate({ scrollTop: 0 }, 600);
                     }
                 }
             },
