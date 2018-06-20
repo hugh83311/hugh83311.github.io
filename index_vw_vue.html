@@ -109,6 +109,10 @@
             display: none;
         }
 
+        /** 平板箭頭 **/
+        .tablet-btn{
+            display: none;
+        }
         /**arrow**/
         .arrow_num {
             /* width: 100%; */
@@ -146,11 +150,10 @@
         .arrow_td {
             position: fixed;
             bottom: 0;
-            left: 48.95833333vw;
+            right: 47.5%;
             z-index: 2;
             display: flex;
             flex-direction: column;
-            margin-right: 2px;
         }
 
         .arrow_top,
@@ -444,11 +447,81 @@
                 width: 68px;
             }
         }
+        @media screen and (max-width: 1250px){
+            .arrow_td{
+                display: none;
+            }
+            .arrow_num{
+                display: none;
+            }
+            .tablet-btn{
+                position: fixed;
+                display: block;
+                width:68px;
+                right: 0;
+                bottom: 0;
+            }
+            .tablet-arrow{
+                display: flex;
+                width: 100%;
+                height: 84px;
+                margin-bottom: 2px;
+                cursor: pointer;
+                background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+                justify-content: center;
+                align-items: center;
+            }
+            .tablet-num{
+                width: 100%;
+                height: 84px;
+                margin-bottom: 2px;
+                background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+                /*transition: 0.6s;*/
+                /*transform-origin: 50% 100%;*/
+            }
+            .tablet-num.active{
+                height: 253px;
+                padding: 15px 0;
+            }
+            .tablet-swiper-container{
+                width: 68px;
+                height: 253px;
+            }
+            .tablet-swiper-container .swiper-slide{
+                font-size: 23px;
+                line-height: 84px;
+                padding: 0 11.455px;
+            }
+            .tablet-num.active .tablet-swiper-container .swiper-slide.slet{
+                color:#FFDC78;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="all" id="app">
+        <div class="tablet-btn">
+            <div class="tablet-arrow" v-on:click="preChapter();">
+                <img class="org" src="img/Left.svg" alt="" width="15px">
+            </div>
+            <div class="tablet-arrow" v-on:click="nextChapter();">
+                <img class="org" src="img/Right.svg" alt="" width="15px">
+            </div>
+            <div class="tablet-num">
+                <div class="swiper-container tablet-swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">0{{ index+1 }}#</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tablet-arrow">
+                <img class="org" src="img/Up.svg" alt="" height="15">
+            </div>
+            <div class="tablet-arrow" style="margin-bottom:0">
+                <img class="org" src="img/Down.svg" alt="" height="15px">
+            </div>
+        </div>
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
@@ -963,6 +1036,23 @@
                 var swiper = new Swiper('.swiper-container', {
                     slidesPerView: 4,
                     spaceBetween: 25,
+                    freeMode: true,
+                    grabCursor: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        })
+        $(".tablet-num").click(function () {
+            $(this).addClass("active");
+            if ($(".tablet-num").hasClass("active")) {
+                $(".slet").removeClass("swiper-no-swiping");
+                var swiper = new Swiper('.tablet-swiper-container', {
+                    direction: 'vertical',
+                    slidesPerView: 4,
+                    spaceBetween: 15,
                     freeMode: true,
                     grabCursor: true,
                     pagination: {
