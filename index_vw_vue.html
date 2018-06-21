@@ -1080,9 +1080,13 @@
             var block_A = container_h + first_news_h;
             var img_h = $(".content_img").outerHeight() + 170;
             if(content_scroll > block_A){
-                $(".content_right").animate({
+                $(".content_right").stop().animate({
             scrollTop: img_h
         }, 600);
+            }else{
+                $(".content_right").stop().animate({
+            scrollTop: -img_h
+        }, 700);
             }
         });
     </script>
