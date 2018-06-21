@@ -40,6 +40,12 @@
 
         /**************************************/
 
+        .navbar img{
+            width: 50px;
+        }
+        .social img{
+            width: 45px;
+        }
         .content {
             flex: 1;
             /*flex: 1 1 45vw;*/
@@ -93,7 +99,6 @@
 
         .content_img {
             height: calc(100% - 170px);
-            margin-bottom: 170px;
             width: 100%;
             background-color: rgba(130, 210, 255, .2);
             background-size: cover;
@@ -101,6 +106,9 @@
             background-repeat: no-repeat;
             cursor: move;
             overflow: scroll;
+        }
+        .content_img:nth-last-child(1){
+            margin-bottom: 170px;
         }
 
         .content_img::-webkit-scrollbar {
@@ -201,6 +209,7 @@
 
         .arrow_lr {
             display: flex;
+            background-color: white;
             /* width: calc(47.396vw - 455px); */
         }
 
@@ -363,7 +372,12 @@
             -webkit-align-items: center;
             align-items: center;
         }
-
+        .tablet-arrow-lr img{
+            width: 15px;
+        }
+        .tablet-arrow-ud img{
+            height: 15px;
+        }
         /**content**/
 
         #top {
@@ -431,6 +445,12 @@
         .reporter_last {
             margin-bottom: 100px;
         }
+        .tablet-img{
+            display: none;
+        }
+        .navbar-off{
+            display: none;
+        }
 
         @media screen and (width: 1597px) {
             .container {
@@ -445,6 +465,11 @@
             }
         }
         @media screen and (max-width: 1250px){
+            .tablet-img{
+                max-width: 100%;
+                display: block;
+                margin-bottom: 50px;
+            }
             .arrow_td{
                 display: none;
             }
@@ -457,6 +482,7 @@
                 width:68px;
                 right: 0;
                 bottom: 0;
+                z-index: 2;
             }
             .tablet-arrow{
                 display: flex;
@@ -496,17 +522,93 @@
                 display: none;
             }
         }
+        @media screen and (max-width:767px){
+            .nav{
+                width: 100%;
+                height: 40px;
+                padding: 10px 15px;
+                flex-flow: row;
+                justify-content: space-between;
+            }
+            .navbar img{
+                width: 25px;
+            }
+            .page_dot{
+                display: none;
+            }
+            .social{
+                display: flex;
+            }
+            .social img{
+                height:20px;
+                width: auto;
+            }
+            .youtube{
+                margin-bottom: 0;
+                margin-right: 16.74px;
+            }
+            .nav_content{
+                width: 100%;
+                left:-100%;
+                z-index: 5;
+            }
+            .nav_content.active{
+                left:0;
+            }
+            .navbar-off{
+                display: block;
+                position: absolute;
+                top:10px;
+                left:15px;
+                cursor: pointer;
+            }
+            .navbar-off img{
+                width: 25px;
+            }
+            .container{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .tablet-btn{
+                display: flex;
+                width: 100%;
+            }
+            .tablet-arrow{
+                margin-bottom: 0;
+                width: 16.875%;
+                height: 40px;
+                background: linear-gradient(360deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+            }
+            .tablet-num{
+                margin-bottom: 0;
+                width: 32.5%;
+                height: 40px;
+            }
+            .space_line{
+                height: 30px;
+                margin:0 0 40px 0
+            }
+            .tablet-swiper-container .swiper-slide{
+                line-height: 40px;
+            }
+            .tablet-arrow-lr img{
+                width: 10px;
+            }
+            .tablet-arrow-ud img{
+                height: 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="all" id="app">
         <div class="tablet-btn">
-            <div class="tablet-arrow" v-on:click="preChapter();">
-                <img class="org" src="img/Left.svg" alt="" width="15px">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();">
+                <img class="org" src="img/Left.svg" alt="" >
             </div>
-            <div class="tablet-arrow" v-on:click="nextChapter();">
-                <img class="org" src="img/Right.svg" alt="" width="15px">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();">
+                <img class="org" src="img/Right.svg" alt="" >
             </div>
             <div class="tablet-num">
                 <div class="swiper-container tablet-swiper-container">
@@ -515,17 +617,17 @@
                     </div>
                 </div>
             </div>
-            <div class="tablet-arrow">
-                <img class="org" src="img/Up.svg" alt="" height="15">
+            <div class="tablet-arrow tablet-arrow-ud">
+                <img class="org" src="img/Up.svg" alt="" >
             </div>
-            <div class="tablet-arrow" style="margin-bottom:0">
-                <img class="org" src="img/Down.svg" alt="" height="15px">
+            <div class="tablet-arrow tablet-arrow-ud" style="margin-bottom:0">
+                <img class="org" src="img/Down.svg" alt="" >
             </div>
         </div>
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
-                    <img src="img/Menu.svg" alt="" width="50">
+                    <img src="img/Menu.svg" alt="" >
                 </div>
                 <div class="page_dot">
                     <ul>
@@ -540,17 +642,20 @@
                 <div class="social">
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube.svg" alt="" width="45">
+                            <img src="img/Youtube.svg" alt="" >
                         </a>
                     </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" width="45">
+                            <img src="img/Facebook.svg" alt="" >
                         </a>
                     </div>
                 </div>
             </div>
             <div class="nav_content">
+                <div class="navbar-off">
+                    <img src="img/Menu.svg" alt="">
+                </div>
                 <div class="search_box">
                     <p>即將推出功能</p>
                     <img src="img/Magnifier-B.svg" alt="" width="20">
@@ -627,7 +732,11 @@
             <div v-for="(item, index) in chapter">
                 <div v-bind:id="item.id">
                     <hr class="space_line">
+                    <!-- <div style="padding: 0 138px 0 100px;">
+                        <img :src="item.image" alt="" class="tablet-img" />    
+                    </div> -->
                     <div class="container">
+                        <img :src="item.image" alt="" class="tablet-img" />
                         <div class="title title_orange">{{item.title}}</div>
                         <div class="subtitle">{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}
                             <br>
@@ -998,6 +1107,9 @@
         $(".navbar").click(function () {
             $(".nav_content").toggleClass("active");
         });
+        $(".navbar-off").click(function () {
+            $(".nav_content").toggleClass("active");
+        });
         $(".content").click(function () {
             $(".nav_content").removeClass("active");
             $(".set_num").removeClass("active");
@@ -1073,22 +1185,62 @@
     <script>
     </script>
     <script>
-        $(".content").scroll(function(){
-            var content_scroll= $(".content").scrollTop();
-            var container_h = $(".container").outerHeight();
-            var first_news_h = $("#A").outerHeight();
-            var block_A = container_h + first_news_h;
-            var img_h = $(".content_img").outerHeight() + 170;
-            if(content_scroll > block_A){
-                $(".content_right").stop().animate({
-            scrollTop: img_h
-        }, 600);
-            }else{
-                $(".content_right").stop().animate({
-            scrollTop: -img_h
-        }, 700);
-            }
-        });
+        // var timer;
+        // $(".content").scroll(function(){
+        //     if ( timer ) clearTimeout(timer);
+
+        //     timer = setTimeout(function(){
+        //         // Make your AJAX request here...
+        //         var content_scroll= $(".content").scrollTop();
+        //         var container_h = $(".container").outerHeight();
+        //         var first_news_h = $("#A").outerHeight();
+        //         var second_news_h = $("#B").outerHeight();
+        //         var block_A = container_h + first_news_h;
+        //         var block_B = block_A + second_news_h;
+        //         var img_h = $(".content_img").outerHeight()
+        //         if(content_scroll > block_A){
+        //             $(".content_right").stop().animate({
+        //         scrollTop: img_h
+        //     }, 600);
+        //         }else{
+        //             $(".content_right").stop().animate({
+        //         scrollTop: -img_h
+        //     }, 700);
+        //         }
+        //         if(content_scroll > block_B){
+        //             $(".content_right").stop().animate({
+        //         scrollTop: img_h*2
+        //     }, 600);
+        //         }
+        //     }, 10000);
+            
+        // });
+        $(".content").scroll(function() {
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(function() {
+        var content_scroll= $(".content").scrollTop();
+                var container_h = $(".container").outerHeight();
+                var first_news_h = $("#A").outerHeight();
+                var second_news_h = $("#B").outerHeight();
+                var block_A = container_h + first_news_h;
+                var block_B = block_A + second_news_h;
+                var img_h = $(".content_img").outerHeight()
+                if(content_scroll > block_A){
+                    $(".content_right").stop().animate({
+                scrollTop: img_h
+            }, 600);
+                }else{
+                    $(".content_right").stop().animate({
+                scrollTop: -img_h
+            }, 700);
+                }
+                if(content_scroll > block_B){
+                    $(".content_right").stop().animate({
+                scrollTop: img_h*2
+            }, 600);
+                }
+    }, 300));
+});
     </script>
 </body>
 
