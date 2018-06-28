@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c31af30-902f-4d12-a7cc-efe1013d6890" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/directory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index_vw_vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_vw_vue.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,14 +16,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="496" column="13" lean-forward="true" selection-start-line="496" selection-start-column="13" selection-end-line="496" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="669">
+              <caret line="500" column="257" lean-forward="true" selection-start-line="500" selection-start-column="16" selection-end-line="500" selection-end-column="257" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="type_school.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/type_school.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directory.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/directory.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="298" column="31" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/nav.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="707">
+              <caret line="196" column="23" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -31,6 +57,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>slet</find>
+      <find>.nav_content</find>
+      <find>.search_box</find>
+      <find>.news-wrap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -39,7 +68,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/css/nav.css" />
         <option value="$PROJECT_DIR$/index_vw_vue.html" />
+        <option value="$PROJECT_DIR$/directory.html" />
       </list>
     </option>
   </component>
@@ -90,7 +121,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kevinwei0312.github.io" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
@@ -121,18 +152,19 @@
       <workItem from="1529230873847" duration="970000" />
       <workItem from="1529327371943" duration="55000" />
       <workItem from="1529405716889" duration="2010000" />
-      <workItem from="1529434659414" duration="9234000" />
+      <workItem from="1529434659414" duration="13354000" />
+      <workItem from="1530170457921" duration="5985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12589000" />
+    <option name="totallyTimeSpent" value="22694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947916" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -162,11 +194,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28056">
+          <caret line="1002" column="48" selection-start-line="1002" selection-start-column="48" selection-end-line="1002" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4228">
           <caret line="151" column="35" selection-start-line="151" selection-start-column="35" selection-end-line="151" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -174,9 +210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10416">
           <caret line="372" column="34" lean-forward="true" selection-start-line="372" selection-start-column="12" selection-end-line="372" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -194,13 +227,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="196" column="23" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/type_school.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="496" column="13" lean-forward="true" selection-start-line="496" selection-start-column="13" selection-end-line="496" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="669">
+          <caret line="500" column="257" lean-forward="true" selection-start-line="500" selection-start-column="16" selection-end-line="500" selection-end-column="257" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="298" column="31" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
         </state>
       </provider>
     </entry>

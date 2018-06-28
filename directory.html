@@ -34,7 +34,7 @@
         }
         .content{
             width: 100%;
-            padding: 0 87px 0 168px;
+            padding: 0 127px 0 168px;
             box-sizing: border-box;
             margin-top: 140px;
             height: calc(100vh - 140px);
@@ -89,15 +89,14 @@
             color:#FA6E0A;
         }
         .news-wrap{
-            margin: 0 -30px;
-            width: 1725px;
+            margin: 0 -25px;
         }
         .news-item{
             float:left;
-            width: 285px;
-            height: 455px;
+            width: 20%;
             padding: 0 25px;
-            margin-bottom: 40px;                           
+            margin-bottom: 40px;
+            box-sizing: border-box;
         }
         
       
@@ -106,12 +105,11 @@
         }
         .news-item_bg{
             width: 100%;
-            height: 355px;
             overflow: hidden;          
         }
         .img{
             width: 100%;
-            height: 100%;
+            padding-top: 124.561%;
             background-image: url('img/01/01-1.jpg');
             background-position-x: center;
             background-position-y: center;
@@ -191,6 +189,130 @@
             display: inline-block;
             opacity: .8;
         }
+        .mobile_hr{
+            display: none;
+        }
+        @media screen and (max-width:767px){
+            .nav{
+                width: 100%;
+                height: 40px;
+                padding: 10px 15px;
+                flex-flow: row;
+                justify-content: space-between;
+            }
+            .navbar img{
+                width: 25px;
+            }
+            .page_dot{
+                display: none;
+            }
+            .social{
+                display: flex;
+            }
+            .social img{
+                height:20px;
+                width: auto;
+            }
+            .youtube{
+                margin-bottom: 0;
+                margin-right: 16.74px;
+            }
+            .nav_content{
+                width: 100%;
+                left:-100%;
+                z-index: 5;
+                padding:80px 55px 0 55px;
+            }
+            .nav_content.active{
+                left:0;
+            }
+            .navbar-off{
+                display: block;
+                position: absolute;
+                top:10px;
+                left:15px;
+                cursor: pointer;
+            }
+            .navbar-off img{
+                width: 25px;
+            }
+            .arrow_td{
+                display: none;
+            }
+            .top{
+                width: 100%;
+                height: 40px;
+                padding: 12px 15px;
+                top: initial;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
+                background: linear-gradient(0deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+                box-sizing: border-box;
+            }
+            .top .type{
+                padding-top: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                letter-spacing: 0;
+            }
+            .top > .type > li:not(:last-child){
+                margin-right: 12px;
+            }
+            .top > .type > li{
+                font-size: 12px;
+            }
+            .top > .type > li::before{
+                font-size: 12px;
+            }
+            .content{
+                padding: 0 15px;
+                margin-top: 55px;
+                height: calc(100vh - 110px);
+            }
+            .news-wrap{
+                margin: 0;
+            }
+            .news-item_content{
+                display: flex;
+                box-shadow: none;
+            }
+            .news-item{
+                width: 100%;
+                padding: 0;
+                margin-bottom: 10px;
+            }
+            .news-item_bg{
+                width: auto;
+                overflow: initial;
+            }
+            .img{
+                width: 60px;
+                height: 60px;
+                padding-top: 0;
+                margin-right: 10px;
+            }
+            .news-item_text{
+                padding: 0;
+                height: 60px;
+            }
+            .news-item_text p {
+                font-size: 16px;
+                line-height: 20px;
+                text-align: justify;
+                letter-spacing: 0;
+            }
+            .date {
+                right: 0;
+                bottom: 0;
+                font-size: 12px;
+            }
+            .mobile_hr{
+                display: block;
+                margin:0 0 10px 0;
+                border-color: rgba(130, 210, 255, 0.2);
+            }
+        }
     </style>
 </head>
 <body>
@@ -221,13 +343,13 @@
                 </div>
             </div>
             <div class="nav_content">
+                <div class="navbar-off">
+                    <img src="img/Menu.svg" alt="">
+                </div>
                 <div class="search_box">
                     <p>即將推出功能</p>
-                    <img src="img/Magnifier-B.svg" alt="" width="20">
+                    <img class="search_icon" src="img/Magnifier-B.svg" alt="">
                 </div>
-                <!--<p style="font-size:18px;">-->
-                <!--即將推出功能-->
-                <!--</p>-->
                 <div class="type">
                     <a href="">
                         <p>‧&nbsp;朝陽新聞</p>
@@ -289,7 +411,7 @@
         </div>
         <div class="content">            
             <div class="news-wrap">
-                <div href="index.html">
+                <a href="index.html">
                     <div class="news-item">
                         <div class="news-item_content">
                             <div class="news-item_bg">
@@ -301,7 +423,8 @@
                             </div>  
                         </div>                                             
                     </div>
-                </div>
+                </a>
+                <hr class="mobile_hr">
                 <a href="index-3.html">
                     <div class="news-item">
                         <div class="news-item_content">
@@ -315,6 +438,7 @@
                         </div>                        
                     </div>
                 </a>
+                <hr class="mobile_hr">
                 <a href="">
                     <div class="news-item">
                         <div class="news-item_content">
@@ -328,6 +452,7 @@
                         </div>                        
                     </div>
                 </a>
+                <hr class="mobile_hr">
                <a href="type_school.html">
                     <div class="news-item">
                         <div class="news-item_content">
@@ -341,39 +466,49 @@
                         </div>                       
                     </div>
                </a>
-                <div class="news-item">
-                    <div class="news-item_content">
-                        <div class="news-item_bg">
-                            <div class="img"></div>
+                <hr class="mobile_hr">
+                <a href="">
+                    <div class="news-item">
+                        <div class="news-item_content">
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
+                            <div class="news-item_text">
+                                <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>
+                                <div class="date">2015/01/01</div>
+                            </div>
                         </div>
-                        <div class="news-item_text">
-                            <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>                            
-                            <div class="date">2015/01/01</div>
-                        </div> 
-                    </div>                    
-                </div>
-                <div class="news-item">
-                    <div class="news-item_content">
-                        <div class="news-item_bg">
-                            <div class="img"></div>
+                    </div>
+                </a>
+                <hr class="mobile_hr">
+                <a href="">
+                    <div class="news-item">
+                        <div class="news-item_content">
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
+                            <div class="news-item_text">
+                                <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>
+                                <div class="date">2015/03/04</div>
+                            </div>
                         </div>
-                        <div class="news-item_text">
-                            <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>                            
-                            <div class="date">2015/03/04</div>
-                        </div> 
-                    </div>                    
-                </div>
-                <div class="news-item">
-                    <div class="news-item_content">
-                        <div class="news-item_bg">
-                            <div class="img"></div>
+                    </div>
+                </a>
+                <hr class="mobile_hr">
+                <a href="">
+                    <div class="news-item">
+                        <div class="news-item_content">
+                            <div class="news-item_bg">
+                                <div class="img"></div>
+                            </div>
+                            <div class="news-item_text">
+                                <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>
+                                <div class="date">2015/03/04</div>
+                            </div>
                         </div>
-                        <div class="news-item_text">
-                            <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>                            
-                            <div class="date">2015/03/04</div>
-                        </div> 
-                    </div>                    
-                </div>                
+                    </div>
+                </a>
+                <hr class="mobile_hr">
                 <a href="index-2.html">
                     <div class="news-item">
                         <div class="news-item_content">
@@ -397,6 +532,9 @@
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script>
         $(".navbar").click(function(){
+            $(".nav_content").toggleClass("active");
+        });
+        $(".navbar-off").click(function () {
             $(".nav_content").toggleClass("active");
         });
         $(".content").click(function(){

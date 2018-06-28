@@ -176,3 +176,24 @@ p{
     color: #FFDC78;
     opacity: 1;
 }
+.search_icon{
+    width: 20px;
+}
+@media screen and (max-width: 767px){
+    .search_box{
+        width: 210px;
+        height: 25px;
+        padding: 5px;
+        border:1px solid white;
+    }
+    .search_box p{
+        font-size: 11px;
+        line-height: 13px;
+    }
+    .search_icon{
+        width: 15px;
+    }
+    .type{
+        font-size: 14px;
+    }
+}
