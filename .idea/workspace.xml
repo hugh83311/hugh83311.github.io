@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c31af30-902f-4d12-a7cc-efe1013d6890" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index_vw_vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_vw_vue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/nav.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="459" lean-forward="true" selection-start-line="459" selection-end-line="459" />
+            <state relative-caret-position="791">
+              <caret line="789" column="97" selection-start-line="789" selection-start-column="92" selection-end-line="789" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="nav.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/nav.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5488">
-              <caret line="196" column="23" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
+            <state relative-caret-position="343">
+              <caret line="159" column="12" lean-forward="true" selection-start-line="159" selection-start-column="12" selection-end-line="159" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -74,9 +74,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/nav.css" />
         <option value="$PROJECT_DIR$/directory.html" />
         <option value="$PROJECT_DIR$/index_vw_vue.html" />
+        <option value="$PROJECT_DIR$/css/nav.css" />
       </list>
     </option>
   </component>
@@ -160,12 +160,12 @@
       <workItem from="1529405716889" duration="2010000" />
       <workItem from="1529434659414" duration="13354000" />
       <workItem from="1530170457921" duration="7672000" />
-      <workItem from="1530791475821" duration="4003000" />
+      <workItem from="1530791475821" duration="4369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28384000" />
+    <option name="totallyTimeSpent" value="28750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -269,13 +269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/nav.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5488">
-          <caret line="196" column="23" selection-start-line="196" selection-start-column="23" selection-end-line="196" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/directory.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15064">
@@ -299,8 +292,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="459" lean-forward="true" selection-start-line="459" selection-end-line="459" />
+        <state relative-caret-position="791">
+          <caret line="789" column="97" selection-start-line="789" selection-start-column="92" selection-end-line="789" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="159" column="12" lean-forward="true" selection-start-line="159" selection-start-column="12" selection-end-line="159" selection-end-column="12" />
         </state>
       </provider>
     </entry>

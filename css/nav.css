@@ -196,4 +196,7 @@ p{
     .type{
         font-size: 16px;
     }
+    .line_w{
+        height: 1px;
+    }
 }
