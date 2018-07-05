@@ -585,6 +585,7 @@
             .tablet-btn{
                 display: flex;
                 width: 100%;
+                background-color: white;
             }
             .tablet-arrow{
                 margin-bottom: 0;
@@ -619,6 +620,7 @@
                 line-height: 40px;
                 text-align: center;
                 margin-right: 1px;
+                font-weight: bold;
             }
             .mobile-num.active{
                 display: block;
@@ -629,10 +631,11 @@
             .mobile-swiper-container{
                 position: absolute;
                 width: 100%;
-                bottom: 41px;
+                bottom: 40px;
                 left: 0;
                 padding: 0 39px;
                 background-color: #82D2FF;
+                border-bottom: 1px solid white;
                 box-sizing: border-box;
             }
             .mobile-swiper-container .swiper-slide{
@@ -640,7 +643,21 @@
                 line-height: 40px;
             }
             .part_title{
-                font-size: 20px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .title{
+                font-size: 30px;
+            }
+            .part_title > .part_list:not(:last-child){
+                margin-bottom: 16px;
+            }
+            .subtitle{
+                font-size: 16px;
+            }
+            .literary{
+                font-size: 18px;
+                line-height: 30px;
             }
         }
     </style>
@@ -776,7 +793,7 @@
                     <p class="title title_blue">朝陽新聞第{{chinessChapterName}}集</p>
                     <img src="img/Youtube-R.svg" alt="" height="20">
                     <ul class="part_title">
-                        <li v-for="(item, index) in chapter">
+                        <li class="part_list" v-for="(item, index) in chapter">
                             <a v-bind:href="'#'+ item.id">{{item.title}}</a>
                         </li>
                     </ul>
