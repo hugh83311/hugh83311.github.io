@@ -16,8 +16,8 @@
       <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
-              <caret line="659" column="34" selection-start-line="659" selection-start-column="34" selection-end-line="659" selection-end-column="34" />
+            <state relative-caret-position="280">
+              <caret line="1099" column="26" lean-forward="true" selection-start-line="1099" selection-start-column="26" selection-end-line="1099" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -71,6 +71,10 @@
       <find>.part_title</find>
       <find>mobile-num-show</find>
       <find>part_title</find>
+      <find>.content_right</find>
+      <find>currentItemsIndex</find>
+      <find>pre_article</find>
+      <find>preArticle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,12 +169,12 @@
       <workItem from="1529405716889" duration="2010000" />
       <workItem from="1529434659414" duration="13354000" />
       <workItem from="1530170457921" duration="7672000" />
-      <workItem from="1530791475821" duration="6147000" />
+      <workItem from="1530791475821" duration="10616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30528000" />
+    <option name="totallyTimeSpent" value="34997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -304,8 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="659" column="34" selection-start-line="659" selection-start-column="34" selection-end-line="659" selection-end-column="34" />
+        <state relative-caret-position="280">
+          <caret line="1099" column="26" lean-forward="true" selection-start-line="1099" selection-start-column="26" selection-end-line="1099" selection-end-column="26" />
         </state>
       </provider>
     </entry>

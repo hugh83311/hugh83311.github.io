@@ -86,7 +86,7 @@
             width: 47.396vw;
             width: calc(100% - 69.702%);
             height: 100vh;
-            overflow: auto;
+            overflow: hi;
             /* position: relative; */
             /* display: inline-flex;
             flex-wrap: nowrap;
@@ -772,13 +772,13 @@
             </div>
         </div>
         <div class="arrow_td">
-            <a href="#!">
+            <a href="#" v-on:click="preArticle();">
                 <div class="arrow_top">
                     <img class="org" src="img/Up.svg" alt="" height="15">
                     <img class="chg" src="img/Up-change.svg" alt="" height="15">
                 </div>
             </a>
-            <a href="#!">
+            <a href="#" v-on:click="nextArticle();">
                 <div class="arrow_down">
                     <img class="org" src="img/Down.svg" alt="" height="15px">
                     <img class="chg" src="img/Down-change.svg" alt="" height="15px">
@@ -1092,6 +1092,35 @@
                 this.chapter = this.firstChapter;
             },
             methods: {
+                preArticle: function (){
+                    var hash = document.URL.substr(document.URL.indexOf('#')+1);
+                    chapterLength = this.chapter.length;
+                    if(hash=="C"){
+                        window.location.hash = '#B';
+                    }else{
+                        window.location.hash = '#A';
+                    }
+
+                    console.log(chapterLength);
+                },
+                nextArticle: function (){
+                    var hash = document.URL.substr(document.URL.indexOf('#')+1);
+                    chapterLength = this.chapter.length;
+
+                    if(chapterLength > 2){
+
+                        if(hash=="A"){
+                            window.location.hash = '#B';
+                        }else{
+                            window.location.hash = '#C';
+                        }
+
+                    }else{
+                        if(hash=="A"){
+                            window.location.hash = '#B';
+                        }
+                    }
+                },
                 changeItemsIndex: function (index, event) {
                     this.currentItemsIndex = index;
                 },
@@ -1245,7 +1274,7 @@
             }
         });
         $(".mobile-num-show").click(function () {
-            $(".mobile-num").addClass("active");
+            $(".mobile-num").toggleClass("active");
             if ($(".mobile-num").hasClass("active")) {
                 $(".slet").removeClass("swiper-no-swiping");
                 var swiper = new Swiper('.mobile-swiper-container', {
