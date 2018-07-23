@@ -32,11 +32,12 @@
         .clearfix{
             clear:both;
         }
+        .content-wrap{
+            padding-left: 100px;
+        }
         .content{
-            width: 100%;
-            padding: 0 127px 0 168px;
-            box-sizing: border-box;
-            margin-top: 140px;
+            max-width: 1625px;
+            margin:140px auto 0 auto;
             height: calc(100vh - 140px);
             overflow-y: scroll;
         }
@@ -93,7 +94,7 @@
         }
         .news-item{
             float:left;
-            width: 20%;
+            width: 335px;
             padding: 0 25px;
             margin-bottom: 40px;
             box-sizing: border-box;
@@ -192,7 +193,32 @@
         .mobile_hr{
             display: none;
         }
+        .navbar-off{
+            display: none;
+        }
+        @media screen and (max-width: 1740px){
+            .content{
+                max-width: 1290px;
+            }
+        }
+        @media screen and (max-width: 1465px){
+            .content{
+                max-width: 955px;
+            }
+        }
+        @media screen and (max-width: 1130px){
+            .content{
+                max-width: 620px;
+            }
+        }
         @media screen and (max-width:767px){
+            .content-wrap{
+                padding-left: 0;
+            }
+            .content{
+                max-width: 100%;
+                margin-left: 0;
+            }
             .nav{
                 width: 100%;
                 height: 40px;
@@ -409,122 +435,125 @@
                 </div>
             </a>
         </div>
-        <div class="content">            
-            <div class="news-wrap">
-                <a href="index.html">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>校園新增133、158公車可抵高鐵站</p>                            
-                                <div class="date">2014/12/15</div>
-                            </div>  
-                        </div>                                             
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-                <a href="index-3.html">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</p>                            
-                                <div class="date">2014/12/15</div>
-                            </div> 
-                        </div>                        
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-                <a href="">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</p>                            
-                                <div class="date">2014/12/15</div>
-                            </div> 
-                        </div>                        
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-               <a href="type_school.html">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</p>                            
-                                <div class="date">2015/01/01</div>
-                            </div> 
-                        </div>                       
-                    </div>
-               </a>
-                <hr class="mobile_hr">
-                <a href="">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>
-                                <div class="date">2015/01/01</div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="news-wrap">
+                    <a href="index.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>校園新增133、158公車可抵高鐵站</p>
+                                    <div class="date">2014/12/15</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-                <a href="">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>
-                                <div class="date">2015/03/04</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-                <a href="">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
-                            </div>
-                            <div class="news-item_text">
-                                <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>
-                                <div class="date">2015/03/04</div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="index-3.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</p>
+                                    <div class="date">2014/12/15</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <hr class="mobile_hr">
-                <a href="index-2.html">
-                    <div class="news-item">
-                        <div class="news-item_content">
-                            <div class="news-item_bg">
-                                <div class="img"></div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</p>
+                                    <div class="date">2014/12/15</div>
+                                </div>
                             </div>
-                            <div class="news-item_text">
-                                <p>國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</p>                            
-                                <div class="date">2015/03/04</div>
-                            </div> 
-                        </div>                       
-                    </div>
-                </a>
-                <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="type_school.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</p>
+                                    <div class="date">2015/01/01</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>
+                                    <div class="date">2015/01/01</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>
+                                    <div class="date">2015/03/04</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>
+                                    <div class="date">2015/03/04</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="index-2.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="img"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</p>
+                                    <div class="date">2015/03/04</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
+
     </div>
 
 

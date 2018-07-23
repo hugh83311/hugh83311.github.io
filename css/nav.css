@@ -117,14 +117,14 @@ p{
     width: 455px;
     height: 100vh;
     position: fixed;;
-    left: -100%;
+    left: -355px;
     top:0;
     /*left: 100px;*/
     background : linear-gradient(-45deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
     box-sizing: border-box;
     padding: 60px 70px 0 70px;
     z-index: 4;
-    transition:1s;
+    transition:0.5s linear;
 }
 .nav_content.active{
     left: 100px;
