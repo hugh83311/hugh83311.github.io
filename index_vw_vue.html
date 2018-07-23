@@ -62,8 +62,6 @@
         }
 
         .container {
-            /* width: 704px; */
-            width: 36.6667vw;
             padding-left: 168px;
             padding-right: 138px;
             width: 100%;
@@ -86,7 +84,7 @@
             width: 47.396vw;
             width: calc(100% - 69.702%);
             height: 100vh;
-            overflow: hi;
+            overflow: auto;
             /* position: relative; */
             /* display: inline-flex;
             flex-wrap: nowrap;
@@ -456,19 +454,6 @@
         }
         .mobile-num{
             display: none;
-        }
-
-        @media screen and (width: 1597px) {
-            .container {
-                width: 704px;
-            }
-            .content_right {
-                width: 587px;
-            }
-            .arrow_left,
-            .arrow_right {
-                width: 68px;
-            }
         }
         @media screen and (max-width: 1250px){
             .tablet-img{
@@ -1334,25 +1319,38 @@
     clearTimeout($.data(this, 'scrollTimer'));
     $.data(this, 'scrollTimer', setTimeout(function() {
         var content_scroll= $(".content").scrollTop();
-                var container_h = $(".container").outerHeight();
+                var container_h = $(".container").outerHeight() - 100;
                 var first_news_h = $("#A").outerHeight();
                 var second_news_h = $("#B").outerHeight();
                 var block_A = container_h + first_news_h;
                 var block_B = block_A + second_news_h;
-                var img_h = $(".content_img").outerHeight()
+                var img_h = $(".content_img").outerHeight();
+                if(content_scroll < container_h){
+                    $(".page_dot li").removeClass("active");
+                    $(".page_dot > ul > a:nth-child(1) li").addClass("active");
+                }
+                if(content_scroll > container_h){
+                    $(".page_dot li").removeClass("active");
+                    $(".page_dot > ul > a:nth-child(2) li").addClass("active");
+                }else{
+                }
                 if(content_scroll > block_A){
                     $(".content_right").stop().animate({
                 scrollTop: img_h
             }, 600);
+                    $(".page_dot li").removeClass("active");
+                    $(".page_dot > ul > a:nth-child(3) li").addClass("active");
                 }else{
                     $(".content_right").stop().animate({
                 scrollTop: -img_h
-            }, 700);
+            }, 600);
                 }
                 if(content_scroll > block_B){
                     $(".content_right").stop().animate({
                 scrollTop: img_h*2
             }, 600);
+                    $(".page_dot li").removeClass("active");
+                    $(".page_dot > ul > a:nth-child(4) li").addClass("active");
                 }
     }, 300));
 });

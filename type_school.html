@@ -46,8 +46,12 @@
         .type_section {
             position: fixed;
             top: 0;
-            left: 168px;
-            display: flex;
+            left: 0;
+            padding-left: 168px;
+            padding-right: 138px;
+            width: 52.604%;
+            box-sizing: border-box;
+            background-color: white;
         }
 
         .type_section .type {
@@ -56,7 +60,6 @@
             padding-top: 68px;
             box-sizing: border-box;
             margin-bottom: 40px;
-            /*margin-left:160px;*/
         }
 
         .type_section>.type>li {
@@ -98,16 +101,11 @@
 
         .line_b {
             margin: 0;
-            /* margin-right: 138px; */
-            margin-right: 13.66%;
+            margin-left: -168px;
             height: 2px;
-            width: 872px;
-            width: 45.41666666666666666666666vw;
+            width: calc(100% + 168px);
             border: 0;
             background-color: #1496FA;
-            position: fixed;
-            left: 0;
-            top: 140px;
         }
 
         .content {
@@ -131,21 +129,19 @@
         }
 
         .container {
-           /* width: 704px; */
-           width: 36.6667vw;
-           width: 69.702%;
-            /* margin-left: 168px; */
-            margin-left: 8.75vw;
-            /* margin-right: 138px; */
-            margin-right: 7.1875vw;
-            
+            padding-left: 168px;
+            padding-right: 138px;
+            width: 100%;
+            letter-spacing: 1.5px;
+            line-height: 40px;
+            box-sizing: border-box;
+            text-align: justify;
         }
 
         .content_right {
+            display: block;
             overflow: auto;
             flex: 0.90099009;
-            /* width: 910px; */
-            width: 47.396vw;
             width: calc(100% - 69.702%);
         }
 
@@ -177,11 +173,9 @@
         .arrow_td {
             position: fixed;
             bottom: 0;
-            left: 940px;
-            left: 48.95833333vw;
+            right: 47.5%;
             display: flex;
             flex-direction: column;
-            margin-right: 2px;
             text-align: center;
             cursor: pointer;
         }
@@ -207,6 +201,7 @@
         .arrow_top img {
             display: inline-block;
             vertical-align: middle;
+            height: 15px;
         }
 
         .arrow_top:hover img.org,
@@ -287,6 +282,124 @@
             font-weight: bold;
             margin-bottom: 100px;
         }
+        .navbar-off{
+            display: none;
+        }
+        @media screen and (max-width: 1820px){
+            .content{
+                margin-top: 212px;
+            }
+        }
+        @media screen and (max-width: 1250px) {
+            .type_section{
+                width: 100%;
+            }
+            .content{
+                margin-top: 180px;
+            }
+            .content_right{
+                display: none;
+            }
+            .arrow_td{
+                right:0;
+                left:initial;
+            }
+        }
+        @media screen and (max-width: 956px){
+            .content{
+                margin-top: 212px;
+            }
+        }
+        @media screen and (max-width:767px){
+            .nav{
+                width: 100%;
+                height: 40px;
+                padding: 10px 15px;
+                flex-flow: row;
+                justify-content: space-between;
+            }
+            .navbar img{
+                width: 25px;
+            }
+            .page_dot{
+                display: none;
+            }
+            .social{
+                display: flex;
+            }
+            .social img{
+                height:20px;
+                width: auto;
+            }
+            .youtube{
+                margin-bottom: 0;
+                margin-right: 16.74px;
+            }
+            .nav_content{
+                width: 100%;
+                left:-100%;
+                z-index: 5;
+                padding:80px 55px 0 55px;
+            }
+            .nav_content.active{
+                left:0;
+            }
+            .navbar-off{
+                display: block;
+                position: absolute;
+                top:10px;
+                left:15px;
+                cursor: pointer;
+            }
+            .navbar-off img{
+                width: 25px;
+            }
+            .type_section{
+                top: 40px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .content{
+                margin-top: 220px;
+            }
+            .container{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .tablet-arrow-lr img{
+                width: 10px;
+            }
+            .tablet-arrow-ud img{
+                height: 10px;
+            }
+            .title{
+                font-size: 30px;
+            }
+            .subtitle{
+                font-size: 16px;
+            }
+            .literary{
+                font-size: 18px;
+                line-height: 30px;
+            }
+            .arrow_top{
+                width: 40px;
+                height: 40px;
+            }
+            .arrow_top img{
+                height: 10px;
+            }
+        }
+        @media screen and (max-width: 676px){
+            .content{
+                margin-top: 250px;
+            }
+        }
+        @media screen and (max-width: 365px){
+            .type_section .type{
+                padding-top: 36px;
+            }
+        }
     </style>
 </head>
 
@@ -318,6 +431,9 @@
                 </div>
             </div>
             <div class="nav_content">
+                <div class="navbar-off">
+                    <img src="img/Menu.svg" alt="">
+                </div>
                 <div class="search_box">
                     <p>即將推出功能</p>
                     <img src="img/Magnifier-B.svg" alt="" width="20">
@@ -387,8 +503,8 @@
                     <a href="#!">&nbsp;地方文化</a>
                 </li>
             </ul>
+            <hr class="line_b">
         </div>
-        <hr class="line_b">
         <div class="content">
             <div class="container">
                 <div class="title title_orange">校園新增133、158公車&nbsp;&nbsp;可抵高鐵站</div>
@@ -426,8 +542,8 @@
                 </p>
                 <div class="arrow_td" id="myBtn">
                     <div class="arrow_top">
-                        <img class="org" src="img/Up.svg" alt="" height="15">
-                        <img class="chg" src="img/Up-change.svg" alt="" height="15">
+                        <img class="org" src="img/Up.svg" alt="" >
+                        <img class="chg" src="img/Up-change.svg" alt="" >
                     </div>
                 </div>
             </div>
@@ -435,7 +551,7 @@
         </div>
         <div class="content_right">
             <div class="content_img dragscroll">
-                <img src="/img/01/01-1.jpg" alt="">
+                <img src="img/01/01-1.jpg" alt="">
             </div>
         </div>
     </div>
@@ -447,6 +563,9 @@
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
     <script>
         $(".navbar").click(function () {
+            $(".nav_content").toggleClass("active");
+        });
+        $(".navbar-off").click(function () {
             $(".nav_content").toggleClass("active");
         });
         $(".content").click(function () {
