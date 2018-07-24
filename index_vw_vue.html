@@ -40,6 +40,12 @@
 
         /**************************************/
 
+        .list-btn{
+            display: none;
+        }
+        .list-menu{
+            display: none;
+        }
         .navbar img{
             width: 50px;
         }
@@ -519,6 +525,47 @@
             }
         }
         @media screen and (max-width:767px){
+            .list-btn{
+                display: block;
+                position: fixed;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right:15px;
+                bottom:55px;
+                background-color: rgb(92, 92, 92);
+                z-index: 99999;
+                cursor: pointer;
+            }
+            .list-menu{
+                position: absolute;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                color:white;
+                width: 100%;
+                height: 100vh;
+                left: 0;
+                top:0;
+                background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+                z-index: 9999999999999;
+            }
+            .close-menu{
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top:30px;
+                right:30px;
+                cursor: pointer;
+            }
+            .list-menu li:not(:last-child){
+                margin-bottom: 20px;
+            }
             .nav{
                 width: 100%;
                 height: 40px;
@@ -648,6 +695,21 @@
 </head>
 
 <body>
+    <!-- 選擇文章 -->
+    <div class="list-btn">
+        <img src="img/note.svg" alt="" height="40">
+    </div>
+    <div class="list-menu">
+        <div class="close-menu">
+            <img src="img/close-button.svg" alt="" height="25">
+        </div>
+        <ul>
+            <li><a href="#A">校園新增133、158公車  可抵高鐵站</a></li>
+            <li><a href="#B">物價上漲壓力  學生餐廳撐不住</a></li>
+            <li><a href="#C">基地台深夜發出噪音  造成居民睡眠障礙</a></li>
+        </ul>
+    </div>
+
     <div class="all" id="app">
         <div class="tablet-btn">
             <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();">
@@ -840,6 +902,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <!--圖片滑動-->
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+    
 
      <!-- Vue -->
      <script>
@@ -1184,6 +1247,18 @@
         })
 
 
+    </script>
+    <script>
+        // list-menu show/hide
+        $(".list-btn").click(function(){
+            $(".list-menu").fadeIn("slow").css("display","flex");
+        });
+        $(".close-menu").click(function(){
+            $(".list-menu").fadeOut("slow");
+        });
+        $(".list-menu a").click(function(){
+            $(".list-menu").fadeOut("slow");
+        });
     </script>
     <script>
         // navbar
