@@ -458,7 +458,8 @@
             display: none;
         }
         .mobile-num{
-            display: none;
+            position: absolute;
+            opacity: 0;
         }
         @media screen and (max-width: 1250px){
             .tablet-img{
@@ -518,7 +519,8 @@
                 display: none;
             }
             .mobile-num{
-                display: none;
+                position: absolute;
+                opacity: 0;
             }
             .content_right{
                 display: none;
@@ -536,8 +538,12 @@
                 right:15px;
                 bottom:55px;
                 background-color: rgb(92, 92, 92);
-                z-index: 99999;
+                z-index: 5;
                 cursor: pointer;
+                transition: 0.6s;
+            }
+            .list-btn.move{
+                bottom:95px;
             }
             .list-menu{
                 position: absolute;
@@ -653,8 +659,15 @@
                 margin-right: 1px;
                 font-weight: bold;
             }
+            .mobile-num{
+                width: 100%;
+                bottom: -40px;
+                transition: 0.6s;
+                z-index: -1;
+            }
             .mobile-num.active{
-                display: block;
+                opacity: 1;
+                bottom: 0;
             }
             .mb-0{
                 margin-right: 0;
@@ -1333,13 +1346,14 @@
             }
         });
         $(".mobile-num-show").click(function () {
+            $(".list-btn").toggleClass("move");
             $(".mobile-num").toggleClass("active");
             if ($(".mobile-num").hasClass("active")) {
                 $(".slet").removeClass("swiper-no-swiping");
                 var swiper = new Swiper('.mobile-swiper-container', {
                     slidesPerView: 4,
                     spaceBetween: 26,
-                    freeMode: true,
+                    freeMode: false,
                     grabCursor: true,
                     pagination: {
                         el: '.swiper-pagination',
