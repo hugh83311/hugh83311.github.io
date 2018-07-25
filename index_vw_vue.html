@@ -40,18 +40,35 @@
 
         /**************************************/
 
-        .list-btn{
+        .list-btn {
             display: none;
         }
-        .list-menu{
+
+        .list-menu {
             display: none;
         }
-        .navbar img{
+
+        .navbar img {
             width: 50px;
         }
-        .social img{
-            width: 45px;
+
+        .social {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
         }
+
+        .fb img {
+            width: 25.94px;
+            height: 50px;
+            margin-bottom: 28.6px;
+        }
+
+        .youtube img {
+            width: 45px;
+            height: 31.5px;
+        }
+
         .content {
             flex: 1;
             /*flex: 1 1 45vw;*/
@@ -85,61 +102,62 @@
         }
 
         .content_right {
+            position: relative;
             flex: 0.90099009;
             /* width: 910px; */
             width: 47.396vw;
             width: calc(100% - 69.702%);
             height: 100vh;
-            overflow: auto;
             /* position: relative; */
             /* display: inline-flex;
             flex-wrap: nowrap;
             flex-direction: column; */
         }
 
-        .content_right::-webkit-scrollbar {
-            display: none;
-        }
-
         .content_img {
             height: calc(100% - 170px);
             width: 100%;
-            background-color: rgba(130, 210, 255, .2);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            cursor: move;
-            overflow: scroll;
-        }
-        .content_img:nth-last-child(1){
-            margin-bottom: 170px;
+            border-bottom: 2px solid white;
+            background-color: #1E1E1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
         }
 
-        .content_img::-webkit-scrollbar {
-            display: none;
+        .content_img iframe {
+            width: 770px;
+            max-width: 770px;
+            height: 433.13px;
         }
 
         /** 平板箭頭 **/
-        .tablet-btn{
+
+        .tablet-btn {
             display: none;
         }
+
         /**arrow**/
+
         .arrow_num {
-            /* width: 100%; */
-            width: 47.39583vw;
+            width: 100%;
             display: flex;
             flex-direction: row;
             align-items: flex-end;
-            /* position: absolute; */
-            position: fixed;
             right: 0;
             bottom: 0;
             background-color: white;
-            box-shadow: 13px 0px 25px rgba(20%,20%,40%,1);
         }
 
         .arrow {
-            width: calc(47.396vw - 455px);
+            width: calc(100% - 453px);
+        }
+
+        .arrow_left:hover img,
+        .arrow_right:hover img,
+        .arrow_top:hover img,
+        .arrow_down:hover img {
+            filter: drop-shadow(2px 2px 4px rgba(90, 90, 90, 0.3));
         }
 
         .arrow,
@@ -149,74 +167,40 @@
             text-align: center;
         }
 
-        .arrow img,
-        .arrow_td img {
-            filter: drop-shadow(2px 2px 4px rgba(90, 90, 90, .2));
-        }
-
         .arrow img.chg,
         .arrow_td img.chg {
             display: none;
         }
 
         .arrow_td {
-            position: fixed;
+            position: absolute;
             bottom: 0;
-            right: 47.5%;
+            left: -71px;
             z-index: 2;
             display: flex;
             flex-direction: column;
+            background-color: white;
         }
 
         .arrow_top,
         .arrow_down {
             width: 68px;
             height: 84px;
-            background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+            background-color: #5A5A5A;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .arrow_top {
-            margin-bottom: 2px;
-        }
-
-        .arrow_top img,
-        .arrow_down img {
-            position: absolute;
-            /* left : 19px; */
-            left: 32.3529%;
-	        /* top : 35px; */
-            top:41.6%;
-            display: inline-block;
-            /* vertical-align: middle; */
-        }
-
-        .arrow_top:hover img.org,
-        .arrow_top:active img.org,
-        .arrow_down:hover img.org,
-        .arrow_down:active img.org {
-            display: none;
-        }
-
-        .arrow_top:hover img,
-        .arrow_down:hover img {
-            filter: drop-shadow(2px 2px 4px rgba(90, 90, 90, .2));
-        }
-
-        .arrow_top:hover img.chg,
-        .arrow_down:hover img.chg {
-            display: inline-block;
-        }
-
-        .arrow_top:active img.chg,
-        .arrow_down:active img.chg {
-            display: inline-block;
-            opacity: .8;
+            border-bottom: 2px solid white;
         }
 
         .arrow_lr {
             display: flex;
             background-color: white;
-            /* width: calc(47.396vw - 455px); */
+            width: 100%;
         }
 
         .arrow_left,
@@ -227,6 +211,8 @@
             /* width: 11.7969vw; */
             height: 170px;
             background-color: #FFAA00;
+            border-right: 2px solid white;
+            box-sizing: border-box;
         }
 
         .arrow_left::before,
@@ -239,31 +225,10 @@
             vertical-align: middle;
         }
 
-        .arrow_left {
-            margin-right: 2px;
-        }
-
         .arrow_left img,
         .arrow_right img {
             display: inline-block;
             vertical-align: middle;
-        }
-
-        .arrow_left:hover img.org,
-        .arrow_left:active img.org,
-        .arrow_right:hover img.org,
-        .arrow_right:active img.org {
-            display: none;
-        }
-
-        .arrow_left:hover img,
-        .arrow_right:hover img {
-            filter: drop-shadow(2px 2px 4px rgba(90, 90, 90, .2));
-        }
-
-        .arrow_left:hover img.chg,
-        .arrow_right:hover img.chg {
-            display: inline-block;
         }
 
         .arrow_left:active img.chg,
@@ -279,8 +244,7 @@
             flex: 2.008830022;
             width: 453px;
             height: 170px;
-            background-color: #999999;
-            background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+            background-color: #00A0F0;
             cursor: default;
             text-align: center;
             vertical-align: middle;
@@ -305,14 +269,6 @@
             box-sizing: border-box;
         }
 
-        .set_num:hover .slet {
-            background: -webkit-linear-gradient(120deg, rgba(255, 220, 120, 1) 0%, rgba(255, 228, 152, 1) 12.83%, rgba(255, 238, 189, 1) 30.59%, rgba(255, 245, 218, 1) 50.38%, rgba(255, 251, 238, 1) 55.97%, rgba(255, 254, 251, 1) 80%, rgba(255, 255, 255, 1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* width: auto !important; */
-            width: 100% !important;
-        }
-
         .set_num.active {
             padding: 0 40px;
             /* padding: 10.3% 14.28%; */
@@ -324,19 +280,24 @@
             letter-spacing: 2.4px;
             /*width: auto !important;*/
         }
-        .set_num.active .swiper-wrapper .swiper-slide:not(:nth-child(-n+3)){
-            color:rgba(255,255,255,0.5);
+
+        .set_num.active .swiper-wrapper .swiper-slide:not(:nth-child(-n+3)) {
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        .set_num.active .slet,
-        .set_num:hover.active .slet {
-            color: #FFDC78;
-            font-size: 37px;
+        .set_num.active .active-num,
+        .set_num.active .total-num {
+            font-size: 37px !important;
             line-height: 49px;
             padding: 0;
             width: auto !important;
             background-color: transparent;
-            -webkit-text-fill-color: #FFDC78;
+        }
+
+        .set_num.active .now-num {
+            line-height: 49px !important;
+            display: flex;
+            align-items: center;
         }
 
         .set_num.active .swiper-container,
@@ -344,6 +305,18 @@
         .set_num.active .swiper-slide {
             width: 100%;
             height: 100%;
+        }
+
+        .swiper-slide.slet .now-num {
+            line-height: 160px;
+        }
+
+        .swiper-slide.slet .active-num {
+            font-size: 110px;
+        }
+
+        .swiper-slide.slet .total-num {
+            font-size: 60px;
         }
 
         .swiper-container,
@@ -374,12 +347,15 @@
             -webkit-align-items: center;
             align-items: center;
         }
-        .tablet-arrow-lr img{
+
+        .tablet-arrow-lr img {
             width: 15px;
         }
-        .tablet-arrow-ud img{
+
+        .tablet-arrow-ud img {
             height: 15px;
         }
+
         /**content**/
 
         #top {
@@ -432,7 +408,7 @@
             background-color: transparent;
             height: 100px;
             border: none;
-            border-bottom: 2px solid #1496FA; 
+            border-bottom: 2px solid #1496FA;
             margin: 0 138px 40px 0;
         }
 
@@ -447,40 +423,45 @@
         .reporter_last {
             margin-bottom: 100px;
         }
-        .tablet-img{
+
+        .tablet-img {
             display: none;
         }
-        .navbar-off{
+
+        .navbar-off {
             display: none;
         }
-        .mobile-num-show{
+
+        .mobile-num-show {
             display: none;
         }
-        .mobile-num{
+
+        .mobile-num {
             position: absolute;
             opacity: 0;
         }
-        @media screen and (max-width: 1250px){
-            .tablet-img{
+
+        @media screen and (max-width: 1250px) {
+            .tablet-img {
                 max-width: 100%;
                 display: block;
                 margin-bottom: 50px;
             }
-            .arrow_td{
+            .arrow_td {
                 display: none;
             }
-            .arrow_num{
+            .arrow_num {
                 display: none;
             }
-            .tablet-btn{
+            .tablet-btn {
                 position: fixed;
                 display: block;
-                width:68px;
+                width: 68px;
                 right: 0;
                 bottom: 0;
                 z-index: 2;
             }
-            .tablet-arrow{
+            .tablet-arrow {
                 display: flex;
                 width: 100%;
                 height: 84px;
@@ -490,7 +471,7 @@
                 justify-content: center;
                 align-items: center;
             }
-            .tablet-num{
+            .tablet-num {
                 width: 100%;
                 height: 84px;
                 margin-bottom: 2px;
@@ -498,35 +479,36 @@
                 /*transition: 0.6s;*/
                 /*transform-origin: 50% 100%;*/
             }
-            .tablet-num.active{
+            .tablet-num.active {
                 height: 253px;
                 padding: 15px 0;
             }
-            .tablet-swiper-container{
+            .tablet-swiper-container {
                 width: 68px;
                 height: 253px;
             }
-            .tablet-swiper-container .swiper-slide{
+            .tablet-swiper-container .swiper-slide {
                 font-size: 23px;
                 line-height: 84px;
                 padding: 0 11.455px;
             }
-            .tablet-num.active .tablet-swiper-container .swiper-slide.slet{
-                color:#FFDC78;
+            .tablet-num.active .tablet-swiper-container .swiper-slide.slet {
+                color: #FFDC78;
             }
-            .mobile-num-show{
+            .mobile-num-show {
                 display: none;
             }
-            .mobile-num{
+            .mobile-num {
                 position: absolute;
                 opacity: 0;
             }
-            .content_right{
+            .content_right {
                 display: none;
             }
         }
-        @media screen and (max-width:767px){
-            .list-btn{
+
+        @media screen and (max-width:767px) {
+            .list-btn {
                 display: block;
                 position: fixed;
                 width: 45px;
@@ -534,144 +516,144 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                right:15px;
-                bottom:55px;
+                right: 15px;
+                bottom: 55px;
                 background-color: rgb(92, 92, 92);
                 z-index: 5;
                 cursor: pointer;
                 transition: 0.6s;
             }
-            .list-btn.move{
-                bottom:95px;
+            .list-btn.move {
+                bottom: 95px;
             }
-            .list-menu{
+            .list-menu {
                 position: absolute;
                 display: none;
                 align-items: center;
                 justify-content: center;
-                color:white;
+                color: white;
                 width: 100%;
                 height: 100vh;
                 left: 0;
-                top:0;
+                top: 0;
                 background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
                 z-index: 9999999999999;
             }
-            .close-menu{
+            .close-menu {
                 position: absolute;
                 width: 25px;
                 height: 25px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                top:30px;
-                right:30px;
+                top: 30px;
+                right: 30px;
                 cursor: pointer;
             }
-            .list-menu li:not(:last-child){
+            .list-menu li:not(:last-child) {
                 margin-bottom: 20px;
             }
-            .nav{
+            .nav {
                 width: 100%;
                 height: 40px;
                 padding: 10px 15px;
                 flex-flow: row;
                 justify-content: space-between;
             }
-            .navbar img{
+            .navbar img {
                 width: 25px;
             }
-            .page_dot{
+            .page_dot {
                 display: none;
             }
-            .social{
+            .social {
                 display: flex;
             }
-            .social img{
-                height:20px;
+            .social img {
+                height: 20px;
                 width: auto;
             }
-            .youtube{
+            .youtube {
                 margin-bottom: 0;
                 margin-right: 16.74px;
             }
-            .nav_content{
+            .nav_content {
                 width: 100%;
-                left:-100%;
+                left: -100%;
                 z-index: 5;
-                padding:80px 55px 0 55px;
+                padding: 80px 55px 0 55px;
             }
-            .nav_content.active{
-                left:0;
+            .nav_content.active {
+                left: 0;
             }
-            .navbar-off{
+            .navbar-off {
                 display: block;
                 position: absolute;
-                top:10px;
-                left:15px;
+                top: 10px;
+                left: 15px;
                 cursor: pointer;
             }
-            .navbar-off img{
+            .navbar-off img {
                 width: 25px;
             }
-            .container{
+            .container {
                 padding-left: 15px;
                 padding-right: 15px;
             }
-            .tablet-btn{
+            .tablet-btn {
                 display: flex;
                 width: 100%;
                 background-color: white;
             }
-            .tablet-arrow{
+            .tablet-arrow {
                 margin-bottom: 0;
                 width: 16.875%;
                 height: 40px;
                 background: linear-gradient(360deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
                 margin-right: 1px;
             }
-            .tablet-num{
-                display:none;
+            .tablet-num {
+                display: none;
             }
-            .space_line{
+            .space_line {
                 height: 30px;
-                margin:0 0 40px 0
+                margin: 0 0 40px 0
             }
-            .tablet-swiper-container .swiper-slide{
+            .tablet-swiper-container .swiper-slide {
                 line-height: 40px;
             }
-            .tablet-arrow-lr img{
+            .tablet-arrow-lr img {
                 width: 10px;
             }
-            .tablet-arrow-ud img{
+            .tablet-arrow-ud img {
                 height: 10px;
             }
-            .mobile-num-show{
+            .mobile-num-show {
                 display: block;
                 width: 32.5%;
                 height: 40px;
                 background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
                 font-size: 24px;
-                color:white;
+                color: white;
                 line-height: 40px;
                 text-align: center;
                 margin-right: 1px;
                 font-weight: bold;
             }
-            .mobile-num{
+            .mobile-num {
                 width: 100%;
                 bottom: -40px;
                 transition: 0.6s;
                 z-index: -1;
             }
-            .mobile-num.active{
+            .mobile-num.active {
                 opacity: 1;
                 bottom: 0;
             }
-            .mb-0{
+            .mb-0 {
                 margin-right: 0;
             }
-            .mobile-swiper-container{
+            .mobile-swiper-container {
                 position: absolute;
                 width: 100%;
                 bottom: 40px;
@@ -681,24 +663,24 @@
                 border-bottom: 1px solid white;
                 box-sizing: border-box;
             }
-            .mobile-swiper-container .swiper-slide{
+            .mobile-swiper-container .swiper-slide {
                 font-size: 20px;
                 line-height: 40px;
             }
-            .part_title{
+            .part_title {
                 font-size: 18px;
                 line-height: 28px;
             }
-            .title{
+            .title {
                 font-size: 30px;
             }
-            .part_title > .part_list:not(:last-child){
+            .part_title>.part_list:not(:last-child) {
                 margin-bottom: 16px;
             }
-            .subtitle{
+            .subtitle {
                 font-size: 16px;
             }
-            .literary{
+            .literary {
                 font-size: 18px;
                 line-height: 30px;
             }
@@ -716,19 +698,25 @@
             <img src="img/close-button.svg" alt="" height="25">
         </div>
         <ul>
-            <li><a href="#A">校園新增133、158公車  可抵高鐵站</a></li>
-            <li><a href="#B">物價上漲壓力  學生餐廳撐不住</a></li>
-            <li><a href="#C">基地台深夜發出噪音  造成居民睡眠障礙</a></li>
+            <li>
+                <a href="#A">校園新增133、158公車 可抵高鐵站</a>
+            </li>
+            <li>
+                <a href="#B">物價上漲壓力 學生餐廳撐不住</a>
+            </li>
+            <li>
+                <a href="#C">基地台深夜發出噪音 造成居民睡眠障礙</a>
+            </li>
         </ul>
     </div>
 
     <div class="all" id="app">
         <div class="tablet-btn">
             <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();">
-                <img class="org" src="img/Left.svg" alt="" >
+                <img class="org" src="img/Left-20.svg" alt="">
             </div>
             <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();">
-                <img class="org" src="img/Right.svg" alt="" >
+                <img class="org" src="img/Right-20.svg" alt="">
             </div>
             <div class="tablet-num">
                 <div class="swiper-container tablet-swiper-container">
@@ -741,21 +729,21 @@
             <div class="mobile-num">
                 <div class="swiper-container mobile-swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"  v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">0{{ index+1 }}#</div>
+                        <div class="swiper-slide" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">0{{ index+1 }}#</div>
                     </div>
                 </div>
             </div>
             <div class="tablet-arrow tablet-arrow-ud">
-                <img class="org" src="img/Up.svg" alt="" >
+                <img class="org" src="img/Up-10.svg" alt="">
             </div>
             <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0">
-                <img class="org" src="img/Down.svg" alt="" >
+                <img class="org" src="img/Down-10.svg" alt="">
             </div>
         </div>
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
-                    <img src="img/Menu.svg" alt="" >
+                    <img src="img/Menu.svg" alt="">
                 </div>
                 <div class="page_dot">
                     <ul>
@@ -768,14 +756,14 @@
                     </ul>
                 </div>
                 <div class="social">
-                    <div class="youtube">
-                        <a href="#!">
-                            <img src="img/Youtube.svg" alt="" >
-                        </a>
-                    </div>
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook.svg" alt="" >
+                            <img src="img/Facebook-B.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="youtube">
+                        <a href="#!">
+                            <img src="img/Youtube-B.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -829,24 +817,10 @@
 
             </div>
         </div>
-        <div class="arrow_td">
-            <a href="#" v-on:click="preArticle();">
-                <div class="arrow_top">
-                    <img class="org" src="img/Up.svg" alt="" height="15">
-                    <img class="chg" src="img/Up-change.svg" alt="" height="15">
-                </div>
-            </a>
-            <a href="#" v-on:click="nextArticle();">
-                <div class="arrow_down">
-                    <img class="org" src="img/Down.svg" alt="" height="15px">
-                    <img class="chg" src="img/Down-change.svg" alt="" height="15px">
-                </div>
-            </a>
-        </div>
         <div class="content">
             <div class="container">
                 <div id="top"></div>
-                
+
                 <div class="title_section">
                     <p class="title title_blue">朝陽新聞第{{chinessChapterName}}集</p>
                     <img src="img/Youtube-R.svg" alt="" height="20">
@@ -876,34 +850,46 @@
             </div>
         </div>
         <div class="content_right">
+            <div class="arrow_td">
+                <a href="#" v-on:click="preArticle();">
+                    <div class="arrow_top">
+                        <img class="org" src="img/Up-10.svg" alt="" height="10">
+                    </div>
+                </a>
+                <a href="#" v-on:click="nextArticle();">
+                    <div class="arrow_down">
+                        <img class="org" src="img/Down-10.svg" alt="" height="10">
+                    </div>
+                </a>
+            </div>
+            <div class="content_img">
+                <iframe src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
             <div class="arrow_num">
                 <div class="arrow">
                     <div class="arrow_lr">
-                        <a href="#!">
-                            <div class="arrow_left" v-on:click="preChapter();">
-                                <img class="org" src="img/Left.svg" alt="" width="20px">
-                                <img class="chg" src="img/Left-change.svg" alt="" width="20px">
-                            </div>
-                        </a>
-                        <a href="#!">
-                            <div class="arrow_right" v-on:click="nextChapter();">
-                                <img class="org" src="img/Right.svg" alt="" width="20px">
-                                <img class="chg" src="img/Right-change.svg" alt="" width="20px">
-                            </div>
-                        </a>
+                        <div class="arrow_left" v-on:click="preChapter();">
+                            <img class="org" src="img/Left-20.svg" alt="" width="20px">
+                        </div>
+                        <div class="arrow_right" v-on:click="nextChapter();">
+                            <img class="org" src="img/Right-20.svg" alt="" width="20px">
+                        </div>
                     </div>
                 </div>
                 <div class="set_num">
                     <div class="swiper-container desktop-swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"  v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9"><span v-on:click="changeChapter(index);">0{{ index+1 }}#</span></div>
+                            <div class="swiper-slide" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">
+                                <div class="now-num" v-on:click="changeChapter(index);">
+                                    <span class="active-num">0{{ index+1 }}</span>
+                                    <span class="total-num">/09</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="content_img dragscroll" v-for="(item, index) in chapter">
-                <img :src="item.image" alt="" />
-            </div>
+
         </div>
     </div>
 
@@ -914,19 +900,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <!--圖片滑動-->
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
-    
 
-     <!-- Vue -->
-     <script>
+
+    <!-- Vue -->
+    <script>
         var vm = new Vue({
             el: '#app',
             data: {
                 currentItemsIndex: '0',
                 chapterIndex: 0,
                 chapter: [],
-                firstChapter: [
-                    {
-                        id: 'A', title: '校園新增133、158公車 可抵高鐵站', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導', image: 'img/01/01-1.jpg', content: `<p class="literary">
+                firstChapter: [{
+                        id: 'A',
+                        title: '校園新增133、158公車 可抵高鐵站',
+                        author: '朝陽新聞台',
+                        time: '2014/12/15',
+                        type: '採訪報導',
+                        content: `<p class="literary">
                     （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
                     <br>
                     <br>（記者旁白）：133公車途經塗城路、成功路、徳芳路、文心南路等以前坐公車較不方便到達的地方。158公車則是往返朝陽科大、仁愛路、下內新、台中火車站、建國北路、台中高鐵站之間。
@@ -956,7 +946,12 @@
                 </p>`
                     },
                     {
-                        id: 'B', title: '物價上漲壓力 學生餐廳撐不住', author: '朝陽新聞台', time: '2014/12/15', type: '台中報導', image: 'img/01/01-2.jpg', content: `<p class="literary">
+                        id: 'B',
+                        title: '物價上漲壓力 學生餐廳撐不住',
+                        author: '朝陽新聞台',
+                        time: '2014/12/15',
+                        type: '台中報導',
+                        content: `<p class="literary">
                     （記者旁白）一到中午，學校餐廳就湧進數百人潮，走一趟餐廳，發現很多家招牌都有改變，原來是店家承受不起物價上漲的壓力，在暑假過後將菜單悄悄的調漲。
                     <br>
                     <br>（餐廳老闆）成本一直在漲，但是我們的訂價沒有跟著去漲，所以對我們相對是壓縮我們的獲利。菜，他漲價的幅度是最大的，漲了幾乎有一倍以上。
@@ -982,7 +977,12 @@
                 </p>`
                     },
                     {
-                        id: 'C', title: '基地台深夜發出噪音 造成居民睡眠障礙', author: '朝陽新聞台', time: '2014/12/15', type: '採訪報導', image: 'img/01/01-3.jpg', content: `<p class="literary title_orange">
+                        id: 'C',
+                        title: '基地台深夜發出噪音 造成居民睡眠障礙',
+                        author: '朝陽新聞台',
+                        time: '2014/12/15',
+                        type: '採訪報導',
+                        content: `<p class="literary title_orange">
                     自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
                 </p>
                 <p class="literary">
@@ -1015,9 +1015,13 @@
                 </p>`
                     }
                 ],
-                secondChapter: [
-                    {
-                        id: 'A', title: '朝陽新型停車證 跟上QRcode潮流', author: '朝陽新聞台', time: '2015/01/01', type: '採訪報導', image: 'img/01/01-3.jpg', content: `<p class="literary">
+                secondChapter: [{
+                        id: 'A',
+                        title: '朝陽新型停車證 跟上QRcode潮流',
+                        author: '朝陽新聞台',
+                        time: '2015/01/01',
+                        type: '採訪報導',
+                        content: `<p class="literary">
                     （記者旁白）：今年的停車證與以往大不相同，車主的學號姓名以及車牌號碼都是印刷上去的，整體設計也簡約了不少。停車證上面還多了現代化的QRcode，校方可以把所有資料放在QRcode系統上做自動列印，節省了大量的人力。
                     <br><br>教官：我們在查證的時候會很方便，譬如說我們的QRcode裡面有內建的所有申請同學的車籍資料在裡面。
                 </p>
@@ -1041,7 +1045,13 @@
                 </p>`
                     },
                     {
-                        id: 'B', title: '勇奪金鐘 李宜珊、范家綺返校回饋', author: '朝陽新聞台', time: '2015/01/01', type: '採訪報導', image: 'img/01/01-3.jpg', content: `<p class="literary">
+                        id: 'B',
+                        title: '勇奪金鐘 李宜珊、范家綺返校回饋',
+                        author: '朝陽新聞台',
+                        time: '2015/01/01',
+                        type: '採訪報導',
+                        image: 'img/01/01-3.jpg',
+                        content: `<p class="literary">
                     〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
                     <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
                     <br><br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
@@ -1068,9 +1078,14 @@
                 </p>`
                     }
                 ],
-                thirdChapter: [
-                    {
-                        id: 'A', title: '化妝水只是水 僅含微量保養成分', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: 'img/01/01-3.jpg', content: `<p class="literary">
+                thirdChapter: [{
+                        id: 'A',
+                        title: '化妝水只是水 僅含微量保養成分',
+                        author: '朝陽新聞台',
+                        time: '2015/03/04',
+                        type: '採訪報導',
+                        image: 'img/01/01-3.jpg',
+                        content: `<p class="literary">
                     〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
                     <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
                     <br><br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
@@ -1097,7 +1112,13 @@
                 </p>`
                     },
                     {
-                        id: 'B', title: '大學生活忙又忙 小心壓力超標', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: 'img/01/01-3.jpg', content: ` <p class="literary">
+                        id: 'B',
+                        title: '大學生活忙又忙 小心壓力超標',
+                        author: '朝陽新聞台',
+                        time: '2015/03/04',
+                        type: '採訪報導',
+                        image: 'img/01/01-3.jpg',
+                        content: ` <p class="literary">
                     （記者旁白）大學生活是一個漸漸從學生身分步入職場的重要階段，許多同學對於自己將來要做什麼不是很清楚，對就讀科系的出路也有許多疑惑。在這個成長階段也常遇到家庭、人際、情感與生涯部分的問題。令人擔憂的是有的人遇到問題時往往會選擇逃避，然而問題積壓久了累積越多也會變得更加嚴重，我們要如何判斷自己的壓力已經過大了呢？
                     <br><br>蘇真以老師：如果這個問題放在心裡面只要一想到就會頭痛失眠睡不著，腸胃問題發生，越來越沒有想要動的活力，那你就要注意了，這個壓力已經超出你可以負荷的重量。               
                 </p>
@@ -1119,7 +1140,13 @@
                 </p>`
                     },
                     {
-                        id: 'C', title: '國際發明展爭光 朝陽2年奪51獎座', author: '朝陽新聞台', time: '2015/03/04', type: '採訪報導', image: 'img/01/01-3.jpg', content: `<p class="literary">
+                        id: 'C',
+                        title: '國際發明展爭光 朝陽2年奪51獎座',
+                        author: '朝陽新聞台',
+                        time: '2015/03/04',
+                        type: '採訪報導',
+                        image: 'img/01/01-3.jpg',
+                        content: `<p class="literary">
                     （記者旁白）自2013-2014年，朝陽科大的同學們先後參加了澳門、韓國、馬來西亞、美國等地舉辦的發明展，在這些發明展中，一共奪得19金，20銀，3銅，及9個特別獎的好成績。學生的發明作品在國際發明展上嶄露頭角，獲得了來自國際的肯定。
                     <br><br>（記者旁白）而在2014年韓國首爾發明展上，朝陽更是以「拉扣─單車踏板」和「安全氣囊式安全帽」這兩件作品，大放異彩。
                     <br><br>（記者旁白）「拉扣─單車踏板」，這看似普通的踏板有什麼樣的玄機呢？接下來請研發中心的同學為我們示範說明。
@@ -1151,31 +1178,31 @@
                 this.chapter = this.firstChapter;
             },
             methods: {
-                preArticle: function (){
-                    var hash = document.URL.substr(document.URL.indexOf('#')+1);
+                preArticle: function () {
+                    var hash = document.URL.substr(document.URL.indexOf('#') + 1);
                     chapterLength = this.chapter.length;
-                    if(hash=="C"){
+                    if (hash == "C") {
                         window.location.hash = '#B';
-                    }else{
+                    } else {
                         window.location.hash = '#A';
                     }
 
                     console.log(chapterLength);
                 },
-                nextArticle: function (){
-                    var hash = document.URL.substr(document.URL.indexOf('#')+1);
+                nextArticle: function () {
+                    var hash = document.URL.substr(document.URL.indexOf('#') + 1);
                     chapterLength = this.chapter.length;
 
-                    if(chapterLength > 2){
+                    if (chapterLength > 2) {
 
-                        if(hash=="A"){
+                        if (hash == "A") {
                             window.location.hash = '#B';
-                        }else{
+                        } else {
                             window.location.hash = '#C';
                         }
 
-                    }else{
-                        if(hash=="A"){
+                    } else {
+                        if (hash == "A") {
                             window.location.hash = '#B';
                         }
                     }
@@ -1187,15 +1214,23 @@
                     if (this.chapterIndex === 1) {
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
 
                     if (this.chapterIndex === 0) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
 
                 },
@@ -1203,15 +1238,23 @@
                     if (this.chapterIndex === 1) {
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
 
                     if (this.chapterIndex === 2) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
                 },
                 isCurrent: function (index) {
@@ -1223,22 +1266,34 @@
                     if (index == 0) {
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
 
                     if (index == 1) {
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
 
                     if (index == 2) {
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
-                        $(".content").animate({ scrollTop: 0 }, 600);
-                        $(".content_right").animate({ scrollTop: 0 }, 600);
+                        $(".content").animate({
+                            scrollTop: 0
+                        }, 600);
+                        $(".content_right").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
                 }
             },
@@ -1257,18 +1312,16 @@
                 }
             }
         })
-
-
     </script>
     <script>
         // list-menu show/hide
-        $(".list-btn").click(function(){
-            $(".list-menu").fadeIn("slow").css("display","flex");
+        $(".list-btn").click(function () {
+            $(".list-menu").fadeIn("slow").css("display", "flex");
         });
-        $(".close-menu").click(function(){
+        $(".close-menu").click(function () {
             $(".list-menu").fadeOut("slow");
         });
-        $(".list-menu a").click(function(){
+        $(".list-menu a").click(function () {
             $(".list-menu").fadeOut("slow");
         });
     </script>
@@ -1400,47 +1453,46 @@
         //     }, 600);
         //         }
         //     }, 10000);
-            
+
         // });
-        $(".content").scroll(function() {
-    clearTimeout($.data(this, 'scrollTimer'));
-    $.data(this, 'scrollTimer', setTimeout(function() {
-        var content_scroll= $(".content").scrollTop();
+        $(".content").scroll(function () {
+            clearTimeout($.data(this, 'scrollTimer'));
+            $.data(this, 'scrollTimer', setTimeout(function () {
+                var content_scroll = $(".content").scrollTop();
                 var container_h = $(".container").outerHeight() - 100;
                 var first_news_h = $("#A").outerHeight();
                 var second_news_h = $("#B").outerHeight();
                 var block_A = container_h + first_news_h;
                 var block_B = block_A + second_news_h;
                 var img_h = $(".content_img").outerHeight();
-                if(content_scroll < container_h){
+                if (content_scroll < container_h) {
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:nth-child(1) li").addClass("active");
                 }
-                if(content_scroll > container_h){
+                if (content_scroll > container_h) {
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:nth-child(2) li").addClass("active");
-                }else{
-                }
-                if(content_scroll > block_A){
+                } else {}
+                if (content_scroll > block_A) {
                     $(".content_right").stop().animate({
-                scrollTop: img_h
-            }, 600);
+                        scrollTop: img_h
+                    }, 600);
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:nth-child(3) li").addClass("active");
-                }else{
+                } else {
                     $(".content_right").stop().animate({
-                scrollTop: -img_h
-            }, 600);
+                        scrollTop: -img_h
+                    }, 600);
                 }
-                if(content_scroll > block_B){
+                if (content_scroll > block_B) {
                     $(".content_right").stop().animate({
-                scrollTop: img_h*2
-            }, 600);
+                        scrollTop: img_h * 2
+                    }, 600);
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:nth-child(4) li").addClass("active");
                 }
-    }, 100));
-});
+            }, 100));
+        });
     </script>
 </body>
 
