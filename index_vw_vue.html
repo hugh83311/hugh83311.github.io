@@ -12,24 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
     <link rel="stylesheet" href="css/nav.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Microsoft JhengHei;
-            letter-spacing: 1px;
-            /* overflow: hidden; */
+        .d-flex{
+            display: flex;
         }
-
-        a,
-        a:hover,
-        a:focus,
-        a:active {
-            color: inherit;
-            text-decoration: none;
+        .justify-content-center{
+            justify-content: center;
         }
-
-        p {
-            margin: 0;
+        .align-items-center{
+            align-items: center;
         }
 
         .all {
@@ -39,34 +29,11 @@
         }
 
         /**************************************/
-
-        .list-btn {
+        .more-btn{
             display: none;
         }
-
         .list-menu {
             display: none;
-        }
-
-        .navbar img {
-            width: 50px;
-        }
-
-        .social {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .fb img {
-            width: 25.94px;
-            height: 50px;
-            margin-bottom: 28.6px;
-        }
-
-        .youtube img {
-            width: 45px;
-            height: 31.5px;
         }
 
         .content {
@@ -75,7 +42,7 @@
             flex-direction: row;
             height: 100vh;
             overflow-y: scroll;
-            color: rgba(90, 90, 90, 1);
+            color: #5A5A5A;
             font-size: 0.9375vw;
             position: relative;
         }
@@ -91,7 +58,6 @@
             letter-spacing: 1.5px;
             line-height: 40px;
             box-sizing: border-box;
-            text-align: justify;
             text-justify: inter-ideograph;
             -ms-text-justify: inter-ideograph;
             /*IE9*/
@@ -360,33 +326,30 @@
 
         /**content**/
 
-        #top {
-            height: 1px;
-        }
 
         .title_section {
             letter-spacing: 1.5px;
-            line-height: 50px;
-            margin: 99px 0 0 0;
+            line-height: 44px;
+            margin: 100px 0 0 0;
         }
 
         .title {
             font-size: 36px;
+            line-height: 48px;
             font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .title_blue {
-            color: rgba(20, 150, 250, 1);
-            display: inline-block;
-            margin-right: 15px;
+            color: #00A0F0;
         }
 
         .title_orange {
-            color: rgba(250, 110, 10, 1);
+            color: #FF6400;
         }
 
         .subtitle {
-            color: rgba(255, 170, 70, 1);
+            color: #FFAA00;
             font-size: 18px;
         }
 
@@ -398,7 +361,7 @@
 
         .part_title {
             font-size: 24px;
-            color: rgba(90, 90, 90, 1);
+            color: #5A5A5A;
         }
 
         ul.part_title li::before {
@@ -416,6 +379,7 @@
 
         .literary {
             font-size: 24px;
+            text-align: justify;
         }
 
         .reporter {
@@ -510,23 +474,28 @@
         }
 
         @media screen and (max-width:767px) {
-            .list-btn {
+            .more-btn{
                 display: block;
-                position: fixed;
-                width: 45px;
-                height: 45px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                right: 15px;
-                bottom: 55px;
-                background-color: rgb(92, 92, 92);
-                z-index: 5;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+                background-image: url('img/More-Buttons-1.svg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
                 cursor: pointer;
+                position: fixed;
+                right:15px;
+                bottom:55px;
                 transition: 0.6s;
+                z-index: 10;
             }
-            .list-btn.move {
-                bottom: 95px;
+            .more-btn.open{
+                background-image: url('img/More-Buttons-2.svg');
+            }
+            .more-btn.move{
+                bottom:96px;
             }
             .list-menu {
                 position: absolute;
@@ -538,19 +507,8 @@
                 height: 100vh;
                 left: 0;
                 top: 0;
-                background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-                z-index: 9999999999999;
-            }
-            .close-menu {
-                position: absolute;
-                width: 25px;
-                height: 25px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                top: 30px;
-                right: 30px;
-                cursor: pointer;
+                background-color: #00A0F0;
+                z-index: 9;
             }
             .list-menu li:not(:last-child) {
                 margin-bottom: 20px;
@@ -562,27 +520,13 @@
                 flex-flow: row;
                 justify-content: space-between;
             }
-            .navbar img {
-                width: 25px;
-            }
             .page_dot {
                 display: none;
-            }
-            .social {
-                display: flex;
-            }
-            .social img {
-                height: 20px;
-                width: auto;
-            }
-            .youtube {
-                margin-bottom: 0;
-                margin-right: 16.74px;
             }
             .nav_content {
                 width: 100%;
                 left: -100%;
-                z-index: 5;
+                z-index: 11;
                 padding: 80px 55px 0 55px;
             }
             .nav_content.active {
@@ -634,13 +578,14 @@
                 display: block;
                 width: 32.5%;
                 height: 40px;
-                background: linear-gradient(-45deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
+                background-color: #00A0F0;
                 font-size: 24px;
                 color: white;
                 line-height: 40px;
                 text-align: center;
                 margin-right: 1px;
                 font-weight: bold;
+                cursor: pointer;
             }
             .mobile-num {
                 width: 100%;
@@ -661,7 +606,7 @@
                 bottom: 40px;
                 left: 0;
                 padding: 0 39px;
-                background-color: #82D2FF;
+                background-color: #5AC8FF;
                 border-bottom: 1px solid white;
                 box-sizing: border-box;
             }
@@ -692,13 +637,8 @@
 
 <body>
     <!-- 選擇文章 -->
-    <div class="list-btn">
-        <img src="img/note.svg" alt="" height="40">
-    </div>
+    <div class="more-btn"></div>
     <div class="list-menu">
-        <div class="close-menu">
-            <img src="img/close-button.svg" alt="" height="25">
-        </div>
         <ul>
             <li>
                 <a href="#A">校園新增133、158公車 可抵高鐵站</a>
@@ -760,12 +700,14 @@
                 <div class="social">
                     <div class="fb">
                         <a href="#!">
-                            <img src="img/Facebook-B.svg" alt="">
+                            <img class="desktop-icon" src="img/Facebook-B.svg" alt="">
+                            <img class="mobile-icon" src="img/Facebook-M.svg" alt="">
                         </a>
                     </div>
                     <div class="youtube">
                         <a href="#!">
-                            <img src="img/Youtube-B.svg" alt="">
+                            <img class="desktop-icon" src="img/Youtube-B.svg" alt="">
+                            <img class="mobile-icon" src="img/Youtube-M.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -786,7 +728,10 @@
                 <hr class="line_w">
                 <div class="type type_select">
                     <a href="directory.html">
-                        <p class="active">‧&nbsp;校園</p>
+                        <p class="active">‧&nbsp;全部</p>
+                    </a>
+                    <a href="">
+                        <p>‧&nbsp;校園</p>
                     </a>
                     <a href="">
                         <p>‧&nbsp;體育</p>
@@ -821,11 +766,11 @@
         </div>
         <div class="content">
             <div class="container">
-                <div id="top"></div>
-
                 <div class="title_section">
-                    <p class="title title_blue">朝陽新聞第{{chinessChapterName}}集</p>
-                    <img src="img/Youtube-R.svg" alt="" height="20">
+                    <div class="title title_blue d-flex align-items-center">
+                        <img src="img/Cytu-Logo-S.svg" alt="" height="36" style="margin-right: 10px">
+                        <span>朝陽新聞第{{chinessChapterName}}集</span>
+                    </div>
                     <ul class="part_title">
                         <li class="part_list" v-for="(item, index) in chapter">
                             <a v-bind:href="'#'+ item.id">{{item.title}}</a>
@@ -865,7 +810,7 @@
                 </a>
             </div>
             <div class="content_img">
-                <iframe src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="arrow_num">
                 <div class="arrow">
@@ -912,7 +857,8 @@
                 currentItemsIndex: '0',
                 chapterIndex: 0,
                 chapter: [],
-                firstChapter: [{
+                firstChapter: [
+                    {
                         id: 'A',
                         title: '校園新增133、158公車 可抵高鐵站',
                         author: '朝陽新聞台',
@@ -1214,6 +1160,7 @@
                 },
                 nextChapter: function () {
                     if (this.chapterIndex === 1) {
+                        $(".yt-video").attr("src","https://www.youtube.com/embed/qeqVvEF3n80");
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({
@@ -1225,6 +1172,7 @@
                     }
 
                     if (this.chapterIndex === 0) {
+                        $(".yt-video").attr("src","https://www.youtube.com/embed/jR-OCLfPdoA");
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
@@ -1238,6 +1186,7 @@
                 },
                 preChapter: function () {
                     if (this.chapterIndex === 1) {
+                        $(".yt-video").attr("src","https://www.youtube.com/embed/me_3l-JBSGU?rel=0");
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({
@@ -1249,6 +1198,7 @@
                     }
 
                     if (this.chapterIndex === 2) {
+                        $(".yt-video").attr("src","https://www.youtube.com/embed/jR-OCLfPdoA");
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
@@ -1312,16 +1262,16 @@
                     if (this.chapterIndex == 2)
                         return "三"
                 }
+
+
             }
         })
     </script>
     <script>
         // list-menu show/hide
-        $(".list-btn").click(function () {
-            $(".list-menu").fadeIn("slow").css("display", "flex");
-        });
-        $(".close-menu").click(function () {
-            $(".list-menu").fadeOut("slow");
+        $(".more-btn").click(function () {
+            $(this).toggleClass("open");
+            $(".list-menu").fadeToggle("slow").css("display", "flex");
         });
         $(".list-menu a").click(function () {
             $(".list-menu").fadeOut("slow");
@@ -1400,7 +1350,7 @@
             }
         });
         $(".mobile-num-show").click(function () {
-            $(".list-btn").toggleClass("move");
+            $(".more-btn").toggleClass("move");
             $(".mobile-num").toggleClass("active");
             if ($(".mobile-num").hasClass("active")) {
                 $(".slet").removeClass("swiper-no-swiping");
@@ -1494,6 +1444,12 @@
                     $(".page_dot > ul > a:nth-child(4) li").addClass("active");
                 }
             }, 100));
+        });
+        $(".page_dot > ul > a:first-child").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: 0
+            }, 600);
         });
     </script>
 </body>

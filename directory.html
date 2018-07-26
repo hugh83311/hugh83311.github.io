@@ -8,7 +8,9 @@
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/type-select.css">
 
     <style>
         body {
@@ -32,6 +34,11 @@
         .clearfix{
             clear:both;
         }
+        .back-top img{
+            width: 24.29px;
+            height: 15px;
+            cursor: pointer;
+        }
         .content-wrap{
             padding-left: 100px;
         }
@@ -44,52 +51,6 @@
         .content::-webkit-scrollbar {
             display: none;
         }
-        .top{
-            width: 1820px;
-            position: fixed;
-            top: 0;
-            left: 100px;
-            box-shadow:0px 3px 6px rgba(90, 90, 90, 0.1);
-        }
-        .top .type{
-            margin: 0;
-            padding-left: 0;
-            padding-top: 68px;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-            margin-left: 68px;
-        }
-        .top > .type > li{
-            display: inline-block;
-            font-size: 24px;
-            color: #1496FA;
-
-        }
-        .top > .type > li:hover{
-            opacity: .8;
-        }
-        .top > .type > li:active,
-        .top > .type > li.active{
-            opacity: 1;
-            color:#FA6E0A;
-        }
-        .top > .type > li:not(:last-child){
-            margin-right: 20px;
-        }
-        .top > .type > li::before{
-            content:'‧';
-            font-size: 24px;
-            color: #1496FA;
-            display: inline-block;
-        }
-        .top > .type > li:hover::before{
-            opacity: .8;
-        }
-        .top > .type > li:active::before,
-        .top > .type > li.active::before{
-            opacity: 1;
-            color:#FA6E0A;
-        }
         .news-wrap{
             margin: 0 -25px;
         }
@@ -100,8 +61,6 @@
             margin-bottom: 40px;
             box-sizing: border-box;
         }
-        
-      
         .news-item_content{
             box-shadow:2px 2px 10px rgba(90, 90, 90, 0.2);  
         }
@@ -109,16 +68,39 @@
             width: 100%;
             overflow: hidden;          
         }
-        .img{
+        .news-img{
             width: 100%;
             padding-top: 124.561%;
-            background-image: url('img/01/01-1.jpg');
             background-position-x: center;
             background-position-y: center;
             background-size: cover;
             transition: all 0.5s ease;
         }
-        .news-item:hover .img{
+        .news-img01{
+            background-image: url('img/news-pic/Thumbnail/01-1.jpg');
+        }
+        .news-img02{
+            background-image: url('img/news-pic/Thumbnail/01-2.jpg');
+        }
+        .news-img03{
+            background-image: url('img/news-pic/Thumbnail/01-3.jpg');
+        }
+        .news-img04{
+            background-image: url('img/news-pic/Thumbnail/02-1.jpg');
+        }
+        .news-img05{
+            background-image: url('img/news-pic/Thumbnail/02-2.jpg');
+        }
+        .news-img06{
+            background-image: url('img/news-pic/Thumbnail/03-1.jpg');
+        }
+        .news-img07{
+            background-image: url('img/news-pic/Thumbnail/03-2.jpg');
+        }
+        .news-img08{
+            background-image: url('img/news-pic/Thumbnail/03-3.jpg');
+        }
+        .news-item:hover .news-img{
             transform: scale(1.2);
         }
 
@@ -144,52 +126,8 @@
             bottom: 10px;
             font-size: 14px;
             line-height: 25px;
-            color:#FFAA46;
+            color:#FFAA00;
             letter-spacing: 1.3px;
-        }
-
-         /**arrow**/
-         .arrow_td{
-            position: fixed;
-            bottom: 0;
-            right:0;
-            display:flex;
-            flex-direction:column;
-            margin-right: 2px;
-            text-align: center;
-        }
-        .arrow_td img.chg{
-            display: none;
-        }
-        .arrow_top{
-            width: 68px;
-            height: 84px;
-            background : linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
-        }
-        .arrow_top::before,
-        .arrow_top::after{
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .arrow_top img{
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .arrow_top:hover img.org,
-        .arrow_top:active img.org{
-            display: none;
-        }
-        .arrow_top:hover img{
-            filter: drop-shadow(2px 2px 4px rgba(90,90,90,.2));
-        }
-        .arrow_top:hover img.chg{
-            display: inline-block;
-        }
-        .arrow_top:active img.chg{
-            display: inline-block;
-            opacity: .8;
         }
         .mobile_hr{
             display: none;
@@ -210,6 +148,7 @@
         @media screen and (max-width: 1130px){
             .content{
                 max-width: 620px;
+                margin:172px auto 0 auto;
             }
         }
         @media screen and (max-width:767px){
@@ -230,20 +169,6 @@
             .navbar img{
                 width: 25px;
             }
-            .page_dot{
-                display: none;
-            }
-            .social{
-                display: flex;
-            }
-            .social img{
-                height:20px;
-                width: auto;
-            }
-            .youtube{
-                margin-bottom: 0;
-                margin-right: 16.74px;
-            }
             .nav_content{
                 width: 100%;
                 left:-100%;
@@ -262,38 +187,6 @@
             }
             .navbar-off img{
                 width: 25px;
-            }
-            .arrow_td{
-                display: none;
-            }
-            .top{
-                width: 100%;
-                height: 40px;
-                padding: 12px 15px;
-                top: initial;
-                left: 0;
-                bottom: 0;
-                z-index: 2;
-                background: linear-gradient(0deg, rgba(20, 150, 250, 1) 0%, rgba(27, 154, 250, 1) 3.14%, rgba(64, 174, 252, 1) 22.89%, rgba(93, 190, 253, 1) 42.66%, rgba(113, 201, 254, 1) 62.2%, rgba(126, 208, 255, 1) 81.44%, rgba(130, 210, 255, 1) 100%);
-                box-sizing: border-box;
-            }
-            .top .type{
-                display: flex;
-                justify-content: space-between;
-                padding-top: 0;
-                margin-bottom: 0;
-                margin-left: 0;
-                letter-spacing: 0;
-            }
-            .top > .type > li:not(:last-child){
-                margin-right: 12px;
-            }
-            .top > .type > li{
-                color:white;
-                font-size: 12px;
-            }
-            .top > .type > li::before{
-                font-size: 12px;
             }
             .content{
                 padding: 0 15px;
@@ -314,17 +207,21 @@
             }
             .news-item_bg{
                 width: auto;
+                height: auto;
+                margin-right: 10px;
                 overflow: initial;
             }
-            .img{
-                width: 60px;
-                height: 60px;
-                padding-top: 0;
-                margin-right: 10px;
+            .news-item:hover .news-img{
+                transform: scale(1);
             }
             .news-item_text{
                 padding: 0;
-                height: 60px;
+                height: auto;
+            }
+            .news-img{
+                width: 18.75vw;
+                padding-top: 18.75vw;
+                transition: initial;
             }
             .news-item_text p {
                 font-size: 16px;
@@ -347,27 +244,28 @@
 </head>
 <body>
     <div class="main-wrap">
+        <div class="mobile-backtop">
+            <img src="img/Top-1.svg" alt="">
+        </div>
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar">
-                    <img src="img/Menu.svg" alt="" width="50">
+                    <img src="img/Menu.svg" alt="">
                 </div>
-                <div class="page_dot">
-                    <ul>
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                <div class="back-top">
+                    <img src="img/Top-2.svg" alt="">
                 </div>
                 <div class="social">
-                    <div class="youtube">
-                        <a href="">
-                            <img src="img/Youtube.svg" alt="" width="45">
+                    <div class="fb">
+                        <a href="#!">
+                            <img class="desktop-icon" src="img/Facebook-B.svg" alt="">
+                            <img class="mobile-icon" src="img/Facebook-M.svg" alt="">
                         </a>
                     </div>
-                    <div class="fb">
-                        <a href="">
-                            <img src="img/Facebook.svg" alt="" width="45">
+                    <div class="youtube">
+                        <a href="#!">
+                            <img class="desktop-icon" src="img/Youtube-B.svg" alt="">
+                            <img class="mobile-icon" src="img/Youtube-M.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -388,21 +286,24 @@
                 <hr class="line_w">
                 <div class="type type_select">
                     <a href="directory.html">
-                        <p class="active">‧&nbsp;校園</p>
+                        <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
+                        <p>‧&nbsp;校園</p>
+                    </a>
+                    <a href="#!">
                         <p>‧&nbsp;體育</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;藝文</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;科技</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;醫藥</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p class="type_select_last">‧&nbsp;地方文化</p>
                     </a>
                 </div>
@@ -421,9 +322,10 @@
 
             </div>
         </div>
-        <div class="top">
+        <div class="desktop-select-type">
             <ul class="type">
-                <li class="active"><a href="#!">&nbsp;校園</a></li>
+                <li class="active"><a href="#!">&nbsp;全部</a></li>
+                <li><a href="#!">&nbsp;校園</a></li>
                 <li><a href="#!">&nbsp;體育</a></li>
                 <li><a href="#!">&nbsp;藝文</a></li>
                 <li><a href="#!">&nbsp;科技</a></li>
@@ -431,22 +333,42 @@
                 <li><a href="#!">&nbsp;地方文化</a></li>
             </ul>
         </div>
-        <div class="arrow_td">
-            <a href="#!">
-                <div class="arrow_top">
-                    <img class="org" src="img/Up.svg" alt="" height="15">
-                    <img class="chg" src="img/Up-change.svg" alt="" height="15">
+        <!-- Swiper -->
+        <div class="mobile-select-type">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="type-item active">全部</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">校園</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">體育</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">藝文</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">科技</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">醫藥</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="type-item">地方文化</div>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="content-wrap">
             <div class="content">
                 <div class="news-wrap">
-                    <a href="index.html">
+                    <a href="news-01.html">
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img01"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>校園新增133、158公車可抵高鐵站</p>
@@ -456,11 +378,11 @@
                         </div>
                     </a>
                     <hr class="mobile_hr">
-                    <a href="index-3.html">
+                    <a href="#!">
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img02"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</p>
@@ -474,7 +396,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img03"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙</p>
@@ -488,7 +410,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img04"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</p>
@@ -502,7 +424,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img05"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>
@@ -516,7 +438,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img06"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>化妝水只是水&nbsp;&nbsp;僅含微量保養成分</p>
@@ -530,7 +452,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img07"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>
@@ -544,7 +466,7 @@
                         <div class="news-item">
                             <div class="news-item_content">
                                 <div class="news-item_bg">
-                                    <div class="img"></div>
+                                    <div class="news-img news-img08"></div>
                                 </div>
                                 <div class="news-item_text">
                                     <p>國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</p>
@@ -562,7 +484,19 @@
 
 
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            freeMode: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
     <script>
         $(".navbar").click(function(){
             $(".nav_content").toggleClass("active");
@@ -575,6 +509,22 @@
         });
         $(".content_right").click(function(){
             $(".nav_content").removeClass("active");
+        });
+    </script>
+
+    <!-- 回到最上 -->
+    <script>
+        $(".back-top").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: 0
+            }, 600);
+        });
+        $(".mobile-backtop").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: 0
+            }, 600);
         });
     </script>
 </body>

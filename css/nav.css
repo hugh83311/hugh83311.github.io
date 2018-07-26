@@ -6,9 +6,10 @@ body {
     overflow: hidden;
 }
 
-/* img {
+img {
+    max-width: 100%;
     display: block;
-} */
+}
 
 a,
 a:hover,
@@ -19,6 +20,37 @@ a:active {
 }
 p{
     margin: 0;
+}
+
+.clear{
+    clear:both;
+}
+/* 回到最上 */
+.back-top{
+    display: block;
+}
+.back-top img{
+    width: 24.29px;
+    height: 15px;
+    cursor: pointer;
+}
+.mobile-backtop{
+    display: none;
+    position: fixed;
+    right:15px;
+    bottom: 55px;
+    z-index: 3;
+    cursor: pointer;
+}
+.mobile-backtop img{
+    width: 35px;
+    height: 35px;
+}
+.desktop-icon{
+    display: block;
+}
+.mobile-icon{
+    display: none;
 }
 .nav {
     position: fixed;
@@ -37,11 +69,15 @@ p{
     color: #929292;
     z-index: 5;
 }
-.nav img{
-    display: block;
-}
 .navbar{
     cursor: pointer;
+}
+.navbar img{
+    width: 50px;
+    height: 40px;
+}
+.navbar-off{
+    display: none;
 }
 .navbar:hover img{
     filter: drop-shadow(2px 2px 4px rgba(90,90,90,0.3));
@@ -96,8 +132,31 @@ p{
 .page_dot > ul > a:nth-last-child(1) > li::after{
     display: none;
 }
-.youtube{
-    margin-bottom: 20px;
+.social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fb img.desktop-icon {
+    width: 25.94px;
+    height: 50px;
+    margin-bottom: 28.6px;
+}
+
+.youtube img.desktop-icon {
+    width: 45px;
+    height: 31.5px;
+}
+.fb img.mobile-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.youtube img.mobile-icon {
+    width: 20px;
+    height: 20px;
 }
 .social .fb:hover img{
     filter: drop-shadow(2px 2px 4px rgba(90,90,90,0.3));
@@ -145,8 +204,11 @@ p{
 }
 .type{
     font-size: 24px;
-    color:#fff;
+    color:rgba(255,255,255,0.3);
     letter-spacing: 1.9px;
+}
+.type p.active{
+    color:rgba(255,255,255,1);
 }
 .line_w{
     background-color: #fff;
@@ -161,18 +223,55 @@ p{
 .type_select_last{
     margin: 0;
 }
-.type p:hover{
-    opacity: .8;
-}
-.type p:active,
-.type p.active{
-    color: #FFDC78;
-    opacity: 1;
-}
 .search_icon{
     width: 20px;
 }
 @media screen and (max-width: 767px){
+    .nav{
+        width: 100%;
+        height: 40px;
+        padding: 10px 15px;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .nav_content{
+        width: 100%;
+        left:-100%;
+        z-index: 5;
+        padding:80px 55px 0 55px;
+    }
+    .nav_content.active{
+        left:0;
+    }
+    .navbar img{
+        width: 25px;
+        height: 20px;
+    }
+    .navbar-off{
+        display: block;
+        position: absolute;
+        top:10px;
+        left:15px;
+        cursor: pointer;
+    }
+    .navbar-off img{
+        width: 25px;
+    }
+    .back-top{
+        display: none;
+    }
+    .mobile-backtop{
+        display: block;
+    }
+    .social{
+        flex-direction: row;
+    }
+    .desktop-icon{
+        display: none;
+    }
+    .mobile-icon{
+        display: block;
+    }
     .search_box{
         width: 100%;
         height: 25px;
