@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c31af30-902f-4d12-a7cc-efe1013d6890" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/type-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news-01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/directory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/01/01-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/01/01-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/01/01-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Down-change.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Facebook.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Left-change.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Right-change.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Up-change.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Up.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Youtube-R.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Youtube.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/close-button.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_vw_vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_vw_vue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/type-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/type-select.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,80 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index_vw_vue.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index_vw_vue.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#22236#22242#0" expanded="true" />
-                <element signature="e#22471#22477#0" expanded="true" />
-                <element signature="e#22471#22477#0" expanded="true" />
-                <element signature="e#22569#22575#0" expanded="true" />
-                <element signature="e#22667#22673#0" expanded="true" />
-                <element signature="e#22765#22771#0" expanded="true" />
-                <element signature="e#22863#22869#0" expanded="true" />
-                <element signature="e#22986#22992#0" expanded="true" />
-                <element signature="e#23192#23198#0" expanded="true" />
-                <element signature="e#23293#23299#0" expanded="true" />
-                <element signature="e#23419#23425#0" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#24687#24693#0" expanded="true" />
-                <element signature="e#24706#24712#0" expanded="true" />
-                <element signature="e#1089#1095#0" expanded="true" />
-                <element signature="e#1095#1101#0" expanded="true" />
-                <element signature="e#1374#1380#0" expanded="true" />
-                <element signature="e#1387#1393#0" expanded="true" />
-                <element signature="e#334#340#0" expanded="true" />
-                <element signature="e#340#346#0" expanded="true" />
-                <element signature="e#990#996#0" expanded="true" />
-                <element signature="e#996#1002#0" expanded="true" />
-                <element signature="e#1267#1273#0" expanded="true" />
-                <element signature="e#1280#1286#0" expanded="true" />
-                <element signature="e#64#70#0" expanded="true" />
-                <element signature="e#70#76#0" expanded="true" />
-                <element signature="e#443#449#0" expanded="true" />
-                <element signature="e#449#455#0" expanded="true" />
-                <element signature="e#843#849#0" expanded="true" />
-                <element signature="e#849#855#0" expanded="true" />
-                <element signature="e#1390#1396#0" expanded="true" />
-                <element signature="e#1403#1409#0" expanded="true" />
-                <element signature="e#334#340#0" expanded="true" />
-                <element signature="e#340#346#0" expanded="true" />
-                <element signature="e#789#795#0" expanded="true" />
-                <element signature="e#795#801#0" expanded="true" />
-                <element signature="e#1198#1204#0" expanded="true" />
-                <element signature="e#1211#1217#0" expanded="true" />
-                <element signature="e#652#658#0" expanded="true" />
-                <element signature="e#658#664#0" expanded="true" />
-                <element signature="e#1279#1285#0" expanded="true" />
-                <element signature="e#1285#1291#0" expanded="true" />
-                <element signature="e#1832#1838#0" expanded="true" />
-                <element signature="e#1849#1855#0" expanded="true" />
-                <element signature="e#652#658#0" expanded="true" />
-                <element signature="e#658#664#0" expanded="true" />
-                <element signature="e#1279#1285#0" expanded="true" />
-                <element signature="e#1285#1291#0" expanded="true" />
-                <element signature="e#1832#1838#0" expanded="true" />
-                <element signature="e#1849#1855#0" expanded="true" />
-                <element signature="e#417#423#0" expanded="true" />
-                <element signature="e#423#429#0" expanded="true" />
-                <element signature="e#946#952#0" expanded="true" />
-                <element signature="e#952#958#0" expanded="true" />
-                <element signature="e#1273#1279#0" expanded="true" />
-                <element signature="e#1290#1296#0" expanded="true" />
-                <element signature="e#579#585#0" expanded="true" />
-                <element signature="e#585#591#0" expanded="true" />
-                <element signature="e#1017#1023#0" expanded="true" />
-                <element signature="e#1023#1029#0" expanded="true" />
-                <element signature="e#1534#1540#0" expanded="true" />
-                <element signature="e#1551#1557#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="news-01.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/news-01.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,19 +28,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="type-select.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="type-select.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/type-select.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="448">
+              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="directory.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="directory.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/directory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
+            <state relative-caret-position="-3240">
               <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
             </state>
           </provider>
@@ -187,9 +93,9 @@
       <find>more-btn</find>
       <find>.nav_content</find>
       <find>.mobile-swiper-container</find>
-      <find>.youtube</find>
       <find>.type</find>
       <find>mobile-num-show</find>
+      <find>.youtube</find>
     </findStrings>
     <replaceStrings>
       <replace>article</replace>
@@ -204,11 +110,11 @@
       <list>
         <option value="$PROJECT_DIR$/index_new.html" />
         <option value="$PROJECT_DIR$/type_school.html" />
-        <option value="$PROJECT_DIR$/css/type-select.css" />
         <option value="$PROJECT_DIR$/css/nav.css" />
         <option value="$PROJECT_DIR$/news-01.html" />
         <option value="$PROJECT_DIR$/index_vw_vue.html" />
         <option value="$PROJECT_DIR$/directory.html" />
+        <option value="$PROJECT_DIR$/css/type-select.css" />
       </list>
     </option>
   </component>
@@ -304,12 +210,12 @@
       <workItem from="1531761893529" duration="23000" />
       <workItem from="1532327875456" duration="6788000" />
       <workItem from="1532345978249" duration="8597000" />
-      <workItem from="1532579723909" duration="20389000" />
+      <workItem from="1532579723909" duration="20865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73585000" />
+    <option name="totallyTimeSpent" value="74061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -695,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/type-select.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/nav.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -796,8 +695,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/directory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
+        <state relative-caret-position="-3240">
           <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/type-select.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
         </state>
       </provider>
     </entry>

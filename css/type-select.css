@@ -44,6 +44,7 @@
     padding: 0 15px;
     background-color: #00A0F0;
     box-sizing: border-box;
+    z-index: 3;
 
 }
 .mobile-select-type .swiper-container {
