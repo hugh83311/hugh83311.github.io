@@ -31,8 +31,8 @@
       <file leaf-file-name="type-select.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/type-select.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+            <state relative-caret-position="784">
+              <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -40,8 +40,8 @@
       <file leaf-file-name="directory.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/directory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3240">
-              <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
+            <state relative-caret-position="2080">
+              <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -49,7 +49,7 @@
       <file leaf-file-name="nav.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/nav.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="833">
               <caret line="247" column="17" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
             </state>
           </provider>
@@ -93,9 +93,9 @@
       <find>more-btn</find>
       <find>.nav_content</find>
       <find>.mobile-swiper-container</find>
-      <find>.type</find>
       <find>mobile-num-show</find>
       <find>.youtube</find>
+      <find>.type</find>
     </findStrings>
     <replaceStrings>
       <replace>article</replace>
@@ -210,12 +210,12 @@
       <workItem from="1531761893529" duration="23000" />
       <workItem from="1532327875456" duration="6788000" />
       <workItem from="1532345978249" duration="8597000" />
-      <workItem from="1532579723909" duration="20865000" />
+      <workItem from="1532579723909" duration="21206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74061000" />
+    <option name="totallyTimeSpent" value="74402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -601,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/nav.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="247" column="17" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news-01.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
@@ -695,15 +688,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/directory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3240">
-          <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
+        <state relative-caret-position="2080">
+          <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="247" column="17" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/type-select.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        <state relative-caret-position="784">
+          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
         </state>
       </provider>
     </entry>

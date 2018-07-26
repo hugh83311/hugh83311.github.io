@@ -76,6 +76,9 @@
     -webkit-align-items: center;
     align-items: center;
 }
+.mobile-select-type .swiper-slide:last-child{
+    margin-right: 0 !important;
+}
 .type-item{
     color:white;
     cursor: pointer;
