@@ -498,15 +498,32 @@
                 align-items: center;
                 justify-content: center;
                 color: white;
+                padding:0 17.1875%;
                 width: 100%;
                 height: 100vh;
                 left: 0;
                 top: 0;
                 background-color: #00A0F0;
                 z-index: 9;
+                box-sizing: border-box;
             }
             .list-menu li:not(:last-child) {
-                margin-bottom: 20px;
+                margin-bottom: 25px;
+            }
+            .list-menu ul{
+                list-style-type:none ;
+                padding-left: 0;
+                margin: 0;
+            }
+            .list-menu ul > li > a{
+                font-size: 14px;
+            }
+            .list-menu ul > li > a.active{
+                color:#FFFF00;
+            }
+            .list-menu ul > li > a::before{
+                content: "◎";
+                padding-right: 8px;
             }
             .nav {
                 width: 100%;
@@ -636,7 +653,7 @@
     <div class="list-menu">
         <ul>
             <li>
-                <a href="#A">校園新增133、158公車 可抵高鐵站</a>
+                <a class="active" href="#A">校園新增133、158公車 可抵高鐵站</a>
             </li>
             <li>
                 <a href="#B">物價上漲壓力 學生餐廳撐不住</a>
@@ -712,12 +729,12 @@
                     <img src="img/Menu.svg" alt="">
                 </div>
                 <div class="search_box">
-                    <p>即將推出功能</p>
+                    <input type="text" placeholder="即將推出功能">
                     <img class="search_icon" src="img/Magnifier-B.svg" alt="">
                 </div>
                 <div class="type">
-                    <a href="">
-                        <p>‧&nbsp;朝陽新聞</p>
+                    <a href="index.html">
+                        <p class="active">‧&nbsp;朝陽新聞</p>
                     </a>
                 </div>
                 <hr class="line_w">
@@ -725,35 +742,35 @@
                     <a href="directory.html">
                         <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;校園</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;體育</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;藝文</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;科技</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p>‧&nbsp;醫藥</p>
                     </a>
-                    <a href="">
+                    <a href="#!">
                         <p class="type_select_last">‧&nbsp;地方文化</p>
                     </a>
                 </div>
                 <hr class="line_w">
                 <div class="type type_select">
-                    <a href="">
-                        <p>‧&nbsp;朝陽新聞台</p>
+                    <a href="#!">
+                        <p class="active">‧&nbsp;朝陽新聞台</p>
                     </a>
-                    <a href="">
-                        <p>‧&nbsp;傳播藝術系</p>
+                    <a href="#!">
+                        <p class="active">‧&nbsp;傳播藝術系</p>
                     </a>
-                    <a href="">
-                        <p class="type_select_last">‧&nbsp;朝陽科技大學</p>
+                    <a href="#!">
+                        <p class="type_select_last active">‧&nbsp;朝陽科技大學</p>
                     </a>
                 </div>
 
@@ -1273,9 +1290,10 @@
         });
         $(".list-menu a").click(function () {
             $(".list-menu").fadeOut("slow");
+            $(".more-btn").removeClass("open");
         });
     </script>
-    
+
     <script>
         // navbar
         $(".navbar").click(function () {
@@ -1375,18 +1393,24 @@
                 var img_h = $(".video-wrap").outerHeight();
                 if (content_scroll < container_h) {
                     $(".page_dot li").removeClass("active");
+                    $(".list-menu a").removeClass("active");
                     $(".page_dot > ul > a:nth-child(1) li").addClass("active");
+                    $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
                 }
                 if (content_scroll > container_h) {
                     $(".page_dot li").removeClass("active");
+                    $(".list-menu a").removeClass("active");
                     $(".page_dot > ul > a:nth-child(2) li").addClass("active");
+                    $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
                 } else {}
                 if (content_scroll > block_A) {
                     $(".content_right").stop().animate({
                         scrollTop: img_h
                     }, 600);
                     $(".page_dot li").removeClass("active");
+                    $(".list-menu a").removeClass("active");
                     $(".page_dot > ul > a:nth-child(3) li").addClass("active");
+                    $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
                 } else {
                     $(".content_right").stop().animate({
                         scrollTop: -img_h
@@ -1397,7 +1421,9 @@
                         scrollTop: img_h * 2
                     }, 600);
                     $(".page_dot li").removeClass("active");
+                    $(".list-menu a").removeClass("active");
                     $(".page_dot > ul > a:nth-child(4) li").addClass("active");
+                    $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
                 }
             }, 100));
         });
