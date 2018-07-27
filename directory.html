@@ -127,7 +127,6 @@
         @media screen and (max-width: 1130px){
             .content{
                 max-width: 620px;
-                margin:172px auto 0 auto;
             }
         }
         @media screen and (max-width:767px){
@@ -258,22 +257,22 @@
                     <a href="directory.html">
                         <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;校園</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;體育</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;藝文</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;科技</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;醫藥</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p class="type_select_last">‧&nbsp;地方文化</p>
                     </a>
                 </div>
@@ -295,12 +294,12 @@
         <div class="desktop-select-type">
             <ul class="type">
                 <li class="active"><a href="#!">&nbsp;全部</a></li>
-                <li><a href="#!">&nbsp;校園</a></li>
-                <li><a href="#!">&nbsp;體育</a></li>
-                <li><a href="#!">&nbsp;藝文</a></li>
-                <li><a href="#!">&nbsp;科技</a></li>
-                <li><a href="#!">&nbsp;醫藥</a></li>
-                <li><a href="#!">&nbsp;地方文化</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;校園</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;體育</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;藝文</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;科技</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;醫藥</a></li>
+                <li><a href="#!" title="暫無功能">&nbsp;地方文化</a></li>
             </ul>
         </div>
         <!-- Swiper -->
@@ -477,6 +476,10 @@
         $(".content").click(function(){
             $(".nav_content").removeClass("active");
         });
+        $(".desktop-select-type").click(function(){
+            $(".nav_content").removeClass("active");
+        });
+        
         $(".content_right").click(function(){
             $(".nav_content").removeClass("active");
         });

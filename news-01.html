@@ -9,6 +9,7 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/type-select.css">
 
@@ -27,9 +28,14 @@
             overflow-y: scroll;
         }
         .news-wrap{
-            padding: 40px 0;
+            padding-bottom: 100px;
+        }
+        .news-content{
+            color:#5A5A5A;
+            text-align: justify;
         }
         .news-pic{
+            margin-top: 40px;
             margin-bottom: 40px;
         }
         .title{
@@ -39,6 +45,10 @@
             margin-bottom: 10px;
             color:#FF6400;
         }
+        .title_orange {
+            color: #FF6400;
+            margin-bottom: 10px;
+        }
         .subtitle{
             font-size: 18px;
             line-height: 24px;
@@ -47,17 +57,21 @@
         }
         .article{
             font-size: 24px;
-            color:#5A5A5A;
             text-align: justify;
         }
-
+        .reporter {
+            font-weight: bold;
+        }
         @media screen and (max-width: 880px){
             .content{
-                margin:172px auto 0 auto;
+                margin:140px auto 0 auto;
                 height: calc(100vh - 172px);
             }
         }
         @media screen and (max-width:767px){
+            .news-wrap{
+                padding: 20px 0 50px 0;
+            }
             .content-wrap{
                 padding-left: 0;
             }
@@ -67,13 +81,19 @@
             }
             .title{
                 font-size: 30px;
+                line-height: 40px;
             }
             .subtitle{
                 font-size: 16px;
+                margin-bottom: 12px;
             }
             .article{
                 font-size: 18px;
                 line-height: 30px;
+            }
+            .news-pic{
+                margin-top: 0;
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -85,7 +105,7 @@
         </div>
         <div class="nav_section">
             <div class="nav">
-                <div class="navbar">
+                <div class="navbar-icon">
                     <img src="img/Menu.svg" alt="">
                 </div>
                 <div class="back-top">
@@ -125,22 +145,22 @@
                         <p class="active">‧&nbsp;全部</p>
                     </a>
                     <a href="#!">
-                        <p>‧&nbsp;校園</p>
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;校園</span></p>
                     </a>
                     <a href="#!">
-                        <p>‧&nbsp;體育</p>
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;體育</span></p>
                     </a>
                     <a href="#!">
-                        <p>‧&nbsp;藝文</p>
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;藝文</span></p>
                     </a>
                     <a href="#!">
-                        <p>‧&nbsp;科技</p>
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;科技</span></p>
                     </a>
                     <a href="#!">
-                        <p>‧&nbsp;醫藥</p>
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;醫藥</span></p>
                     </a>
                     <a href="#!">
-                        <p class="type_select_last">‧&nbsp;地方文化</p>
+                        <p class="type_select_last"><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;地方文化</span></p>
                     </a>
                 </div>
                 <hr class="line_w">
@@ -161,12 +181,12 @@
         <div class="desktop-select-type">
             <ul class="type">
                 <li class="active"><a href="#!">&nbsp;全部</a></li>
-                <li><a href="#!">&nbsp;校園</a></li>
-                <li><a href="#!">&nbsp;體育</a></li>
-                <li><a href="#!">&nbsp;藝文</a></li>
-                <li><a href="#!">&nbsp;科技</a></li>
-                <li><a href="#!">&nbsp;醫藥</a></li>
-                <li><a href="#!">&nbsp;地方文化</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;校園</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;體育</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;藝文</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;科技</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;醫藥</a></li>
+                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;地方文化</a></li>
             </ul>
         </div>
         <!-- Swiper -->
@@ -177,22 +197,22 @@
                         <div class="type-item active">全部</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">校園</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">校園</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">體育</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">體育</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">藝文</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">藝文</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">科技</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">科技</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">醫藥</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">醫藥</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">地方文化</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">地方文化</div>
                     </div>
                 </div>
             </div>
@@ -204,7 +224,7 @@
                         <img src="img/news-pic/Original/01-1.jpg" alt="">
                     </div>
                     <div class="news-content">
-                        <div class="title title_orange">校園新增133、158公車　可抵高鐵站</div>
+                        <div class="title title_orange">校園新增133、158公車 可抵高鐵站</div>
                         <div class="subtitle">朝陽新聞台 2014/12/15 採訪報導</div>
                         <p class="article">
                             （記者旁白）：連接朝陽科技大學和烏日高鐵站的133、158號公車分別在10月1日和11月1日正式通車。133公車每日有40班次，而158公車則每日有64班次。
@@ -225,7 +245,7 @@
                         <p class="article">
                             （記者旁白）：學校的公車亭在今年安裝了電子公車時刻表，讓公車到站的時刻更加一目了然，同學們也可以多多利用智慧型手機的app來查詢公車準確的位置。
                         </p>
-                        <p class="article title_orange">
+                        <p class="title_orange article">
                             <br>4路公車&nbsp;&nbsp;班次等待更省時
                         </p>
                         <p class="article">
@@ -245,6 +265,13 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
@@ -257,7 +284,7 @@
         });
     </script>
     <script>
-        $(".navbar").click(function(){
+        $(".navbar-icon").click(function(){
             $(".nav_content").toggleClass("active");
         });
         $(".navbar-off").click(function () {

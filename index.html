@@ -306,11 +306,11 @@
         }
 
         .tablet-arrow-lr img {
-            width: 15px;
+            width: 10px;
         }
 
         .tablet-arrow-ud img {
-            height: 15px;
+            height: 10px;
         }
 
         /**content**/
@@ -407,8 +407,11 @@
                 display: block;
                 margin-bottom: 50px;
             }
-            .mobile-video iframe{
+            .mobile-video .yt-video:nth-child(1){
                 display: block;
+            }
+            .mobile-video iframe{
+                display: none;
                 width: 100%;
                 height: 39.1865vw;
             }
@@ -432,7 +435,7 @@
                 height: 84px;
                 margin-bottom: 2px;
                 cursor: pointer;
-                background: linear-gradient(270deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+                background-color: #5A5A5A;
                 justify-content: center;
                 align-items: center;
             }
@@ -513,12 +516,8 @@
             .mobile-video{
                 margin-bottom: 15px;
             }
-            .mobile-video .yt-video:nth-child(1){
-                display: block;
-            }
             .mobile-video iframe{
                 height: 50.9375vw;
-                display: none;
             }
             .more-btn{
                 display: block;
@@ -557,6 +556,7 @@
                 background-color: #00A0F0;
                 z-index: 9;
                 box-sizing: border-box;
+                text-align: justify
             }
             .list-menu li:not(:last-child) {
                 margin-bottom: 25px;
@@ -567,7 +567,7 @@
                 margin: 0;
             }
             .list-menu ul > li > a{
-                font-size: 14px;
+                font-size: 16px;
             }
             .list-menu ul > li > a.active{
                 color:#FFFF00;
@@ -618,7 +618,7 @@
                 margin-bottom: 0;
                 width: 16.875%;
                 height: 40px;
-                background: linear-gradient(360deg, rgba(120, 120, 120, 1) 0%, rgba(107, 107, 107, 1) 26.33%, rgba(94, 94, 94, 1) 63.78%, rgba(90, 90, 90, 1) 100%);
+                background-color: #5A5A5A;
                 margin-right: 1px;
             }
             .tablet-num {
@@ -751,7 +751,7 @@
         </div>
         <div class="nav_section">
             <div class="nav">
-                <div class="navbar">
+                <div class="navbar-icon">
                     <img src="img/Menu.svg" alt="">
                 </div>
                 <div class="page_dot">
@@ -797,22 +797,22 @@
                     <a href="directory.html">
                         <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;校園</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;體育</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;藝文</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;科技</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p>‧&nbsp;醫藥</p>
                     </a>
-                    <a href="#!">
+                    <a href="#!" title="暫無功能">
                         <p class="type_select_last">‧&nbsp;地方文化</p>
                     </a>
                 </div>
@@ -1127,7 +1127,7 @@
                     <br><br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
 		            <br><br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
 	            </p>
-                <p class="literary reporter reporter_last">
+                <p class="literary reporter">
                     <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
                 </p>`
                     },
@@ -1388,7 +1388,7 @@
 
     <script>
         // navbar
-        $(".navbar").click(function () {
+        $(".navbar-icon").click(function () {
             $(".nav_content").toggleClass("active");
         });
         $(".navbar-off").click(function () {
