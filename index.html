@@ -494,8 +494,12 @@
         }
 
         @media screen and (max-width:767px) {
+            .mobile-video .yt-video:nth-child(1){
+                display: block;
+            }
             .mobile-video iframe{
                 height: 50.9375vw;
+                display: none;
             }
             .more-btn{
                 display: block;
@@ -816,6 +820,8 @@
                     </div>
                     <div class="mobile-video">
                         <iframe class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                     <ul class="part_title">
                         <li class="part_list" v-for="(item, index) in chapter">
@@ -1211,6 +1217,8 @@
                     if (this.chapterIndex === 1) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(3)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(3)").show();
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         this.currentItemsIndex = 2;
@@ -1225,6 +1233,8 @@
                     if (this.chapterIndex === 0) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(2)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
                         this.currentItemsIndex = 1;
                         this.chapter = this.secondChapter;
@@ -1241,6 +1251,8 @@
                     if (this.chapterIndex === 1) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(1)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(1)").show();
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         this.currentItemsIndex = 0;
@@ -1255,6 +1267,8 @@
                     if (this.chapterIndex === 2) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(2)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         this.currentItemsIndex = 1;
@@ -1274,6 +1288,8 @@
                     if (index == 0) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(1)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(1)").show();
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({
@@ -1287,6 +1303,8 @@
                     if (index == 1) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(2)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
@@ -1300,6 +1318,8 @@
                     if (index == 2) {
                         $(".video-container .yt-video").hide();
                         $(".video-container .yt-video:nth-child(3)").show();
+                        $(".mobile-video .yt-video").hide();
+                        $(".mobile-video .yt-video:nth-child(3)").show();
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({
