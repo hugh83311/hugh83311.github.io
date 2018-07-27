@@ -335,11 +335,14 @@
 
         .title_orange {
             color: #FF6400;
+            margin-bottom: 5px;
         }
 
         .subtitle {
             color: #FFAA00;
             font-size: 18px;
+            margin-bottom: 40px;
+            line-height: normal;
         }
 
         ul.part_title {
@@ -494,6 +497,22 @@
         }
 
         @media screen and (max-width:767px) {
+            .title_section{
+                margin:55px 0 0 0;
+            }
+            .title{
+                font-size: 30px;
+                line-height: 40px;
+            }
+            .title_blue{
+                margin-bottom: 15px;
+            }
+            .title_orange{
+                margin-bottom: 10px;
+            }
+            .mobile-video{
+                margin-bottom: 15px;
+            }
             .mobile-video .yt-video:nth-child(1){
                 display: block;
             }
@@ -605,9 +624,12 @@
             .tablet-num {
                 display: none;
             }
-            .space_line {
-                height: 30px;
-                margin: 0 0 40px 0
+            .content > .article-wrap:nth-child(2) .space_line{
+                height: 15px;
+            }
+            .space_line{
+                height: 50px;
+                margin: 0 0 15px 0;
             }
             .tablet-swiper-container .swiper-slide {
                 line-height: 40px;
@@ -662,14 +684,12 @@
                 font-size: 18px;
                 line-height: 28px;
             }
-            .title {
-                font-size: 30px;
-            }
             .part_title>.part_list:not(:last-child) {
-                margin-bottom: 16px;
+                margin-bottom: 8px;
             }
             .subtitle {
                 font-size: 16px;
+                margin-bottom: 12px;
             }
             .literary {
                 font-size: 18px;
@@ -830,7 +850,7 @@
                     </ul>
                 </div>
             </div>
-            <div v-for="(item, index) in chapter">
+            <div class="article-wrap" v-for="(item, index) in chapter">
                 <div v-bind:id="item.id">
                     <hr class="space_line">
                     <!-- <div style="padding: 0 138px 0 100px;">
@@ -838,10 +858,7 @@
                     </div> -->
                     <div class="container">
                         <div class="title title_orange">{{item.title}}</div>
-                        <div class="subtitle">{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}
-                            <br>
-                            <br>
-                        </div>
+                        <div class="subtitle">{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}</div>
                         <span v-html="item.content"></span>
                     </div>
                 </div>
@@ -871,10 +888,10 @@
                 <div class="arrow">
                     <div class="arrow_lr">
                         <div class="arrow_left" v-on:click="preChapter();">
-                            <img class="org" src="img/Left-20.svg" alt="" width="20px">
+                            <img class="org" src="img/Left-20.svg" alt="" width="15px">
                         </div>
                         <div class="arrow_right" v-on:click="nextChapter();">
-                            <img class="org" src="img/Right-20.svg" alt="" width="20px">
+                            <img class="org" src="img/Right-20.svg" alt="" width="15px">
                         </div>
                     </div>
                 </div>
