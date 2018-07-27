@@ -90,6 +90,9 @@
         .video-wrap iframe {
             width: 100%;
             height: 22.5vw;
+            display: none;
+        }
+        .video-wrap .video-container .yt-video:nth-child(1){
             display: block;
         }
 
@@ -241,7 +244,7 @@
             width: auto !important;
         }
 
-        .set_num.active .swiper-wrapper .swiper-slide:not(:nth-child(-n+3)) {
+        .swiper-wrapper .swiper-slide:not(:nth-child(-n+3)) {
             color: rgba(255, 255, 255, 0.5);
             cursor: not-allowed;
         }
@@ -260,10 +263,10 @@
         .set_num.active .swiper-slide {
             height: 100%;
         }
-        .desktop-swiper-container > .swiper-wrapper > .swiper-slide:nth-child(-n+3) > span{
+        .swiper-wrapper > .swiper-slide:nth-child(-n+3) > span{
             cursor: pointer;
         }
-        .now-num {
+        .desktop-swiper-container .now-num {
             display: block;
             line-height: 160px;
             width: 100%;
@@ -449,22 +452,32 @@
             }
             .tablet-num .swiper-slide.slet{
                 display: flex;
+            }
+            .tablet-num .now-num{
                 width: 100%;
-                height: 100%!important;
+                height: 100%;
+                line-height: 84px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .tablet-num .swiper-slide.slet > span{
+                display: none;
             }
             .tablet-num.active {
                 height: 253px;
                 padding: 15px 0;
             }
             .tablet-num.active .swiper-slide{
-                display: flex;
+                display: flex !important;
             }
-            .tablet-num.active .swiper-slide.slet{
-                height:auto !important;
+            .tablet-num.active .swiper-slide > .now-num{
+                display: none;
+            }
+            .tablet-num.active .swiper-slide.slet > span{
+                display: flex;
             }
             .tablet-swiper-container .swiper-slide {
                 font-size: 23px;
-                display: flex;
                 justify-content: center;
                 align-items: center;
             }
@@ -690,15 +703,18 @@
             <div class="tablet-num">
                 <div class="swiper-container tablet-swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-on:click="changeChapter(index);" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9"><span>0{{ index+1 }}#</span></div>
+                        <div class="swiper-slide"  v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">
+                            <div class="now-num">0{{ index+1 }}#</div>
+                            <span v-on:click="changeChapter(index);">0{{ index+1 }}#</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mobile-num-show" v-on:click="changeChapter(index);">{{ currentItemsIndex+1 }}#</div>
+            <div class="mobile-num-show" v-on:click="changeChapter(index);">0{{ chapterIndex+1 }}#</div>
             <div class="mobile-num">
                 <div class="swiper-container mobile-swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9">0{{ index+1 }}#</div>
+                        <div class="swiper-slide" v-bind:class="{'slet': isCurrent(index)}" v-for="(item, index) in 9" v-on:click="changeChapter(index);">0{{ index+1 }}#</div>
                     </div>
                 </div>
             </div>
@@ -841,6 +857,8 @@
             <div class="video-wrap">
                 <div class="video-container d-flex align-items-center">
                     <iframe class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="arrow_num">
@@ -1191,9 +1209,11 @@
                 },
                 nextChapter: function () {
                     if (this.chapterIndex === 1) {
-                        $(".yt-video").attr("src","https://www.youtube.com/embed/qeqVvEF3n80");
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(3)").show();
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
+                        this.currentItemsIndex = 2;
                         $(".content").animate({
                             scrollTop: 0
                         }, 600);
@@ -1203,8 +1223,10 @@
                     }
 
                     if (this.chapterIndex === 0) {
-                        $(".yt-video").attr("src","https://www.youtube.com/embed/jR-OCLfPdoA");
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
+                        this.currentItemsIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
                             scrollTop: 0
@@ -1217,9 +1239,11 @@
                 },
                 preChapter: function () {
                     if (this.chapterIndex === 1) {
-                        $(".yt-video").attr("src","https://www.youtube.com/embed/me_3l-JBSGU?rel=0");
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(1)").show();
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
+                        this.currentItemsIndex = 0;
                         $(".content").animate({
                             scrollTop: 0
                         }, 600);
@@ -1229,9 +1253,11 @@
                     }
 
                     if (this.chapterIndex === 2) {
-                        $(".yt-video").attr("src","https://www.youtube.com/embed/jR-OCLfPdoA");
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
+                        this.currentItemsIndex = 1;
                         $(".content").animate({
                             scrollTop: 0
                         }, 600);
@@ -1246,6 +1272,8 @@
                 },
                 changeChapter: function (index) {
                     if (index == 0) {
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(1)").show();
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({
@@ -1257,6 +1285,8 @@
                     }
 
                     if (index == 1) {
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(2)").show();
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
@@ -1268,6 +1298,8 @@
                     }
 
                     if (index == 2) {
+                        $(".video-container .yt-video").hide();
+                        $(".video-container .yt-video:nth-child(3)").show();
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({
@@ -1312,6 +1344,9 @@
             $(".set_num").addClass("active");
            $(this).parent().find(".swiper-slide").hide();
         });
+        $(".tablet-num .now-num").click(function(){
+            $(".tablet-num").addClass("active");
+        });
     </script>
 
     <script>
@@ -1326,9 +1361,12 @@
             $(".nav_content").removeClass("active");
             $(".set_num").removeClass("active");
             $(".tablet-num").removeClass("active");
+            $(".tablet-num .swiper-slide.slet").css("height","100%");
         });
         $(".swiper-wrapper > .swiper-slide:nth-child(-n+3) > span").click(function(){
             $(".set_num").removeClass("active");
+            $(".tablet-num").removeClass("active");
+            $(".tablet-num .swiper-slide.slet").css("height","100%");
         });
         $(".content_right").click(function () {
             $(".nav_content").removeClass("active");
@@ -1367,7 +1405,6 @@
             }
         });
         $(".tablet-num").click(function () {
-            $(this).addClass("active");
             if ($(".tablet-num").hasClass("active")) {
                 var swiper = new Swiper('.tablet-swiper-container', {
                     direction: 'vertical',
