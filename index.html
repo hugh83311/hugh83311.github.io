@@ -29,6 +29,30 @@
         }
 
         /**************************************/
+        /* 入口頁 */
+        .entrance-page{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-image:url('img/entrance-background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center bottom;
+            top:0;
+            left: 0;
+            z-index: 9999;
+        }
+        .entrance-page::before{
+            content:'';
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+        .entrance-logo{
+            width: 300px;
+        }
         .more-btn{
             display: none;
         }
@@ -700,6 +724,11 @@
 </head>
 
 <body>
+    <div class="entrance-page d-flex justify-content-center align-items-center">
+        <div class="entrance-logo">
+            <img src="img/Cytu-Logo.svg" alt="">
+        </div>
+    </div>
     <!-- 選擇文章 -->
     <div class="more-btn"></div>
     <div class="list-menu">
@@ -752,11 +781,12 @@
         <div class="nav_section">
             <div class="nav">
                 <div class="navbar-icon">
-                    <img src="img/Menu.svg" alt="">
+                    <img class="desktop-icon" src="img/Menu-35.svg" alt="">
+                    <img class="mobile-icon" src="img/Menu-40.svg" alt="">
                 </div>
                 <div class="page_dot">
                     <ul>
-                        <a href="#top">
+                        <a href="#!">
                             <li class="active"></li>
                         </a>
                         <a v-for="(item, index) in chapter" v-bind:href="'#'+ item.id">
@@ -781,7 +811,7 @@
             </div>
             <div class="nav_content">
                 <div class="navbar-off">
-                    <img src="img/Menu.svg" alt="">
+                    <img src="img/Menu-40.svg" alt="">
                 </div>
                 <div class="search_box">
                     <input type="text" placeholder="即將推出功能">
@@ -839,9 +869,9 @@
                         <span>朝陽新聞第{{chinessChapterName}}集</span>
                     </div>
                     <div class="mobile-video">
-                        <iframe class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <iframe class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe id="mb-video-1" class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe id="mb-video-2" class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe id="mb-video-3" class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                     <ul class="part_title">
                         <li class="part_list" v-for="(item, index) in chapter">
@@ -879,9 +909,9 @@
             </div>
             <div class="video-wrap">
                 <div class="video-container d-flex align-items-center">
-                    <iframe class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <iframe class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <iframe class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe id="video-1" class="yt-video" src="https://www.youtube.com/embed/me_3l-JBSGU?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="video-2" class="yt-video" src="https://www.youtube.com/embed/jR-OCLfPdoA?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="video-3" class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="arrow_num">
@@ -914,11 +944,26 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
-    <!--圖片滑動-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.ripples-min.js"></script>
+
+
+    <script>
+        $(".entrance-page").ripples({
+            imageUrl: null,
+            resolution: 256,
+            dropRadius: 20,
+            perturbance: 0.04,
+            interactive: true,
+            crossOrigin: ''
+        });
+        $(".entrance-page").click(function(){
+            $(this).fadeOut(2000);
+        })
+    </script>
 
 
     <!-- Vue -->
@@ -1106,13 +1151,13 @@
                         type: '採訪報導',
                         image: 'img/01/01-3.jpg',
                         content: `<p class="literary">
-                    〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
-                    <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
-                    <br><br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
-                    <br><br>〈傳播系師長─陳勇瑞老師〉她會不斷堅持自己的理想，然後去找到一個辦法，然後去完成她的作品。
+                    （記者旁白）愛漂亮不只是女性的專利，男性為了追求完美，也開始為自己的皮膚保養，但是天天保養的你，觀念是正確的嗎？
+                    <br><br>民眾：保濕，因為有的時候洗完臉皮膚會很乾。就基本的保養。就幫人卸妝跟化妝用的。
+                    <br><br>專家：其實一罐化妝水裡面百分之九十五都只是水而已，然後它當然會有防腐的成分，然後還有些香味，再來就是你可能會有微量的有效成分放進去。
+                    <br><br>（記者旁白）但是化妝水一瓶的價格都不便宜，大約300-1000不等，其中最貴的1ml就要五塊錢，相當於一瓶水的35倍。
                 </p>
                 <p class="literary title_orange">
-                    <br>邁向成功之路&nbsp;&nbsp;李宜珊：惟有堅持
+                    <br>保濕效果短暫&nbsp;&nbsp;易帶走臉上水分
                 </p>
                 <p class="literary">
                     〈記者旁白〉成功的方法沒有捷徑，只有堅持。李宜珊學姊在就學時期就不斷朝著導演之路邁進，在畢業作品「下一秒。無限」，獲得許多評審的肯定，但是畢業的李宜珊學姊投入傳播圈，卻選擇了剪輯這一條自己很不擅長的路。
@@ -1123,12 +1168,18 @@
                     <br>美感培養&nbsp;&nbsp;范家綺：由日常生活中累積
                 </p>
                 <p class="literary">
-                    〈記者旁白〉范家綺學姊則是就學時期就專注在美術上面，更在畢業製作「少年不戴花」擔任美術，獲得一致好評，而學姊認為，美感的培養是可以在日常生活中記錄累積下來的。
-                    <br><br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
-		            <br><br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
+                    專家：化妝水在表皮有濕濕的感覺，濕濕的等一下就蒸發了，所以你說化妝水有沒有保濕的效果，它其實非常非常的短暫。一直擦化妝水的話，這樣反而會讓你的皮膚變得更乾燥，因為你讓他有更多的機會把臉上原本的水分帶走，因為水分本來就是會蒸發的。
+                    <br><br>（記者旁白）市面上販售多種化妝水，有的業者宣稱成分是溫泉水或海洋水，使用在臉部上可溫和皮膚，還可以抗老化，就連皮膚過敏也可以使用。
+		            <br><br>專家：以抗老抗皺來講的話，這種更需要長時間才看得出效果的，其實以化妝水來講沒有那麼容易達成。
 	            </p>
+	            <p class="literary title_orange">
+	                <br>依膚質選擇產品&nbsp;&nbsp;養成正確保養之道
+                </p>
+                <p class="literary">
+                    （記者旁白）如果冬天要保濕，專家建議直接使用多分子玻尿酸來取代化妝水，另外，也要依照自己的膚質狀況選擇產品，而不是隨便聽信包裝上的效果，先矯正自己的保養觀念，就可以踏上正確的保養之道。
+                </p>
                 <p class="literary reporter">
-                    <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
+                    <br>記者&nbsp;曾芳子、吳淑汝、陳怡君&nbsp;採訪報導
                 </p>`
                     },
                     {
@@ -1232,10 +1283,14 @@
                 },
                 nextChapter: function () {
                     if (this.chapterIndex === 1) {
-                        $(".video-container .yt-video").hide();
-                        $(".video-container .yt-video:nth-child(3)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(3)").css("display","block");
+                        $('#video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         $(".mobile-video .yt-video").hide();
-                        $(".mobile-video .yt-video:nth-child(3)").css("display","block")
+                        $(".mobile-video .yt-video:nth-child(3)").css("display","block");
+                        $('#mb-video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         this.currentItemsIndex = 2;
@@ -1248,10 +1303,14 @@
                     }
 
                     if (this.chapterIndex === 0) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(2)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(2)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(2)").css("display","block");
+                        $('#video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(2)").css("display","block");
+                        $('#mb-video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 1;
                         this.currentItemsIndex = 1;
                         this.chapter = this.secondChapter;
@@ -1266,10 +1325,14 @@
                 },
                 preChapter: function () {
                     if (this.chapterIndex === 1) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(1)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(1)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(1)").css("display","block");
+                        $('#video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(1)").css("display","block");
+                        $('#mb-video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         this.currentItemsIndex = 0;
@@ -1282,10 +1345,14 @@
                     }
 
                     if (this.chapterIndex === 2) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(2)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(2)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(2)").css("display","block");
+                        $('#video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(2)").css("display","block");
+                        $('#mb-video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         this.currentItemsIndex = 1;
@@ -1303,10 +1370,14 @@
                 },
                 changeChapter: function (index) {
                     if (index == 0) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(1)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(1)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(1)").css("display","block");
+                        $('#video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(1)").css("display","block");
+                        $('#mb-video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 0;
                         this.chapter = this.firstChapter;
                         $(".content").animate({
@@ -1318,10 +1389,14 @@
                     }
 
                     if (index == 1) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(2)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(2)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(2)").css("display","block");
+                        $('#video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(2)").css("display","block");
+                        $('#mb-video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
                         $(".content").animate({
@@ -1333,10 +1408,14 @@
                     }
 
                     if (index == 2) {
-                        $(".video-container .yt-video").css("display","none")
-                        $(".video-container .yt-video:nth-child(3)").css("display","block")
-                        $(".mobile-video .yt-video").css("display","none")
-                        $(".mobile-video .yt-video:nth-child(3)").css("display","block")
+                        $(".video-container .yt-video").css("display","none");
+                        $(".video-container .yt-video:nth-child(3)").css("display","block");
+                        $('#video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $(".mobile-video .yt-video").css("display","none");
+                        $(".mobile-video .yt-video:nth-child(3)").css("display","block");
+                        $('#mb-video-1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        $('#mb-video-2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 2;
                         this.chapter = this.thirdChapter;
                         $(".content").animate({
@@ -1365,62 +1444,6 @@
 
             }
         })
-    </script>
-
-    <script>
-        // list-menu show/hide
-        $(".more-btn").click(function () {
-            $(this).toggleClass("open");
-            $(".list-menu").fadeToggle("slow").css("display", "flex");
-        });
-        $(".list-menu a").click(function () {
-            $(".list-menu").fadeOut("slow");
-            $(".more-btn").removeClass("open");
-        });
-        $(".now-num").click(function(){
-            $(".set_num").addClass("active");
-           $(this).parent().find(".swiper-slide").hide();
-        });
-        $(".tablet-num .now-num").click(function(){
-            $(".tablet-num").addClass("active");
-        });
-    </script>
-
-    <script>
-        // navbar
-        $(".navbar-icon").click(function () {
-            $(".nav_content").toggleClass("active");
-        });
-        $(".navbar-off").click(function () {
-            $(".nav_content").toggleClass("active");
-        });
-        $(".content").click(function () {
-            $(".nav_content").removeClass("active");
-            $(".set_num").removeClass("active");
-            $(".tablet-num").removeClass("active");
-            $(".tablet-num .swiper-slide.slet").css("height","100%");
-        });
-        $(".swiper-wrapper > .swiper-slide:nth-child(-n+3) > span").click(function(){
-            $(".set_num").removeClass("active");
-            $(".tablet-num").removeClass("active");
-            $(".tablet-num .swiper-slide.slet").css("height","100%");
-        });
-        $(".content_right").click(function () {
-            $(".nav_content").removeClass("active");
-
-        });
-    </script>
-
-    <script>
-        //page_dot
-        $(".page_dot li").click(function () {
-            if ($(this).hasClass("active")) {
-                // $(this).removeClass("active");
-            } else {
-                $(".page_dot li").removeClass("active");
-                $(this).addClass("active");
-            }
-        });
     </script>
 
     <script>
@@ -1475,58 +1498,74 @@
             }
         })
     </script>
+    <!-- 點擊集數跳出 -->
+    <script>
+        $(".swiper-wrapper > .swiper-slide:nth-child(-n+3) > span").click(function(){
+            $(".set_num").removeClass("active");
+            $(".tablet-num").removeClass("active");
+            $(".tablet-num .swiper-slide.slet").css("height","100%");
+        });
+    </script>
 
     <script>
+
+        var sectionA_offsetTop = Math.floor($(".title_section").outerHeight(true));
+        var sectionB_offsetTop = sectionA_offsetTop + $("#A").outerHeight(true);
+        var sectionC_offsetTop = sectionB_offsetTop + $("#B").outerHeight(true);
         $(".content").scroll(function () {
-            clearTimeout($.data(this, 'scrollTimer'));
-            $.data(this, 'scrollTimer', setTimeout(function () {
-                var content_scroll = $(".content").scrollTop();
-                var container_h = $(".container").outerHeight() - 100;
-                var first_news_h = $("#A").outerHeight();
-                var second_news_h = $("#B").outerHeight();
-                var block_A = container_h + first_news_h;
-                var block_B = block_A + second_news_h;
-                var img_h = $(".video-wrap").outerHeight();
-                if (content_scroll < container_h) {
-                    $(".page_dot li").removeClass("active");
-                    $(".list-menu a").removeClass("active");
-                    $(".page_dot > ul > a:nth-child(1) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
-                }
-                if (content_scroll > container_h) {
-                    $(".page_dot li").removeClass("active");
-                    $(".list-menu a").removeClass("active");
-                    $(".page_dot > ul > a:nth-child(2) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
-                } else {}
-                if (content_scroll > block_A) {
-                    $(".content_right").stop().animate({
-                        scrollTop: img_h
-                    }, 600);
-                    $(".page_dot li").removeClass("active");
-                    $(".list-menu a").removeClass("active");
-                    $(".page_dot > ul > a:nth-child(3) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
-                } else {
-                    $(".content_right").stop().animate({
-                        scrollTop: -img_h
-                    }, 600);
-                }
-                if (content_scroll > block_B) {
-                    $(".content_right").stop().animate({
-                        scrollTop: img_h * 2
-                    }, 600);
-                    $(".page_dot li").removeClass("active");
-                    $(".list-menu a").removeClass("active");
-                    $(".page_dot > ul > a:nth-child(4) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
-                }
-            }, 100));
+            var content_scroll = $(".content").scrollTop();
+            if(content_scroll < sectionA_offsetTop){
+                $(".page_dot > ul > a:nth-child(1) li").addClass("active");
+                $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
+            }else{
+                $(".page_dot > ul > a:nth-child(1) li").removeClass("active");
+                $(".list-menu > ul > li:nth-child(1) > a").removeClass("active");
+            }
+            if (content_scroll >= sectionA_offsetTop && content_scroll < sectionB_offsetTop ) {
+                $(".page_dot > ul > a:nth-child(2) li").addClass("active");
+                $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
+            }else{
+                $(".page_dot > ul > a:nth-child(2) li").removeClass("active");
+                $(".list-menu > ul > li:nth-child(2) > a").removeClass("active");
+            }
+            if(content_scroll >= sectionB_offsetTop && content_scroll < sectionC_offsetTop){
+                $(".page_dot > ul > a:nth-child(3) li").addClass("active");
+                $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
+            }else{
+                $(".page_dot > ul > a:nth-child(3) li").removeClass("active");
+                $(".list-menu > ul > li:nth-child(3) > a").removeClass("active");
+            }
+            if(content_scroll >= sectionC_offsetTop){
+                $(".page_dot > ul > a:nth-child(4) li").addClass("active");
+                $(".list-menu > ul > li:nth-child(4) > a").addClass("active");
+            }else{
+                $(".page_dot > ul > a:nth-child(4) li").removeClass("active");
+                $(".list-menu > ul > li:nth-child(4) > a").removeClass("active");
+            }
         });
+
         $(".page_dot > ul > a:first-child").on('click', function (e) {
             e.preventDefault();
             $(".content").animate({
                 scrollTop: 0
+            }, 600);
+        });
+        $(".page_dot > ul > a:nth-child(2)").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: sectionA_offsetTop
+            }, 600);
+        });
+        $(".page_dot > ul > a:nth-child(3)").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: sectionB_offsetTop
+            }, 600);
+        });
+        $(".page_dot > ul > a:nth-child(4)").on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: sectionC_offsetTop
             }, 600);
         });
     </script>
