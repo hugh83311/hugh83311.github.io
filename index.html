@@ -949,7 +949,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
-    <script src="js/common.js"></script>
     <script src="js/jquery.ripples-min.js"></script>
 
 
@@ -964,8 +963,12 @@
         });
         $(".entrance-page").click(function(){
             $(this).fadeOut(2000);
+            setTimeout(function(){
+                $("div").remove(".entrance-page");
+            },2000);
         })
     </script>
+
 
 
     <!-- Vue -->
@@ -1447,6 +1450,10 @@
             }
         })
     </script>
+
+    <script src="js/common.js"></script>
+
+
 
     <script>
         //集數

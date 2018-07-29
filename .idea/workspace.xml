@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c31af30-902f-4d12-a7cc-efe1013d6890" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/smooth-scroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/directory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Menu.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Thumbs.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-01.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-02.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-02.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-03.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-04.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-04.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-05.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-05.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-06.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-06.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-07.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-07.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-08.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-08.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +50,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="963" column="32" selection-start-line="963" selection-start-column="32" selection-end-line="963" selection-end-column="32" />
+            <state relative-caret-position="707">
+              <caret line="966" column="33" selection-start-line="966" selection-start-column="33" selection-end-line="966" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#22452#22458#0" expanded="true" />
@@ -97,8 +83,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="834">
+              <caret line="48" column="3" lean-forward="true" selection-end-line="48" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -165,9 +151,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>content</find>
-      <find>.navbar-off</find>
-      <find>.nav img</find>
+      <find />
       <find>.top</find>
       <find>.fb</find>
       <find>.news-img</find>
@@ -189,12 +173,14 @@
       <find>全部</find>
       <find>.content</find>
       <find>navbar</find>
-      <find>.page_dot &gt; ul &gt; a &gt; li</find>
+      <find />
       <find>stop</find>
       <find>.navbar</find>
       <find>Me</find>
       <find>$(&quot;.page_dot</find>
+      <find>.navbar-icon</find>
       <find>Menu</find>
+      <find>navbar-icon</find>
     </findStrings>
     <replaceStrings>
       <replace>.desktop-select-type</replace>
@@ -224,6 +210,7 @@
         <option value="$PROJECT_DIR$/nav.js" />
         <option value="$PROJECT_DIR$/common.js" />
         <option value="$PROJECT_DIR$/js/smooth-scroll.js" />
+        <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -332,12 +319,12 @@
       <workItem from="1532579723909" duration="25552000" />
       <workItem from="1532624760045" duration="11777000" />
       <workItem from="1532711836740" duration="274000" />
-      <workItem from="1532867967047" duration="26629000" />
+      <workItem from="1532867967047" duration="27712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117428000" />
+    <option name="totallyTimeSpent" value="118511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -557,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/news-01.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1309">
-          <caret line="139" column="54" lean-forward="true" selection-start-line="139" selection-start-column="54" selection-end-line="139" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news-04.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -577,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/smooth-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -591,10 +564,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/news-01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1309">
+          <caret line="139" column="54" lean-forward="true" selection-start-line="139" selection-start-column="54" selection-end-line="139" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="834">
+          <caret line="48" column="3" lean-forward="true" selection-end-line="48" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="963" column="32" selection-start-line="963" selection-start-column="32" selection-end-line="963" selection-end-column="32" />
+        <state relative-caret-position="707">
+          <caret line="966" column="33" selection-start-line="966" selection-start-column="33" selection-end-line="966" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#22452#22458#0" expanded="true" />

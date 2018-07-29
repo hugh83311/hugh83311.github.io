@@ -1,4 +1,4 @@
-<!-- 寬度改變時關閉選單 -->
+// 寬度改變時關閉選單
 $(window).resize(function(){
     $(".nav_content").removeClass("active").css("display","none");
     if($(".more-btn").hasClass("open")){
@@ -28,7 +28,7 @@ $(".tablet-num .now-num").click(function(){
 
 // navbar
 $(".navbar-icon").click(function () {
-    $(".nav_content").css("display","block")
+    $(".nav_content").css("display","block");
     setTimeout(function(){
         $(".nav_content").toggleClass("active");
     },200);
