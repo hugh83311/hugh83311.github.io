@@ -1,10 +1,8 @@
 // 寬度改變時關閉選單
 $(window).resize(function(){
     $(".nav_content").removeClass("active");
-    if($(".more-btn").hasClass("open")){
-        $(".more-btn").removeClass("open");
-        $(".list-menu").css("display","none");
-    }
+    $(".more-btn").removeClass("open");
+    $(".list-menu").removeClass("show");
 });
 
 
@@ -12,10 +10,6 @@ $(window).resize(function(){
 $(".more-btn").click(function () {
     $(this).toggleClass("open");
     $(".list-menu").toggleClass("show");
-});
-$(".list-menu a").click(function () {
-    $(".list-menu").removeClass("show");
-    $(".more-btn").removeClass("open");
 });
 $(".now-num").click(function(){
     $(".set_num").addClass("active");
