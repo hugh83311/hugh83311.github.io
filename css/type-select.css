@@ -86,7 +86,7 @@
 .type-item.active{
     color:#FFFF00;
 }
-@media screen and (max-width:870px){
+@media screen and (max-width:940px){
     .desktop-select-type > .type > li{
         font-size: 18px;
     }
@@ -94,7 +94,14 @@
         font-size: 18px;
     }
 }
-
+@media screen and (max-width:800px){
+    .desktop-select-type > .type > li{
+        font-size: 16px;
+    }
+    .desktop-select-type > .type > li::before{
+        font-size: 16px;
+    }
+}
 @media screen and (max-width: 767px){
     .desktop-select-type{
         display: none;
