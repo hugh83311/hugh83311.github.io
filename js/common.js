@@ -14,7 +14,7 @@ $(".more-btn").click(function () {
     $(".list-menu").toggleClass("show");
 });
 $(".list-menu a").click(function () {
-    $(".list-menu").fadeOut("slow");
+    $(".list-menu").removeClass("show");
     $(".more-btn").removeClass("open");
 });
 $(".now-num").click(function(){
