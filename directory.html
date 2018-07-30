@@ -29,17 +29,18 @@
 
         .content-wrap {
             padding-left: 100px;
-        }
-
-        .content {
-            max-width: 1635px;
-            margin: 0 auto 0 auto;
             height: calc(100vh - 144px);
             overflow-y: scroll;
         }
 
+        .content {
+            max-width: 1761px;
+            margin: 0 auto 0 auto;
+            padding: 0 68px;
+        }
+
         .news-wrap {
-            margin: 0 -20px;
+            margin: 0 -25px;
         }
 
         .news-item {
@@ -140,31 +141,45 @@
             display: none;
         }
 
-        @media screen and (max-width: 1740px) {
+        @media screen and (max-width: 1880px) {
             .content {
-                max-width: 1290px;
+                max-width: 1426px;
             }
         }
 
-        @media screen and (max-width: 1465px) {
+        @media screen and (max-width: 1545px) {
             .content {
-                max-width: 955px;
+                max-width: 1091px;
             }
         }
-
-        @media screen and (max-width: 1130px) {
-            .content {
-                max-width: 620px;
+        @media screen and (max-width: 1250px){
+            .content-wrap::-webkit-scrollbar {
+                display: none;
             }
         }
-
+        @media screen and (max-width: 1205px) {
+            .content {
+                max-width: 650px;
+                padding: 0 15px;
+            }
+        }
         @media screen and (max-width:767px) {
+            body{
+                padding-top: 40px;
+            }
+            .desktop-select-type{
+                display: none;
+            }
             .content-wrap {
                 padding-left: 0;
+                height: calc(100vh - 80px);
+                padding-bottom: 60px;
+                
             }
             .content {
                 max-width: 100%;
                 margin-left: 0;
+                margin-top: 15px;
             }
             .nav {
                 width: 100%;
@@ -185,11 +200,6 @@
             }
             .navbar-off img {
                 width: 25px;
-            }
-            .content {
-                padding: 0 15px;
-                margin-top: 55px;
-                height: calc(100vh - 110px);
             }
             .news-wrap {
                 margin: 0;
@@ -235,7 +245,7 @@
             .mobile_hr {
                 display: block;
                 margin: 0 0 10px 0;
-                border-color: rgba(130, 210, 255, 0.2);
+                border-top: 2px solid #5AC8FF;
             }
         }
     </style>
@@ -325,25 +335,25 @@
         <div class="desktop-select-type">
             <ul class="type">
                 <li class="active">
-                    <a href="#!">&nbsp;全部</a>
+                    <a href="#!">全部</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;校園</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">校園</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;體育</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">體育</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;藝文</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">藝文</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;科技</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">科技</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;醫藥</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">醫藥</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;地方文化</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">地方文化</a>
                 </li>
             </ul>
         </div>
@@ -390,6 +400,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-07.html">
@@ -404,6 +415,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-06.html">
@@ -418,6 +430,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-05.html">
@@ -432,6 +445,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-04.html">
@@ -446,6 +460,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-03.html">
@@ -460,6 +475,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-02.html">
@@ -474,6 +490,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <hr class="mobile_hr">
                     <a href="news-01.html">
@@ -488,8 +505,8 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
-                    <div class="clear"></div>
                 </div>
             </div>
         </div>
@@ -543,13 +560,13 @@
     <script>
         $(".back-top").on('click', function (e) {
             e.preventDefault();
-            $(".content").animate({
+            $(".content-wrap").animate({
                 scrollTop: 0
             }, 600);
         });
         $(".mobile-backtop").on('click', function (e) {
             e.preventDefault();
-            $(".content").animate({
+            $(".content-wrap").animate({
                 scrollTop: 0
             }, 600);
         });
