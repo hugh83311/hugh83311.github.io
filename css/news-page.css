@@ -11,7 +11,7 @@ body {
 .content {
     max-width: 960px;
     margin: 0 auto 0 auto;
-    padding: 0 68px;
+    padding: 0 30px;
 }
 
 .news-wrap {
@@ -59,11 +59,6 @@ body {
 @media screen and (max-width: 1250px){
     .content-wrap::-webkit-scrollbar {
         display: none;
-    }
-}
-@media screen and (max-width: 940px) {
-    .content {
-        margin: 0 auto 0 auto;
     }
 }
 

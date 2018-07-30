@@ -477,6 +477,9 @@
                 box-sizing: border-box;
                 text-align: justify
             }
+            .list-menu.show{
+                display: flex;
+            }
             .list-menu li:not(:last-child) {
                 margin-bottom: 25px;
             }
@@ -595,21 +598,14 @@
     </div> -->
     <!-- 選擇文章 -->
     <div class="more-btn"></div>
-    <div class="list-menu">
-        <ul>
-            <li>
-                <a class="active" href="#A">校園新增133、158公車 可抵高鐵站</a>
-            </li>
-            <li>
-                <a href="#B">物價上漲壓力 學生餐廳撐不住</a>
-            </li>
-            <li>
-                <a href="#C">基地台深夜發出噪音 造成居民睡眠障礙</a>
-            </li>
-        </ul>
-    </div>
-
     <div class="all" id="app">
+        <div class="list-menu">
+            <ul>
+                <li v-for="(item, index) in chapter">
+                    <a v-bind:href="'#'+ item.id">{{item.title}}</a>
+                </li>
+            </ul>
+        </div>
         <div class="tablet-btn">
             <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();">
                 <img class="org" src="img/Left-20.svg" alt="">
@@ -1360,31 +1356,29 @@
             var content_scroll = $(".content").scrollTop();
             if (content_scroll < sectionA_offsetTop) {
                 $(".page_dot > ul > a:nth-child(1) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
             } else {
                 $(".page_dot > ul > a:nth-child(1) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(1) > a").removeClass("active");
             }
             if (content_scroll >= sectionA_offsetTop && content_scroll < sectionB_offsetTop) {
                 $(".page_dot > ul > a:nth-child(2) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
+                $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
             } else {
                 $(".page_dot > ul > a:nth-child(2) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(2) > a").removeClass("active");
+                $(".list-menu > ul > li:nth-child(1) > a").removeClass("active");
             }
             if (content_scroll >= sectionB_offsetTop && content_scroll < sectionC_offsetTop) {
                 $(".page_dot > ul > a:nth-child(3) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
+                $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
             } else {
                 $(".page_dot > ul > a:nth-child(3) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(3) > a").removeClass("active");
+                $(".list-menu > ul > li:nth-child(2) > a").removeClass("active");
             }
             if (content_scroll >= sectionC_offsetTop) {
                 $(".page_dot > ul > a:nth-child(4) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(4) > a").addClass("active");
+                $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
             } else {
                 $(".page_dot > ul > a:nth-child(4) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(4) > a").removeClass("active");
+                $(".list-menu > ul > li:nth-child(3) > a").removeClass("active");
             }
         });
 

@@ -11,7 +11,7 @@ $(window).resize(function(){
 // list-menu show/hide
 $(".more-btn").click(function () {
     $(this).toggleClass("open");
-    $(".list-menu").fadeToggle("slow").css("display", "flex");
+    $(".list-menu").toggleClass("show");
 });
 $(".list-menu a").click(function () {
     $(".list-menu").fadeOut("slow");

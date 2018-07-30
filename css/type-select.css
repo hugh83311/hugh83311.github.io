@@ -86,18 +86,20 @@
 .type-item.active{
     color:#FFFF00;
 }
-@media screen and (max-width:890px){
+@media screen and (max-width:1250px){
     .desktop-select-type{
         padding-left: 0;
     }
     .desktop-select-type > .type{
         text-align: center;
     }
+}
+@media screen and (max-width:890px){
     .desktop-select-type > .type > li{
-        font-size: 17px;
+        font-size: 20px;
     }
     .desktop-select-type > .type > li::before{
-        font-size: 17px;
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 767px){
