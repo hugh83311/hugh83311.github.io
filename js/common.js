@@ -1,6 +1,6 @@
 // 寬度改變時關閉選單
 $(window).resize(function(){
-    $(".nav_content").removeClass("active").css("display","none");
+    $(".nav_content").removeClass("active");
     if($(".more-btn").hasClass("open")){
         $(".more-btn").removeClass("open");
         $(".list-menu").css("display","none");
@@ -28,10 +28,7 @@ $(".tablet-num .now-num").click(function(){
 
 // navbar
 $(".navbar-icon").click(function () {
-    $(".nav_content").css("display","block");
-    setTimeout(function(){
-        $(".nav_content").toggleClass("active");
-    },200);
+    $(".nav_content").toggleClass("active");
 });
 $(".navbar-off").click(function () {
     $(".nav_content").toggleClass("active");

@@ -203,7 +203,6 @@ p{
     box-sizing: border-box;
     padding: 60px 70px 0 70px;
     z-index: 4;
-    transition:0.5s linear;
 }
 .nav_content.active{
     left: 100px;

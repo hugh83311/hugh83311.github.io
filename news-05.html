@@ -1,112 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>朝陽新聞台</title>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
-    <link rel="bookmark" href="img/favicon.ico"/>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="bookmark" href="img/favicon.ico" />
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/type-select.css">
 
     <style>
-        body{
+        body {
             padding-top: 144px;
         }
-        .content-wrap{
+
+        .content-wrap {
             padding-left: 100px;
         }
-        .content-wrap{
+
+        .content-wrap {
             overflow-y: scroll;
         }
-        .content{
+
+        .content {
             max-width: 960px;
-            margin:0 auto 0 auto;
+            margin: 0 auto 0 auto;
             height: calc(100vh - 144px);
             padding: 0 15px;
         }
-        .news-wrap{
+
+        .news-wrap {
             padding-bottom: 100px;
         }
-        .news-content{
-            color:#5A5A5A;
+
+        .news-content {
+            color: #5A5A5A;
             text-align: justify;
         }
-        .news-pic{
+
+        .news-pic {
             margin-top: 40px;
             margin-bottom: 40px;
         }
-        .title{
+
+        .title {
             font-size: 36px;
             line-height: 48px;
             font-weight: bold;
             margin-bottom: 10px;
-            color:#FF6400;
+            color: #FF6400;
         }
+
         .title_orange {
             color: #FF6400;
             margin-bottom: 10px;
         }
-        .subtitle{
+
+        .subtitle {
             font-size: 18px;
             line-height: 24px;
             margin-bottom: 40px;
-            color:#FFAA00;
+            color: #FFAA00;
         }
-        .article{
+
+        .article {
             font-size: 24px;
             text-align: justify;
         }
+
         .reporter {
             font-weight: bold;
         }
-        @media screen and (max-width: 880px){
-            .content{
-                margin:140px auto 0 auto;
+
+        @media screen and (max-width: 880px) {
+            .content {
+                margin: 140px auto 0 auto;
                 height: calc(100vh - 172px);
             }
         }
-        @media screen and (max-width:767px){
-            body{
+
+        @media screen and (max-width:767px) {
+            body {
                 padding-top: 0;
             }
             .content-wrap::-webkit-scrollbar {
                 display: none;
             }
-            .news-wrap{
-                padding: 20px 0 50px 0;
+            .news-wrap {
+                padding: 20px 0 60px 0;
             }
-            .content-wrap{
+            .content-wrap {
                 padding-left: 0;
             }
-            .content{
-                margin:40px auto 0 auto;
+            .content {
+                margin: 40px auto 0 auto;
                 height: calc(100vh - 80px);
             }
-            .title{
+            .title {
                 font-size: 30px;
                 line-height: 40px;
             }
-            .subtitle{
+            .subtitle {
                 font-size: 16px;
                 margin-bottom: 12px;
             }
-            .article{
+            .article {
                 font-size: 18px;
                 line-height: 30px;
             }
-            .news-pic{
+            .news-pic {
                 margin-top: 0;
                 margin-bottom: 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="main-wrap">
         <div class="mobile-backtop">
@@ -155,22 +172,34 @@
                         <p class="active">‧&nbsp;全部</p>
                     </a>
                     <a href="#!">
-                        <p><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;校園</span></p>
+                        <p>
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;校園</span>
+                        </p>
                     </a>
                     <a href="#!">
-                        <p><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;體育</span></p>
+                        <p>
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;體育</span>
+                        </p>
                     </a>
                     <a href="#!">
-                        <p><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;藝文</span></p>
+                        <p>
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;藝文</span>
+                        </p>
                     </a>
                     <a href="#!">
-                        <p><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;科技</span></p>
+                        <p>
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;科技</span>
+                        </p>
                     </a>
                     <a href="#!">
-                        <p><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;醫藥</span></p>
+                        <p>
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;醫藥</span>
+                        </p>
                     </a>
                     <a href="#!">
-                        <p class="type_select_last"><span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;地方文化</span></p>
+                        <p class="type_select_last">
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;地方文化</span>
+                        </p>
                     </a>
                 </div>
                 <hr class="line_w">
@@ -190,13 +219,27 @@
         </div>
         <div class="desktop-select-type">
             <ul class="type">
-                <li class="active"><a href="directory.html">&nbsp;全部</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;校園</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;體育</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;藝文</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;科技</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;醫藥</a></li>
-                <li><a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;地方文化</a></li>
+                <li class="active">
+                    <a href="directory.html">&nbsp;全部</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;校園</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;體育</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;藝文</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;科技</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;醫藥</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;地方文化</a>
+                </li>
             </ul>
         </div>
         <!-- Swiper -->
@@ -204,7 +247,9 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="type-item active"><a href="directory.html">全部</a></div>
+                        <div class="type-item active">
+                            <a href="directory.html">全部</a>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">校園</div>
@@ -238,25 +283,32 @@
                         <div class="subtitle">朝陽新聞台 2015/01/01 採訪報導</div>
                         <p class="article">
                             〈記者旁白〉現在講台前的就是我們傳播系今年的兩位傑出校友，李宜珊及范家綺學姊，她們回到學校跟傳播系的師長及學弟妹，分享她們在金鐘得到的榮耀及光彩，還有背後那不為人知的辛苦歷程。
-                            <br><br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
-                            <br><br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
-                            <br><br>〈傳播系師長─陳勇瑞老師〉她會不斷堅持自己的理想，然後去找到一個辦法，然後去完成她的作品。
+                            <br>
+                            <br>〈傳播系傑出校友─李宜珊學姊〉我在讀大學的時候對剪接是完全沒興趣的，一點興趣都沒有，所以對於我未來，我未來是就讀研究所，所以對於我未來研究所畢業後做剪接，我自己也覺得很驚訝。挫折感的來源，我想應該是會伴隨著，一個無限期的轉檔，跟無限大量的素材，就是無限期的轉檔跟素材都會伴隨著，我們時間很趕，我們預算不太夠，這兩句話，這些東西，應該說它是，也不能說是挫折或許是沮喪，你有很多沮喪的地方是從這裡來的，但我覺得這些東西它是可以被消化的，就像是我都會覺得，剪接的過程都是在修行，它在考驗你這個人的修身養性修得好不好。
+                            <br>
+                            <br>〈傳播系師長─鄭淑慧老師〉她們對於自己有興趣的領域，就會非常的專注。
+                            <br>
+                            <br>〈傳播系師長─陳勇瑞老師〉她會不斷堅持自己的理想，然後去找到一個辦法，然後去完成她的作品。
                         </p>
                         <p class="article title_orange">
                             <br>邁向成功之路&nbsp;&nbsp;李宜珊：惟有堅持
                         </p>
                         <p class="article">
                             〈記者旁白〉成功的方法沒有捷徑，只有堅持。李宜珊學姊在就學時期就不斷朝著導演之路邁進，在畢業作品「下一秒。無限」，獲得許多評審的肯定，但是畢業的李宜珊學姊投入傳播圈，卻選擇了剪輯這一條自己很不擅長的路。
-                            <br><br>〈傳播系傑出校友─李宜珊學姊〉我只要在剪接的過程跟那個時間，我都會睡不好，因為隨時都會擔心檔案轉壞掉，或是要交片的那天檔案沒有辦法輸出，就是各種各種麻煩的問題，都會在後製的時候出現，所以其實我每天都在剪接的狀態時候都很提心吊膽，可是做每個工作都是這樣，就像是今天一個藝術家，他也會面臨他創作枯竭的時候，他也必須解決他這樣的恐懼，才有辦法去生出下一個作品，所以面對恐懼最好的辦法就是跟它共存，沒有別的辦法。
-                            <br><br>〈傳播系師長─安碧芸老師〉我覺得她一直去衝撞，一直去挑戰自己，然後不安於現狀，或者是不滿於現狀，我覺得這是她能夠不斷進步很重要的因素。
+                            <br>
+                            <br>〈傳播系傑出校友─李宜珊學姊〉我只要在剪接的過程跟那個時間，我都會睡不好，因為隨時都會擔心檔案轉壞掉，或是要交片的那天檔案沒有辦法輸出，就是各種各種麻煩的問題，都會在後製的時候出現，所以其實我每天都在剪接的狀態時候都很提心吊膽，可是做每個工作都是這樣，就像是今天一個藝術家，他也會面臨他創作枯竭的時候，他也必須解決他這樣的恐懼，才有辦法去生出下一個作品，所以面對恐懼最好的辦法就是跟它共存，沒有別的辦法。
+                            <br>
+                            <br>〈傳播系師長─安碧芸老師〉我覺得她一直去衝撞，一直去挑戰自己，然後不安於現狀，或者是不滿於現狀，我覺得這是她能夠不斷進步很重要的因素。
                         </p>
                         <p class="article title_orange">
                             <br>美感培養&nbsp;&nbsp;范家綺：由日常生活中累積
                         </p>
                         <p class="article">
                             〈記者旁白〉范家綺學姊則是就學時期就專注在美術上面，更在畢業製作「少年不戴花」擔任美術，獲得一致好評，而學姊認為，美感的培養是可以在日常生活中記錄累積下來的。
-                            <br><br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
-                            <br><br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
+                            <br>
+                            <br>〈傳播系傑出校友─范家綺學姊〉美術成功在於是，你看了這部片你不會，它的存在感不會搶過這部片，但是你同時可以感受，就是美術算是，你可以讓觀眾更進入這個劇情。平常你感受到什麼可以把它記錄下來，這樣也可以成為你培養美感的一個方法。
+                            <br>
+                            <br>〈記者旁白〉金鐘獎對許多傳媒人都是一個肯定的指標，兩位學姊在第四十九屆金鐘獎成功拿下獎座，但是得獎對她們來說不是一個結束，而是一個嶄新的開始，兩位學姊未來依舊會堅持自己的初衷，在夢想的舞台上繼續發光發熱。
                         </p>
                         <p class="article reporter reporter_last">
                             <br>記者&nbsp;田芳昕、吳淑汝、陳怡君&nbsp;採訪報導
@@ -272,8 +324,10 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -291,20 +345,20 @@
         });
     </script>
     <script>
-        $(".navbar-icon").click(function(){
+        $(".navbar-icon").click(function () {
             $(".nav_content").toggleClass("active");
         });
         $(".navbar-off").click(function () {
             $(".nav_content").toggleClass("active");
         });
-        $(".content").click(function(){
+        $(".content").click(function () {
             $(".nav_content").removeClass("active");
         });
-        $(".desktop-select-type").click(function(){
+        $(".desktop-select-type").click(function () {
             $(".nav_content").removeClass("active");
         });
 
-        $(".content_right").click(function(){
+        $(".content_right").click(function () {
             $(".nav_content").removeClass("active");
         });
     </script>
@@ -313,16 +367,17 @@
     <script>
         $(".back-top").on('click', function (e) {
             e.preventDefault();
-            $(".content").animate({
+            $(".content-wrap").animate({
                 scrollTop: 0
             }, 600);
         });
         $(".mobile-backtop").on('click', function (e) {
             e.preventDefault();
-            $(".content").animate({
+            $(".content-wrap").animate({
                 scrollTop: 0
             }, 600);
         });
     </script>
 </body>
+
 </html>

@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>朝陽新聞台</title>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
-    <link rel="bookmark" href="img/favicon.ico"/>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="bookmark" href="img/favicon.ico" />
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/type-select.css">
 
     <style>
-        .back-top img{
+        body{
+            padding-top: 144px;
+        }
+        .back-top img {
             width: 24.29px;
             height: 15px;
             cursor: pointer;
         }
-        .content-wrap{
+
+        .content-wrap {
             padding-left: 100px;
         }
-        .content{
-            max-width: 1625px;
-            margin:140px auto 0 auto;
-            height: calc(100vh - 140px);
+
+        .content {
+            max-width: 1635px;
+            margin: 0 auto 0 auto;
+            height: calc(100vh - 144px);
             overflow-y: scroll;
         }
-        .content::-webkit-scrollbar {
-            display: none;
+
+        .news-wrap {
+            margin: 0 -20px;
         }
-        .news-wrap{
-            margin: 0 -25px;
-        }
-        .news-item{
-            float:left;
+
+        .news-item {
+            float: left;
             width: 335px;
             padding: 0 25px;
             margin-bottom: 40px;
             box-sizing: border-box;
         }
-        .news-item_content{
-            box-shadow:2px 2px 10px rgba(90, 90, 90, 0.2);  
+
+        .news-item_content {
+            box-shadow: 2px 2px 10px rgba(90, 90, 90, 0.2);
         }
-        .news-item_bg{
+
+        .news-item_bg {
             width: 100%;
-            overflow: hidden;          
+            overflow: hidden;
         }
-        .news-img{
+
+        .news-img {
             width: 100%;
             padding-top: 124.561%;
             background-position-x: center;
@@ -56,139 +67,156 @@
             background-size: cover;
             transition: all 0.5s ease;
         }
-        .news-img01{
+
+        .news-img01 {
             background-image: url('img/news-pic/Thumbnail/01-1.jpg');
         }
-        .news-img02{
+
+        .news-img02 {
             background-image: url('img/news-pic/Thumbnail/01-2.jpg');
         }
-        .news-img03{
+
+        .news-img03 {
             background-image: url('img/news-pic/Thumbnail/01-3.jpg');
         }
-        .news-img04{
+
+        .news-img04 {
             background-image: url('img/news-pic/Thumbnail/02-1.jpg');
         }
-        .news-img05{
+
+        .news-img05 {
             background-image: url('img/news-pic/Thumbnail/02-2.jpg');
         }
-        .news-img06{
+
+        .news-img06 {
             background-image: url('img/news-pic/Thumbnail/03-1.jpg');
         }
-        .news-img07{
+
+        .news-img07 {
             background-image: url('img/news-pic/Thumbnail/03-2.jpg');
         }
-        .news-img08{
+
+        .news-img08 {
             background-image: url('img/news-pic/Thumbnail/03-3.jpg');
         }
-        .news-item:hover .news-img{
+
+        .news-item:hover .news-img {
             transform: scale(1.2);
         }
 
-        .news-item_text{
+        .news-item_text {
             width: 100%;
             height: 100px;
             background-color: #fff;
             position: relative;
             box-sizing: border-box;
             padding: 10px 20px 20px 20px;
-            
+
         }
-        .news-item_text p{
+
+        .news-item_text p {
             font-weight: bold;
             color: #5A5A5A;
             font-size: 20px;
             line-height: 30px;
-            word-wrap:break-word;
+            word-wrap: break-word;
         }
-        .date{
+
+        .date {
             position: absolute;
             right: 10px;
             bottom: 10px;
             font-size: 14px;
             line-height: 25px;
-            color:#FFAA00;
+            color: #FFAA00;
             letter-spacing: 1.3px;
         }
-        .mobile_hr{
+
+        .mobile_hr {
             display: none;
         }
-        .navbar-off{
+
+        .navbar-off {
             display: none;
         }
-        @media screen and (max-width: 1740px){
-            .content{
+
+        @media screen and (max-width: 1740px) {
+            .content {
                 max-width: 1290px;
             }
         }
-        @media screen and (max-width: 1465px){
-            .content{
+
+        @media screen and (max-width: 1465px) {
+            .content {
                 max-width: 955px;
             }
         }
-        @media screen and (max-width: 1130px){
-            .content{
+
+        @media screen and (max-width: 1130px) {
+            .content {
                 max-width: 620px;
             }
         }
-        @media screen and (max-width:767px){
-            .content-wrap{
+
+        @media screen and (max-width:767px) {
+            .content-wrap {
                 padding-left: 0;
             }
-            .content{
+            .content {
                 max-width: 100%;
                 margin-left: 0;
             }
-            .nav{
+            .nav {
                 width: 100%;
                 height: 40px;
                 padding: 10px 15px;
                 flex-flow: row;
                 justify-content: space-between;
             }
-            .navbar img{
+            .navbar img {
                 width: 25px;
             }
-            .navbar-off{
+            .navbar-off {
                 display: block;
                 position: absolute;
-                top:10px;
-                left:15px;
+                top: 10px;
+                left: 15px;
                 cursor: pointer;
             }
-            .navbar-off img{
+            .navbar-off img {
                 width: 25px;
             }
-            .content{
+            .content {
                 padding: 0 15px;
                 margin-top: 55px;
                 height: calc(100vh - 110px);
             }
-            .news-wrap{
+            .news-wrap {
                 margin: 0;
             }
-            .news-item_content{
+            .news-item_content {
                 display: flex;
                 box-shadow: none;
             }
-            .news-item{
+            .news-item {
                 width: 100%;
                 padding: 0;
                 margin-bottom: 10px;
             }
-            .news-item_bg{
+            .news-item_bg {
                 width: auto;
                 height: auto;
                 margin-right: 10px;
                 overflow: initial;
             }
-            .news-item:hover .news-img{
+            .news-item:hover .news-img {
                 transform: scale(1);
             }
-            .news-item_text{
+            .news-item_text {
                 padding: 0;
                 height: auto;
             }
-            .news-img{
+            .news-img {
                 width: 18.75vw;
                 padding-top: 18.75vw;
                 transition: initial;
@@ -204,14 +232,15 @@
                 bottom: 0;
                 font-size: 12px;
             }
-            .mobile_hr{
+            .mobile_hr {
                 display: block;
-                margin:0 0 10px 0;
+                margin: 0 0 10px 0;
                 border-color: rgba(130, 210, 255, 0.2);
             }
         }
     </style>
 </head>
+
 <body>
     <div class="main-wrap">
         <div class="mobile-backtop">
@@ -259,23 +288,23 @@
                     <a href="directory.html">
                         <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p>‧&nbsp;校園</p>
+                    <a href="#!">
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;校園</span></p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p>‧&nbsp;體育</p>
+                    <a href="#!">
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;體育</span></p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p>‧&nbsp;藝文</p>
+                    <a href="#!">
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;藝文</span></p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p>‧&nbsp;科技</p>
+                    <a href="#!">
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;科技</span></p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p>‧&nbsp;醫藥</p>
+                    <a href="#!">
+                        <p><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;醫藥</span></p>
                     </a>
-                    <a href="#!" title="暫無功能">
-                        <p class="type_select_last">‧&nbsp;地方文化</p>
+                    <a href="#!">
+                        <p class="type_select_last"><span data-toggle="tooltip" data-placement="right" title="暫無功能">‧&nbsp;地方文化</span></p>
                     </a>
                 </div>
                 <hr class="line_w">
@@ -295,13 +324,27 @@
         </div>
         <div class="desktop-select-type">
             <ul class="type">
-                <li class="active"><a href="#!">&nbsp;全部</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;校園</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;體育</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;藝文</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;科技</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;醫藥</a></li>
-                <li><a href="#!" title="暫無功能">&nbsp;地方文化</a></li>
+                <li class="active">
+                    <a href="#!">&nbsp;全部</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;校園</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;體育</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;藝文</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;科技</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;醫藥</a>
+                </li>
+                <li>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="暫無功能">&nbsp;地方文化</a>
+                </li>
             </ul>
         </div>
         <!-- Swiper -->
@@ -312,22 +355,22 @@
                         <div class="type-item active">全部</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">校園</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">校園</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">體育</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">體育</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">藝文</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">藝文</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">科技</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">科技</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">醫藥</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">醫藥</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item">地方文化</div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="暫無功能">地方文化</div>
                     </div>
                 </div>
             </div>
@@ -457,6 +500,15 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
@@ -469,20 +521,20 @@
         });
     </script>
     <script>
-        $(".navbar-icon").click(function(){
+        $(".navbar-icon").click(function () {
             $(".nav_content").toggleClass("active");
         });
         $(".navbar-off").click(function () {
             $(".nav_content").toggleClass("active");
         });
-        $(".content").click(function(){
+        $(".content").click(function () {
             $(".nav_content").removeClass("active");
         });
-        $(".desktop-select-type").click(function(){
+        $(".desktop-select-type").click(function () {
             $(".nav_content").removeClass("active");
         });
-        
-        $(".content_right").click(function(){
+
+        $(".content_right").click(function () {
             $(".nav_content").removeClass("active");
         });
     </script>
@@ -503,4 +555,5 @@
         });
     </script>
 </body>
+
 </html>
