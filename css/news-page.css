@@ -57,9 +57,9 @@ body {
     font-weight: bold;
 }
 @media screen and (max-width: 1250px){
-    /* .content-wrap::-webkit-scrollbar {
+    .content-wrap::-webkit-scrollbar {
         display: none;
-    } */
+    }
 }
 @media screen and (max-width: 940px) {
     .content {
