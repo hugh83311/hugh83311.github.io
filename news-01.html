@@ -24,17 +24,14 @@
 
         .content-wrap {
             padding-left: 100px;
-        }
-
-        .content-wrap {
             overflow-y: scroll;
+            height: calc(100vh - 144px);
         }
 
         .content {
             max-width: 960px;
             margin: 0 auto 0 auto;
-            height: calc(100vh - 144px);
-            padding: 0 15px;
+            padding: 0 68px;
         }
 
         .news-wrap {
@@ -79,11 +76,14 @@
         .reporter {
             font-weight: bold;
         }
-
+        @media screen and (max-width: 1250px){
+            .content-wrap::-webkit-scrollbar {
+                display: none;
+            }
+        }
         @media screen and (max-width: 940px) {
             .content {
                 margin: 0 auto 0 auto;
-                height: calc(100vh - 144px);
             }
         }
 
@@ -99,10 +99,12 @@
             }
             .content-wrap {
                 padding-left: 0;
+                height: calc(100vh - 40px);
+
             }
             .content {
                 margin: 40px auto 0 auto;
-                height: calc(100vh - 80px);
+                padding: 0 15px;
             }
             .title {
                 font-size: 30px;
@@ -223,25 +225,25 @@
         <div class="desktop-select-type">
             <ul class="type">
                 <li class="active">
-                    <a href="directory.html">&nbsp;全部</a>
+                    <a href="directory.html">全部</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;校園</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">校園</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;體育</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">體育</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;藝文</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">藝文</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;科技</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">科技</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;醫藥</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">醫藥</a>
                 </li>
                 <li>
-                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">&nbsp;地方文化</a>
+                    <a href="#!" data-toggle="tooltip" data-placement="top" title="即將開放">地方文化</a>
                 </li>
             </ul>
         </div>
