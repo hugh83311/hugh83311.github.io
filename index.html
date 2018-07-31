@@ -493,7 +493,7 @@
             .list-menu ul>li>a {
                 font-size: 16px;
             }
-            .list-menu ul>li>a.active {
+            .list-menu ul>li>a:active {
                 color: #FFFF00;
             }
             .list-menu ul>li>a::before {
@@ -601,7 +601,7 @@
         <div class="list-menu">
             <ul>
                 <li v-for="(item, index) in chapter">
-                    <a href="javascript: void(0)" data-toggle="tooltip" data-placement="top" title="即將開放">{{item.title}}</a>
+                    <a :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -613,15 +613,15 @@
                 <img class="org" src="img/Right-20.svg" alt="">
             </div>
             <div class="tablet-num" data-toggle="tooltip" data-placement="left" title="即將開放集數搜尋">
-                <div class="now-num">0{{ chapterIndex+1 }}#</div>
+                <div class="now-num">0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
             <div class="mobile-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
-                <div class="now-num">0{{ chapterIndex+1 }}#</div>
+                <div class="now-num">0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
-            <div class="tablet-arrow tablet-arrow-ud">
+            <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();">
                 <img class="org" src="img/Up-10.svg" alt="">
             </div>
-            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0">
+            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0" v-on:click="nextArticle();">
                 <img class="org" src="img/Down-10.svg" alt="">
             </div>
         </div>
@@ -633,11 +633,11 @@
                 </div>
                 <div class="page_dot">
                     <ul>
-                        <a href="javascript: void(0)" class="active">
-                            <li data-toggle="tooltip" data-placement="right" title="即將開放"></li>
+                        <a v-on:click="backToTop();" v-bind:class="{ active: ArticleActive(0)}">
+                            <li></li>
                         </a>
-                        <a href="javascript: void(0)" v-for="(item, index) in chapter">
-                            <li data-toggle="tooltip" data-placement="right" title="即將開放"></li>
+                        <a :href="'#'+changeAnchor(index)" v-on:click="updateArticleIndex(index);" v-for="(item, index) in chapter" v-bind:class="{ active: ArticleActive(index+1)}">
+                            <li></li>
                         </a>
                     </ul>
                 </div>
@@ -737,7 +737,7 @@
                     </div>
                     <ul class="part_title">
                         <li class="part_list" v-for="(item, index) in chapter">
-                            <a v-bind:href="'#'+ item.id">{{item.title}}</a>
+                            <a v-bind:href="'#'+ item.id" v-on:click="updateArticleIndex(index)">{{item.title}}</a>
                         </li>
                     </ul>
                 </div>
@@ -792,7 +792,7 @@
                 </div>
                 <div class="desktop-num">
                     <div class="now-num">
-                        <span class="active-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">0{{ chapterIndex+1 }}</span>
+                        <span class="active-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">0{{chapterIndex+1}}</span>
                         <span class="total-num">/03</span>
                     </div>
                 </div>
@@ -812,7 +812,7 @@
         crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
         })
     </script>
     <!-- <script src="js/jquery.ripples-min.js"></script> -->
@@ -843,6 +843,8 @@
             el: '#app',
             data: {
                 currentItemsIndex: '0',
+                currentArticleIndex: 0,
+                currentArticleOffsets:[],
                 chapterIndex: 0,
                 chapter: [],
                 firstChapter: [{
@@ -1118,45 +1120,54 @@
                 // `this` points to the vm instance
                 this.chapter = this.firstChapter;
             },
-            methods: {
-                preArticle: function () {
-                    $(".content").animate({
-                        scrollTop: 0
-                    }, 0);
-                    // var hash = document.URL.substr(document.URL.indexOf('#') + 1);
-                    // chapterLength = this.chapter.length;
-                    // if (hash == "C") {
-                    //     window.location.hash = '#B';
-                    // } else {
-                    //     window.location.hash = '#A';
-                    // }
+            mounted :function () {
+                this.initAnchorOffsetTop();
+            },
+            updated: function () {
 
-                    // console.log(chapterLength);
+            },
+            methods: {
+                initAnchorOffsetTop: function () {
+                    //clear array
+                    this.currentArticleOffsets = [];
+                    this.currentArticleOffsets.push(0);
+
+                    //clear currentArticleIndex
+                    this.currentArticleIndex = 0;
+
+
+                    //get all anchor
+                    for(i=0; i < this.chapter.length;i++){
+                        //change anchorIndex to string
+                        this.currentArticleOffsets.push($("#"+this.changeAnchor(i)).offset().top);
+                    }
+
+                },
+                preArticle: function () {
+                    //check currentArticleIndex -1 and scrollTop
+
+                    if(this.currentArticleIndex > 0){
+                        this.currentArticleIndex -= 1;
+                        $(".content").animate({
+                            scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
+                        }, 250);
+                    }
+
                 },
                 nextArticle: function () {
-                    var content_h =  $(".content").height();
-                    $(".content").animate({
-                        scrollTop: content_h
-                    }, 0);
-                    // var hash = document.URL.substr(document.URL.indexOf('#') + 1);
-                    // chapterLength = this.chapter.length;
+                    //check currentArticleIndex +1 and scrollTop
 
-                    // if (chapterLength > 2) {
+                    if(this.currentArticleIndex < this.chapter.length){
+                        this.currentArticleIndex += 1;
 
-                    //     if (hash == "A") {
-                    //         window.location.hash = '#B';
-                    //     } else {
-                    //         window.location.hash = '#C';
-                    //     }
-
-                    // } else {
-                    //     if (hash == "A") {
-                    //         window.location.hash = '#B';
-                    //     }
-                    // }
+                        $(".content").animate({
+                            scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
+                        }, 250);
+                    }
                 },
                 changeItemsIndex: function (index, event) {
                     this.currentItemsIndex = index;
+                    this.initAnchorOffsetTop();
                 },
                 nextChapter: function () {
                     $(".page_dot li").removeClass("active");
@@ -1204,6 +1215,9 @@
                         }, 0);
                     }
 
+                    this.$nextTick(() => {
+                        this.initAnchorOffsetTop();
+                    });
                 },
                 preChapter: function () {
                     $(".page_dot li").removeClass("active");
@@ -1249,6 +1263,9 @@
                             scrollTop: 0
                         }, 0);
                     }
+                    this.$nextTick(() => {
+                        this.initAnchorOffsetTop();
+                    });
                 },
                 isCurrent: function (index) {
                     if (index == this.chapterIndex)
@@ -1323,6 +1340,48 @@
                             scrollTop: 0
                         }, 600);
                     }
+
+                    this.initAnchorOffsetTop();
+                },
+                changeAnchor: function (index) {
+                    switch (index){
+                        case 0:
+                            return "A";
+                        case 1:
+                            return "B";
+                        case 2:
+                            return "C";
+                        case 3:
+                            return "D";
+                        case 4:
+                            return "E";
+                    }
+                },
+                closeListMenu: function () {
+                    $(".more-btn").removeClass("open");
+                    $(".list-menu").removeClass("show");
+                },
+                backToTop :function () {
+                    this.currentArticleIndex=0;
+                    $(".content").scrollTop(0);
+                },
+                updateArticleIndex :function (index) {
+                    this.currentArticleIndex = index +1;
+                },
+
+                ArticleActive :function (index) {
+
+                    return this.currentArticleIndex==index;
+                },
+                chapterIndexRevert:function (index) {
+                    switch (index){
+                        case 1:
+                            return "3";
+                        case 2:
+                            return "2";
+                        case 3:
+                        return "1";
+                    }
                 }
             },
             computed: {
@@ -1330,13 +1389,13 @@
                 chinessChapterName: function () {
                     // `this` points to the vm instance
                     if (this.chapterIndex == 0)
-                        return "三"
+                        return "三";
 
                     if (this.chapterIndex == 1)
-                        return "二"
+                        return "二";
 
                     if (this.chapterIndex == 2)
-                        return "一"
+                        return "一";
                 }
 
 
@@ -1357,179 +1416,10 @@
     <script>
         
         $(".content").scroll(function(){
-            var content_scroll = $(".content").scrollTop()
-            console.log(content_scroll);
+            // var content_scroll = $(".content").scrollTop();
+            // console.log(content_scroll);
         });
     </script>
-
-    <!-- <script>
-        var sectionA_offsetTop = Math.floor($(".title_section").outerHeight(true));
-        var sectionB_offsetTop = sectionA_offsetTop + $("#A").outerHeight(true);
-        var sectionC_offsetTop = sectionB_offsetTop + $("#B").outerHeight(true);
-        $(".content").scroll(function () {
-            var content_scroll = $(".content").scrollTop() + 30;
-
-            console.log(content_scroll);
-            console.log(sectionA_offsetTop);
-            if (content_scroll < sectionA_offsetTop) {
-                $(".page_dot > ul > a:nth-child(1) li").addClass("active");
-            } else {
-                $(".page_dot > ul > a:nth-child(1) li").removeClass("active");
-            }
-            if (content_scroll >= sectionA_offsetTop && content_scroll < sectionB_offsetTop) {
-                $(".page_dot > ul > a:nth-child(2) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
-            } else {
-                $(".page_dot > ul > a:nth-child(2) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(1) > a").removeClass("active");
-            }
-            if (content_scroll >= sectionB_offsetTop && content_scroll < sectionC_offsetTop) {
-                $(".page_dot > ul > a:nth-child(3) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
-            } else {
-                $(".page_dot > ul > a:nth-child(3) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(2) > a").removeClass("active");
-            }
-            if (content_scroll >= sectionC_offsetTop) {
-                $(".page_dot > ul > a:nth-child(4) li").addClass("active");
-                $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
-            } else {
-                $(".page_dot > ul > a:nth-child(4) li").removeClass("active");
-                $(".list-menu > ul > li:nth-child(3) > a").removeClass("active");
-            }
-        });
-
-        $(".page_dot > ul > a:first-child").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: 0
-            }, 600);
-        });
-        $(".page_dot > ul > a:nth-child(2)").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionA_offsetTop
-            }, 600);
-        });
-        $(".page_dot > ul > a:nth-child(3)").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionB_offsetTop
-            }, 600);
-        });
-        $(".page_dot > ul > a:nth-child(4)").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionC_offsetTop
-            }, 600);
-        });
-
-        $(".list-menu > ul > li:first-child > a").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionA_offsetTop - 23
-            }, 600);
-        });
-        $(".list-menu > ul > li:nth-child(2) > a").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionB_offsetTop + 17
-            }, 600);
-        });
-        $(".list-menu > ul > li:nth-child(3) > a").on('click', function (e) {
-            e.preventDefault();
-            $(".content").animate({
-                scrollTop: sectionC_offsetTop + 17
-            }, 600);
-        });
-    </script>
-
-    <script>
-        $(".tablet-arrow-lr").click(function () {
-            var sectionA_offsetTop = Math.floor($(".title_section").outerHeight(true));
-            var sectionB_offsetTop = sectionA_offsetTop + $("#A").outerHeight(true);
-            var sectionC_offsetTop = sectionB_offsetTop + $("#B").outerHeight(true);
-            
-            $(".content").scroll(function () {
-                var content_scroll = $(".content").scrollTop() + 30;
-
-                console.log(content_scroll);
-                console.log(sectionA_offsetTop);
-                if (content_scroll < sectionA_offsetTop) {
-                    $(".page_dot > ul > a:nth-child(1) li").addClass("active");
-                } else {
-                    $(".page_dot > ul > a:nth-child(1) li").removeClass("active");
-                }
-                if (content_scroll >= sectionA_offsetTop && content_scroll < sectionB_offsetTop) {
-                    $(".page_dot > ul > a:nth-child(2) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(1) > a").addClass("active");
-                } else {
-                    $(".page_dot > ul > a:nth-child(2) li").removeClass("active");
-                    $(".list-menu > ul > li:nth-child(1) > a").removeClass("active");
-                }
-                if (content_scroll >= sectionB_offsetTop && content_scroll < sectionC_offsetTop) {
-                    $(".page_dot > ul > a:nth-child(3) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(2) > a").addClass("active");
-                } else {
-                    $(".page_dot > ul > a:nth-child(3) li").removeClass("active");
-                    $(".list-menu > ul > li:nth-child(2) > a").removeClass("active");
-                }
-                if (content_scroll >= sectionC_offsetTop) {
-                    $(".page_dot > ul > a:nth-child(4) li").addClass("active");
-                    $(".list-menu > ul > li:nth-child(3) > a").addClass("active");
-                } else {
-                    $(".page_dot > ul > a:nth-child(4) li").removeClass("active");
-                    $(".list-menu > ul > li:nth-child(3) > a").removeClass("active");
-                }
-            });
-
-            $(".page_dot > ul > a:first-child").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: 0
-                }, 600);
-            });
-            $(".page_dot > ul > a:nth-child(2)").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionA_offsetTop
-                }, 600);
-            });
-            $(".page_dot > ul > a:nth-child(3)").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionB_offsetTop
-                }, 600);
-            });
-            $(".page_dot > ul > a:nth-child(4)").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionC_offsetTop
-                }, 600);
-            });
-
-            $(".list-menu > ul > li:first-child > a").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionA_offsetTop - 23
-                }, 600);
-            });
-            $(".list-menu > ul > li:nth-child(2) > a").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionB_offsetTop + 17
-                }, 600);
-            });
-            $(".list-menu > ul > li:nth-child(3) > a").on('click', function (e) {
-                e.preventDefault();
-                $(".content").animate({
-                    scrollTop: sectionC_offsetTop + 17
-                }, 600);
-            });
-        });
-    </script> -->
-
-
 </body>
 
 </html>
