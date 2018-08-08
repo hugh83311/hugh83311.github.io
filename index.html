@@ -1150,24 +1150,32 @@
                 preArticle: function () {
                     //check currentArticleIndex -1 and scrollTop
 
-                    if(this.currentArticleIndex > 0){
-                        this.currentArticleIndex -= 1;
-                        $(".content").animate({
-                            scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
-                        }, 250);
-                    }
+                    // if(this.currentArticleIndex > 0){
+                    //     this.currentArticleIndex -= 1;
+                    //     $(".content").animate({
+                    //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
+                    //     }, 250);
+                    // }
+
+                    $(".content").animate({
+                        scrollTop: 0
+                    }, 250);
 
                 },
                 nextArticle: function () {
                     //check currentArticleIndex +1 and scrollTop
 
-                    if(this.currentArticleIndex < this.chapter.length){
-                        this.currentArticleIndex += 1;
+                    // if(this.currentArticleIndex < this.chapter.length){
+                    //     this.currentArticleIndex += 1;
+                    //
+                    //     $(".content").animate({
+                    //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
+                    //     }, 250);
+                    // }
 
-                        $(".content").animate({
-                            scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
-                        }, 250);
-                    }
+                    $(".content").animate({
+                        scrollTop: document.querySelector(".content").scrollHeight
+                    }, 250);
                 },
                 changeItemsIndex: function (index, event) {
                     this.currentItemsIndex = index;
@@ -1372,9 +1380,7 @@
                 updateArticleIndex :function (index) {
                     this.currentArticleIndex = index +1;
                 },
-
                 ArticleActive :function (index) {
-
                     return this.currentArticleIndex==index;
                 },
                 chapterIndexRevert:function (index) {
