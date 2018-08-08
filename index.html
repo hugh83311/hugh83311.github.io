@@ -584,14 +584,14 @@
                 font-size: 18px;
                 line-height: 30px;
             }
+            .nav_content {
+                padding: 65px 55px 0 55px;
+            }
         }
 
         @media (max-width:330px) {
             .line_w {
                 margin:9px 0;
-            }
-            .nav_content {
-                padding: 65px 55px 0 55px;
             }
         }
 
@@ -613,7 +613,7 @@
         <div class="list-menu">
             <ul>
                 <li v-for="(item, index) in chapter" v-cloak>
-                    <a v-if :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
+                    <a v-bind:class="mobile_index_check(index)" :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -1155,6 +1155,12 @@
                     }
 
                 },
+                mobile_index_check:function (index) {
+                    if(index+1 === this.currentArticleIndex){
+                        return 'active';
+                    }
+                }
+                ,
                 preArticle: function () {
                     //check currentArticleIndex -1 and scrollTop
 

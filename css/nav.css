@@ -333,6 +333,9 @@ p{
     .line_w{
         height: 1px;
     }
+    .line_w {
+        margin:12px 0;
+    }
 }
 
 @media (max-width:330px) {
