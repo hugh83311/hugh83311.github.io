@@ -586,6 +586,10 @@
                 line-height: 30px;
             }
         }
+
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
@@ -600,7 +604,7 @@
     <div class="all" id="app">
         <div class="list-menu">
             <ul>
-                <li v-for="(item, index) in chapter">
+                <li v-for="(item, index) in chapter" v-cloak>
                     <a :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
                 </li>
             </ul>
@@ -613,10 +617,10 @@
                 <img class="org" src="img/Right-20.svg" alt="">
             </div>
             <div class="tablet-num" data-toggle="tooltip" data-placement="left" title="即將開放集數搜尋">
-                <div class="now-num">0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
+                <div class="now-num" v-cloak>0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
             <div class="mobile-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
-                <div class="now-num">0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
+                <div class="now-num" v-cloak>0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
             <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();">
                 <img class="org" src="img/Up-10.svg" alt="">
@@ -725,7 +729,7 @@
                 <div class="title_section">
                     <div class="title title_blue d-flex align-items-center">
                         <img src="img/Cytu-Logo-S.svg" alt="" height="36" style="margin-right: 10px">
-                        <span>朝陽新聞第{{chinessChapterName}}集</span>
+                        <span v-cloak>朝陽新聞第{{chinessChapterName}}集</span>
                     </div>
                     <div class="mobile-video">
                         <iframe id="mb-video-3" class="yt-video" src="https://www.youtube.com/embed/qeqVvEF3n80?enablejsapi=1&version=3&playerapiid=ytplayer"
@@ -737,7 +741,7 @@
                     </div>
                     <ul class="part_title">
                         <li class="part_list" v-for="(item, index) in chapter">
-                            <a v-bind:href="'#'+ item.id" v-on:click="updateArticleIndex(index)">{{item.title}}</a>
+                            <a v-bind:href="'#'+ item.id" v-on:click="updateArticleIndex(index)" v-cloak>{{item.title}}</a>
                         </li>
                     </ul>
                 </div>
@@ -749,8 +753,8 @@
                         <img :src="item.image" alt="" class="mobile-video" />    
                     </div> -->
                     <div class="custom-container">
-                        <div class="title title_orange">{{item.title}}</div>
-                        <div class="subtitle">{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}</div>
+                        <div class="title title_orange" v-cloak>{{item.title}}</div>
+                        <div class="subtitle" v-cloak>{{item.author}}&nbsp;{{item.time}}&nbsp;{{item.type}}</div>
                         <span v-html="item.content"></span>
                     </div>
                 </div>
@@ -792,7 +796,7 @@
                 </div>
                 <div class="desktop-num">
                     <div class="now-num">
-                        <span class="active-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">0{{3-chapterIndex}}</span>
+                        <span class="active-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋" v-cloak>0{{3-chapterIndex}}</span>
                         <span class="total-num">/03</span>
                     </div>
                 </div>
