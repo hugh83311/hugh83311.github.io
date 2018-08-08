@@ -492,7 +492,7 @@
             .list-menu ul>li>a {
                 font-size: 16px;
             }
-            .list-menu ul>li>a:active {
+            .list-menu ul>li>a:active,.list-menu ul>li>a.active {
                 color: #FFFF00;
             }
             .list-menu ul>li>a::before {
@@ -613,7 +613,7 @@
         <div class="list-menu">
             <ul>
                 <li v-for="(item, index) in chapter" v-cloak>
-                    <a v-bind:class="mobile_index_check(index)" :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
+                    <a v-bind:class={"active":mobileCheckIndex(index)} :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -854,6 +854,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
+                active: true,
                 currentItemsIndex: '0',
                 currentArticleIndex: 0,
                 currentArticleOffsets:[],
@@ -1139,6 +1140,10 @@
 
             },
             methods: {
+                mobileCheckIndex:function (index) {
+                  return index === this.chapterIndex;
+                },
+
                 initAnchorOffsetTop: function () {
                     //clear array
                     this.currentArticleOffsets = [];
@@ -1155,12 +1160,6 @@
                     }
 
                 },
-                mobile_index_check:function (index) {
-                    if(index+1 === this.currentArticleIndex){
-                        return 'active';
-                    }
-                }
-                ,
                 preArticle: function () {
                     //check currentArticleIndex -1 and scrollTop
 
