@@ -1157,6 +1157,8 @@
                     //     }, 250);
                     // }
 
+                    this.currentArticleIndex =  0;
+
                     $(".content").animate({
                         scrollTop: 0
                     }, 250);
@@ -1173,6 +1175,7 @@
                     //     }, 250);
                     // }
 
+                    this.currentArticleIndex =  this.chapter.length-1;
                     $(".content").animate({
                         scrollTop: document.querySelector(".content").scrollHeight
                     }, 250);
