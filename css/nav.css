@@ -342,7 +342,10 @@ p{
     .line_w {
         margin:9px 0;
     }
+}
+
+@media (max-height:460px) {
     .nav_content {
-        padding: 65px 55px 0 55px;
+        overflow: scroll;
     }
 }
