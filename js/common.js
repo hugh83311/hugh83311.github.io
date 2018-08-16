@@ -1,9 +1,9 @@
 // 寬度改變時關閉選單
-$(window).resize(function(){
-    $(".nav_content").removeClass("active");
-    $(".more-btn").removeClass("open");
-    $(".list-menu").removeClass("show");
-});
+// $(window).resize(function(){
+//     $(".nav_content").removeClass("active");
+//     $(".more-btn").removeClass("open");
+//     $(".list-menu").removeClass("show");
+// });
 
 
 // list-menu show/hide
