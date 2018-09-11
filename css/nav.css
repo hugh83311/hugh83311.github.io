@@ -97,8 +97,8 @@ p{
 }
 .navbar-icon img.desktop-icon{
     display: block;
-    width: 50px;
-    height: 35px;
+    width: 40px;
+    height: 30px;
 }
 .navbar-icon img.mobile-icon{
     display: none;
@@ -166,14 +166,14 @@ p{
 }
 
 .fb img.desktop-icon {
-    width: 25.94px;
-    height: 50px;
+    width: 23.06px;
+    height: 44.44px;
     margin-bottom: 28.6px;
 }
 
 .youtube img.desktop-icon {
-    width: 45px;
-    height: 31.5px;
+    width: 40px;
+    height: 28px;
 }
 .fb img.mobile-icon {
     width: 20px;
