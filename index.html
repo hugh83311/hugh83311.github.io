@@ -84,7 +84,7 @@
             font-size: 0.9375vw;
             position: relative;
             text-align: justify;
-            max-width: 1010px;
+        
         }
 
         .content::-webkit-scrollbar {
@@ -377,7 +377,20 @@
         .mobile-video {
             display: none;
         }
-
+         @media screen and (min-width: 1920) {
+            .content {
+            flex: 1;
+            /*flex: 1 1 45vw;*/
+            flex-direction: row;
+            height: 100vh;
+            overflow-y: scroll;
+            color: #5A5A5A;
+            font-size: 0.9375vw;
+            position: relative;
+            text-align: justify;
+            max-width: 1010px;
+        }
+         }
         @media screen and (max-width: 1250px) {
             .mobile-video {
                 display: block;
