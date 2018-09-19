@@ -8,6 +8,18 @@ body {
 *:focus{
     outline: none;
 }
+
+.navbar-icon:active{
+    opacity: 0.8;
+}
+
+.fb:active{
+    opacity: 0.8;
+}
+
+.youtube:active{
+    opacity: 0.8;
+}
 img {
     max-width: 100%;
     display: block;
