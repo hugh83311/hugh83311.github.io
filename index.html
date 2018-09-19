@@ -634,6 +634,9 @@
     <div class="all" id="app">
         <div class="list-menu">
             <ul>
+                <li>
+                    <a href="#" v-on:click="closeListMenu();backToTop();">朝陽新聞第{{chinessChapterName}}集</a>
+                </li>
                 <li v-for="(item, index) in chapter" v-cloak>
                     <a v-bind:class={"active":mobileCheckIndex(index)} :href="'#'+changeAnchor(index)" v-on:click="closeListMenu();updateArticleIndex(index);">{{item.title}}</a>
                 </li>
