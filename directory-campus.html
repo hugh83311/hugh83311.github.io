@@ -16,7 +16,262 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/type-select.css">
-    <link rel="stylesheet" href="css/news-page.css">
+
+    <style>
+
+        body{
+            padding-top: 144px;
+        }
+
+
+        .back-top img {
+            width: 24.29px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .content-wrap {
+            padding-left: 100px;
+            height: calc(100vh - 144px);
+            overflow-y: scroll;
+        }
+
+        .content {
+            max-width: 1761px;
+            margin: 0 auto 0 auto;
+            padding: 0 68px;
+        }
+
+        .news-wrap {
+            margin: 0 -25px;
+        }
+
+        .news-item {
+            float: left;
+            width: 335px;
+            padding: 0 25px;
+            margin-top: 40px;
+            box-sizing: border-box;
+        }
+
+        .news-item_content {
+            box-shadow: 2px 2px 10px rgba(90, 90, 90, 0.2);
+        }
+
+        .news-item_bg {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-img {
+            width: 100%;
+            padding-top: 70%;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: cover;
+            transition: all 0.5s ease;
+        }
+
+        .news-img01 {
+            background-image: url('img/news-pic/Thumbnail/01-1.jpg');
+        }
+
+        .news-img02 {
+            background-image: url('img/news-pic/Thumbnail/01-2.jpg');
+        }
+
+        .news-img03 {
+            background-image: url('img/news-pic/Thumbnail/01-3.jpg');
+        }
+
+        .news-img04 {
+            background-image: url('img/news-pic/Thumbnail/02-1.jpg');
+        }
+
+        .news-img05 {
+            background-image: url('img/news-pic/Thumbnail/02-2.jpg');
+        }
+
+        .news-img06 {
+            background-image: url('img/news-pic/Thumbnail/03-1.jpg');
+        }
+
+        .news-img07 {
+            background-image: url('img/news-pic/Thumbnail/03-2.jpg');
+        }
+
+        .news-img08 {
+            background-image: url('img/news-pic/Thumbnail/03-3.jpg');
+        }
+
+        .news-item:hover .news-img {
+            transform: scale(1.2);
+        }
+
+        .news-item_text {
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px 20px 20px 20px;
+
+        }
+
+        .news-item_text p {
+            font-weight: bold;
+            color: #5A5A5A;
+            font-size: 20px;
+            line-height: 30px;
+            word-wrap: break-word;
+        }
+
+        .news-item:active p{
+            opacity: 0.8;
+        }
+
+        .date {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 14px;
+            line-height: 25px;
+            color: #FFAA00;
+            letter-spacing: 1.3px;
+        }
+
+        .mobile_hr {
+            display: none;
+        }
+
+        .navbar-off {
+            display: none;
+        }
+        .mobile-clear{
+            clear: both;
+            display: none;
+        }
+
+        @media screen and (max-width: 1880px) {
+            .content {
+                max-width: 1426px;
+            }
+        }
+
+        @media screen and (max-width: 1545px) {
+            .content {
+                max-width: 1091px;
+            }
+        }
+        @media screen and (max-width: 1250px){
+            .content-wrap::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 1205px) {
+            .content {
+                max-width: 650px;
+                padding: 0 15px;
+            }
+        }
+        @media screen and (max-width:767px) {
+            body{
+                padding-top: 40px;
+            }
+            .desktop-select-type{
+                display: none;
+            }
+            .content-wrap {
+                padding-left: 0;
+                height: calc(100vh - 80px);
+            }
+            .content {
+                max-width: 100%;
+                margin-left: 0;
+                margin-top: 15px;
+                margin-bottom: 60px;
+            }
+            .nav {
+                width: 100%;
+                height: 40px;
+                padding: 0;
+                flex-flow: row;
+                justify-content: space-between;
+            }
+            .navbar img {
+                width: 25px;
+            }
+            .navbar-off {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                cursor: pointer;
+            }
+            .navbar-off img {
+                width: 25px;
+            }
+            .news-wrap {
+                margin: 0;
+            }
+            .news-item_content {
+                display: flex;
+                box-shadow: none;
+            }
+            .news-item {
+                width: 100%;
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            .news-img {
+            width: 100%;
+            padding-top: 124.561%;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: cover;
+            transition: all 0.5s ease;
+        }
+            .news-item_bg {
+                width: auto;
+                height: auto;
+                margin-right: 10px;
+                overflow: initial;
+            }
+            .news-item:hover .news-img {
+                transform: scale(1);
+            }
+            .news-item_text {
+                padding: 0;
+                height: auto;
+            }
+            .news-img {
+                width: 18.75vw;
+                padding-top: 18.75vw;
+                transition: initial;
+            }
+            .news-item_text p {
+                font-size: 16px;
+                line-height: 20px;
+                text-align: justify;
+                letter-spacing: 0;
+            }
+            .date {
+                right: 0;
+                bottom: 0;
+                font-size: 12px;
+            }
+            .mobile_hr {
+                display: block;
+                margin: 0 0 10px 0;
+                border-top: 1px solid #5AC8FF;
+            }
+            .mobile-clear{
+                display: block
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +289,7 @@
                     <img src="img/Top-2.svg" alt="">
                 </div>
                 <div class="social">
-                     <div class="fb">
+                    <div class="fb">
                         <a href="https://www.facebook.com/CYUTNEWS/" target="_blank">
                             <img class="desktop-icon" src="img/Facebook-B.svg" alt="">
                             <img class="mobile-icon" src="img/Facebook-M.svg" alt="">
@@ -158,37 +413,81 @@
         <div class="content-wrap">
             <div class="content">
                 <div class="news-wrap">
-                    <div class="news-pic">
-                        <img src="img/news-pic/Original/01-2.jpg" alt="">
-                    </div>
-                    <div class="news-content">
-                        <div class="title title_orange">物價上漲壓力 學生餐廳撐不住</div>
-                        <div class="subtitle">朝陽新聞台 2014/12/15 採訪報導</div>
-                        <p class="article">
-                            （記者旁白）一到中午，學校餐廳就湧進數百人潮，走一趟餐廳，發現很多家招牌都有改變，原來是店家承受不起物價上漲的壓力，在暑假過後將菜單悄悄的調漲。
-                            <br>
-                            <br>（餐廳老闆）成本一直在漲，但是我們的訂價沒有跟著去漲，所以對我們相對是壓縮我們的獲利。菜，他漲價的幅度是最大的，漲了幾乎有一倍以上。
-                        </p>
-                        <p class="article title_orange">
-                            <br>便當、小菜全數漲價&nbsp;&nbsp;貴5-10塊錢
-                        </p>
-                        <p class="article">
-                            （記者旁白）不只是原物料上漲，看看菜單上學生最愛的蒜泥白肉飯，原本45元現在漲到50元，還有人氣熱賣的豬排飯，在暑假前只要50元就可以吃得到，但是暑假過後就得多花五塊錢。架上各式各樣的小菜，任由學生挑選組成三菜一主菜的便當，一向被認為是最經濟實惠的，但是現在吃便當至少得準備65元才吃得起，店家漲價主要是因為原物料，像是小白菜在暑假前成本一捆90元，暑假後變成一捆180元，足足漲了一倍多，還有蛋在暑假前後的成本更是差了快100元，這些原物料不斷的上漲，讓店家不得不把菜單調整價格。
-                            <br>
-                            <br>（朝陽學生一）雖然（漲價）五塊十塊，每個禮拜下來也是很多錢。
-                            <br>（朝陽學生二）其實學校一個便當的分量是跟外面差不多，但是外面一個便當可能就要75或80元這樣。
-                            <br>（餐廳老闆）但是一漲價，學校就會來關心，為什麼你的那個定價會漲價，學校也會關心。
-                        </p>
-                        <p class="article title_orange">
-                            <br>物價飆漲&nbsp;&nbsp;學生規劃用錢更要精打細算
-                        </p>
-                        <p class="article">
-                            （記者旁白）蛋、油、蔬菜等原物料的上漲，讓主打比外食便宜的學校餐廳撐不住，只好調整價格，只是生活費本來就不多的學生們，在吃的消費規劃上，比起以前更要斤斤計較了。
-                        </p>
-                        <p class="article reporter">
-                            <br>記者&nbsp;田芳昕、陳怡君&nbsp;台中報導
-                        </p>
-                    </div>
+                    <a href="news-08.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img08"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>國際發明展爭光&nbsp;&nbsp;朝陽2年奪51獎座</p>
+                                    <div class="date">2015/03/04</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="news-07.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img07"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>大學生活忙又忙&nbsp;&nbsp;小心壓力超標</p>
+                                    <div class="date">2015/03/04</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="news-04.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img04"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>朝陽新型停車證&nbsp;&nbsp;跟上QRcode潮流</p>
+                                    <div class="date">2015/01/01</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="news-02.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img02"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>物價上漲壓力&nbsp;&nbsp;學生餐廳撐不住</p>
+                                    <div class="date">2014/12/15</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
+                    <hr class="mobile_hr">
+                    <a href="news-01.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img01"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>校園新增133、158公車可抵高鐵站</p>
+                                    <div class="date">2014/12/15</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
+                    
                 </div>
             </div>
         </div>

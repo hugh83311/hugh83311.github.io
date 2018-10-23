@@ -16,7 +16,262 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/type-select.css">
-    <link rel="stylesheet" href="css/news-page.css">
+
+    <style>
+
+        body{
+            padding-top: 144px;
+        }
+
+
+        .back-top img {
+            width: 24.29px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .content-wrap {
+            padding-left: 100px;
+            height: calc(100vh - 144px);
+            overflow-y: scroll;
+        }
+
+        .content {
+            max-width: 1761px;
+            margin: 0 auto 0 auto;
+            padding: 0 68px;
+        }
+
+        .news-wrap {
+            margin: 0 -25px;
+        }
+
+        .news-item {
+            float: left;
+            width: 335px;
+            padding: 0 25px;
+            margin-top: 40px;
+            box-sizing: border-box;
+        }
+
+        .news-item_content {
+            box-shadow: 2px 2px 10px rgba(90, 90, 90, 0.2);
+        }
+
+        .news-item_bg {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-img {
+            width: 100%;
+            padding-top: 70%;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: cover;
+            transition: all 0.5s ease;
+        }
+
+        .news-img01 {
+            background-image: url('img/news-pic/Thumbnail/01-1.jpg');
+        }
+
+        .news-img02 {
+            background-image: url('img/news-pic/Thumbnail/01-2.jpg');
+        }
+
+        .news-img03 {
+            background-image: url('img/news-pic/Thumbnail/01-3.jpg');
+        }
+
+        .news-img04 {
+            background-image: url('img/news-pic/Thumbnail/02-1.jpg');
+        }
+
+        .news-img05 {
+            background-image: url('img/news-pic/Thumbnail/02-2.jpg');
+        }
+
+        .news-img06 {
+            background-image: url('img/news-pic/Thumbnail/03-1.jpg');
+        }
+
+        .news-img07 {
+            background-image: url('img/news-pic/Thumbnail/03-2.jpg');
+        }
+
+        .news-img08 {
+            background-image: url('img/news-pic/Thumbnail/03-3.jpg');
+        }
+
+        .news-item:hover .news-img {
+            transform: scale(1.2);
+        }
+
+        .news-item_text {
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px 20px 20px 20px;
+
+        }
+
+        .news-item_text p {
+            font-weight: bold;
+            color: #5A5A5A;
+            font-size: 20px;
+            line-height: 30px;
+            word-wrap: break-word;
+        }
+
+        .news-item:active p{
+            opacity: 0.8;
+        }
+
+        .date {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 14px;
+            line-height: 25px;
+            color: #FFAA00;
+            letter-spacing: 1.3px;
+        }
+
+        .mobile_hr {
+            display: none;
+        }
+
+        .navbar-off {
+            display: none;
+        }
+        .mobile-clear{
+            clear: both;
+            display: none;
+        }
+
+        @media screen and (max-width: 1880px) {
+            .content {
+                max-width: 1426px;
+            }
+        }
+
+        @media screen and (max-width: 1545px) {
+            .content {
+                max-width: 1091px;
+            }
+        }
+        @media screen and (max-width: 1250px){
+            .content-wrap::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 1205px) {
+            .content {
+                max-width: 650px;
+                padding: 0 15px;
+            }
+        }
+        @media screen and (max-width:767px) {
+            body{
+                padding-top: 40px;
+            }
+            .desktop-select-type{
+                display: none;
+            }
+            .content-wrap {
+                padding-left: 0;
+                height: calc(100vh - 80px);
+            }
+            .content {
+                max-width: 100%;
+                margin-left: 0;
+                margin-top: 15px;
+                margin-bottom: 60px;
+            }
+            .nav {
+                width: 100%;
+                height: 40px;
+                padding: 0;
+                flex-flow: row;
+                justify-content: space-between;
+            }
+            .navbar img {
+                width: 25px;
+            }
+            .navbar-off {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                cursor: pointer;
+            }
+            .navbar-off img {
+                width: 25px;
+            }
+            .news-wrap {
+                margin: 0;
+            }
+            .news-item_content {
+                display: flex;
+                box-shadow: none;
+            }
+            .news-item {
+                width: 100%;
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            .news-img {
+            width: 100%;
+            padding-top: 124.561%;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: cover;
+            transition: all 0.5s ease;
+        }
+            .news-item_bg {
+                width: auto;
+                height: auto;
+                margin-right: 10px;
+                overflow: initial;
+            }
+            .news-item:hover .news-img {
+                transform: scale(1);
+            }
+            .news-item_text {
+                padding: 0;
+                height: auto;
+            }
+            .news-img {
+                width: 18.75vw;
+                padding-top: 18.75vw;
+                transition: initial;
+            }
+            .news-item_text p {
+                font-size: 16px;
+                line-height: 20px;
+                text-align: justify;
+                letter-spacing: 0;
+            }
+            .date {
+                right: 0;
+                bottom: 0;
+                font-size: 12px;
+            }
+            .mobile_hr {
+                display: block;
+                margin: 0 0 10px 0;
+                border-top: 1px solid #5AC8FF;
+            }
+            .mobile-clear{
+                display: block
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +289,7 @@
                     <img src="img/Top-2.svg" alt="">
                 </div>
                 <div class="social">
-                   <div class="fb">
+                    <div class="fb">
                         <a href="https://www.facebook.com/CYUTNEWS/" target="_blank">
                             <img class="desktop-icon" src="img/Facebook-B.svg" alt="">
                             <img class="mobile-icon" src="img/Facebook-M.svg" alt="">
@@ -48,7 +303,7 @@
                     </div>
                 </div>
             </div>
-             <div class="nav_content">
+            <div class="nav_content">
                 <div class="navbar-off">
                     <img src="img/Menu-40.svg" alt="">
                 </div>
@@ -110,10 +365,10 @@
                 <li>
                     <a href="directory-campus.html" data-toggle="tooltip" data-placement="top" title="校園">校園</a>
                 </li>
-                <li >
+                <li>
                     <a href="directory-sports.html" data-toggle="tooltip" data-placement="top" title="體育">體育</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="directory-art.html" data-toggle="tooltip" data-placement="top" title="藝文">藝文</a>
                 </li>
                 <li>
@@ -122,7 +377,7 @@
                 <li>
                     <a href="directory-medicine.html" data-toggle="tooltip" data-placement="top" title="醫藥">醫藥</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="directory-culture.html" data-toggle="tooltip" data-placement="top" title="地方文化">地方文化</a>
                 </li>
             </ul>
@@ -141,7 +396,7 @@
                         <div class="type-item" data-toggle="tooltip" data-placement="top" title="體育"><a href="directory-sports.html">體育</a></div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="藝文"><a href="directory-art.html">藝文</a></div>
+                        <div class="type-item  active" data-toggle="tooltip" data-placement="top" title="藝文"><a href="directory-art.html">藝文</a></div>
                     </div>
                     <div class="swiper-slide">
                         <div class="type-item" data-toggle="tooltip" data-placement="top" title="科技"><a href="directory-technology.html">科技</a></div>
@@ -150,7 +405,7 @@
                         <div class="type-item" data-toggle="tooltip" data-placement="top" title="醫藥"><a href="directory-medicine.html">醫藥</a></div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="type-item  active" data-toggle="tooltip" data-placement="top" title="地方文化"><a href="directory-culture.html">地方文化</a></div>
+                        <div class="type-item" data-toggle="tooltip" data-placement="top" title="地方文化"><a href="directory-culture.html">地方文化</a></div>
                     </div>
                 </div>
             </div>
@@ -158,44 +413,20 @@
         <div class="content-wrap">
             <div class="content">
                 <div class="news-wrap">
-                    <div class="news-pic">
-                        <img src="img/news-pic/Original/01-3.jpg" alt="">
-                    </div>
-                    <div class="news-content">
-                        <div class="title title_orange">基地台深夜發出噪音 造成居民睡眠障礙</div>
-                        <div class="subtitle">朝陽新聞台 2014/12/15 採訪報導</div>
-                        <p class="article title_orange">
-                            自強路住宅架設基地台&nbsp;&nbsp;居民：不知情
-                        </p>
-                        <p class="article">
-                            （記者旁白）：鄰近朝陽科技大學的自強路居民表示，有屋主與電信業者簽約，並在附近住戶完全不知情的情況下，在住宅頂樓架設基地台，甚至意圖出租給學生作為宿舍。
-                            <br>
-                            <br>居民郭小姐：（有人問）是哪一家？我說後面那一家，我們住那一家耶！真的喔？我看到布條只是不知道是哪一家。
-                        </p>
-                        <p class="article title_orange">
-                            <br>基地台深夜發出噪音&nbsp;&nbsp;造成居民睡眠障礙
-                        </p>
-                        <p class="article">
-                            （記者旁白）：居民表示基地台常在深夜發出噪音，使他們睡眠品質出現嚴重的障礙。
-                            <br>
-                            <br>居民莊小姐：在睡覺的時候鄰居都會一直聽到（噪音），大家都睡不著。
-                            <br>居民黃太太：大家都說頭暈暈的，就是有那個聲音，我也有反應就是頭會痛／７座（基地台），中華電信最主要。
-                        </p>
-                        <p class="article title_orange">
-                            <br>電磁波對人體無危害？&nbsp;&nbsp;當地居民人心惶惶
-                        </p>
-                        <p class="article">
-                            （記者旁白）：雖然目前包括NCC、衛生署國民健康局及電信產業界的各種電磁波宣導，一再強調各基地台功率均符合國家標準及法規上限，但仍舊無法消弭大眾對基地台的疑慮以及恐慌。
-                            <br>
-                            <br>居民林先生：電磁波最威脅的就是（我們的）免疫力。
-                            <br>居民林小姐：我們這個是住宅區，不應該有這樣子的東西在我們住宅區裡。
-                            <br>
-                            <br>（記者旁白）：台灣各地基地台抗爭事件層出不窮，也有人在網路上呼籲，若是因為收訊問題想在自家架設基地台，應當先與附近居民達成共識，以免造成不必要的麻煩。
-                        </p>
-                        <p class="article reporter reporter_last">
-                            <br>記者&nbsp;許喨瑜、游婷雅&nbsp;台中報導
-                        </p>
-                    </div>
+                    <a href="news-05.html">
+                        <div class="news-item">
+                            <div class="news-item_content">
+                                <div class="news-item_bg">
+                                    <div class="news-img news-img05"></div>
+                                </div>
+                                <div class="news-item_text">
+                                    <p>勇奪金鐘&nbsp;&nbsp;李宜珊、范家綺返校回饋</p>
+                                    <div class="date">2015/01/01</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-clear"></div>
+                    </a>
                 </div>
             </div>
         </div>
