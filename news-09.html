@@ -80,8 +80,15 @@
                     <img class="desktop-icon" src="img/Menu-35.svg" alt="">
                     <img class="mobile-icon" src="img/Menu-40.svg" alt="">
                 </div>
-                <div class="back-top">
-                    <img src="img/Top-2.svg" alt="">
+                <div class="page_dot">
+                    <ul>
+                        <a v-on:click="backToTop();" v-bind:class="{ active: ArticleActive(0)}">
+                            <li></li>
+                        </a>
+                        <a :href="'#'+changeAnchor(index)" v-on:click="updateArticleIndex(index);" v-for="(item, index) in chapter" v-bind:class="{ active: ArticleActive(index+1)}">
+                            <li></li>
+                        </a>
+                    </ul>
                 </div>
                 <div class="social">
                     <div class="fb">
@@ -98,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="nav_content">
+             <div class="nav_content">
                 <div class="navbar-off">
                     <img src="img/Menu-40.svg" alt="">
                 </div>
@@ -116,43 +123,33 @@
                     <a href="directory.html">
                         <p class="active">‧&nbsp;全部</p>
                     </a>
-                    <a href="#!">
-                        <p>
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;校園</span>
-                        </p>
+                    <a href="directory-campus.html">
+                        <p class="active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;校園</span></p>
                     </a>
-                    <a href="#!">
-                        <p>
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;體育</span>
-                        </p>
+                    <a href="directory-sports.html">
+                        <p class="active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;體育</span></p>
                     </a>
-                    <a href="#!">
-                        <p>
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;藝文</span>
-                        </p>
+                    <a href="directory-art.html">
+                        <p class="active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;藝文</span></p>
                     </a>
-                    <a href="#!">
-                        <p>
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;科技</span>
-                        </p>
+                    <a href="directory-technology.html">
+                        <p class="active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;科技</span></p>
                     </a>
-                    <a href="#!">
-                        <p>
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;醫藥</span>
-                        </p>
+                    <a href="directory-medicine.html">
+                        <p class="active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;醫藥</span></p>
                     </a>
-                    <a href="#!">
-                        <p class="type_select_last">
-                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right" title="即將開放">‧&nbsp;地方文化</span>
-                        </p>
+                    <a href="directory-culture.html">
+                        <p class="type_select_last active"><span data-toggle="tooltip" data-placement="right">‧&nbsp;地方文化</span></p>
                     </a>
                 </div>
                 <hr class="line_w">
                 <div class="type type_select">
                     <a href="/news-09.html">
-                        <p class="active">‧&nbsp;朝陽新聞台</p>
+                        <p class="active">
+                            <span class="custom-tooltip" data-toggle="tooltip" data-placement="right">‧&nbsp;朝陽新聞台</span>
+                        </p>
                     </a>
-                     <a href="http://ft.cyut.edu.tw/" target="_blank">
+                    <a href="http://ft.cyut.edu.tw/" target="_blank">
                         <p class="active">‧&nbsp;傳播藝術系</p>
                     </a>
                     <a href="http://web.cyut.edu.tw/bin/home.php" target="_blank">
@@ -175,7 +172,7 @@
 電視台設台長一人，由系主任擔任。另於台長之下分設行銷公關部、新聞節目部、及工程部，分別由指導老師帶領，規劃與執行電視台之相關工作。指導老師下設實習台長一名，綜理電視台各項業務，並得設兩名實習副台長及三部部長各一名，協助指導老師及實習台長執行各部門業務。
 
                         </p>
-                        <p class="article" style="margin-top: 30px;">-&nbsp;縱觀真相與未來</p>
+                        <p class="article" style="margin-top: 30px;">-&nbsp;朝陽新聞台&nbsp;縱觀真相與未來</p>
                     </div>
                 </div>
             </div>
