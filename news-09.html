@@ -80,16 +80,6 @@
                     <img class="desktop-icon" src="img/Menu-35.svg" alt="">
                     <img class="mobile-icon" src="img/Menu-40.svg" alt="">
                 </div>
-                <div class="page_dot">
-                    <ul>
-                        <a v-on:click="backToTop();" v-bind:class="{ active: ArticleActive(0)}">
-                            <li></li>
-                        </a>
-                        <a :href="'#'+changeAnchor(index)" v-on:click="updateArticleIndex(index);" v-for="(item, index) in chapter" v-bind:class="{ active: ArticleActive(index+1)}">
-                            <li></li>
-                        </a>
-                    </ul>
-                </div>
                 <div class="social">
                     <div class="fb">
                         <a href="https://www.facebook.com/CYUTNEWS/" target="_blank">
