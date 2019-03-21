@@ -238,18 +238,42 @@
 
     <!-- 回到最上 -->
     <script>
-        $(".back-top").on('click', function (e) {
-            e.preventDefault();
-            $(".content-wrap").animate({
-                scrollTop: 0
-            }, 600);
-        });
-        $(".mobile-backtop").on('click', function (e) {
-            e.preventDefault();
-            $(".content-wrap").animate({
-                scrollTop: 0
-            }, 600);
-        });
+       if ($(window).width() < 767) {
+            $(".back-top").hide();
+
+            $(".mobile-backtop").hide();
+            $('.content-wrap').scroll(function () {
+                if ($('.content-wrap').scrollTop() > 150) {
+                    $(".mobile-backtop").show();
+                }
+                else
+                    $(".mobile-backtop").hide();
+            });
+            $(".mobile-backtop").on('click', function (e) {
+                e.preventDefault();
+                $(".content-wrap").animate({
+                    scrollTop: 0
+                }, 600);
+            });
+        } else {
+            $(".mobile-backtop").hide();
+
+            $(".back-top").hide();
+            $('.content-wrap').scroll(function () {
+                if ($('.content-wrap').scrollTop() > 300) {
+                    $(".back-top").show();
+                }
+                else
+                    $(".back-top").hide();
+            });
+
+            $(".back-top").on('click', function (e) {
+                e.preventDefault();
+                $(".content-wrap").animate({
+                    scrollTop: 0
+                }, 600);
+            });
+        }
     </script>
 </body>
 
