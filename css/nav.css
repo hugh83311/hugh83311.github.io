@@ -32,8 +32,11 @@ a:active {
     color: inherit;
     text-decoration: none;
 }
-a:active{
+a:hover{
     opacity: 0.8 !important;
+}
+a:active{
+    opacity: 0.9 !important;
 }
 p{
     margin: 0;
@@ -41,6 +44,10 @@ p{
 
 .clear{
     clear:both;
+}
+
+::selection {
+    background-color: transparent;
 }
 /* Tooltip 顏色 */
 .tooltip-inner {
@@ -69,6 +76,9 @@ p{
 }
 .back-top:hover img{
     filter: drop-shadow(2px 2px 4px rgba(90,90,90,0.3));
+}
+.back-top:active img{
+    opacity: 0.8;
 }
 .mobile-backtop{
     display: none;
@@ -255,6 +265,9 @@ p{
 }
 .type p.active:hover{
     color:rgba(255,255,255,0.8);
+}
+.type p.active:active{
+    color:rgba(255,255,255,0.9);
 }
 .line_w{
     background-color: #fff;
