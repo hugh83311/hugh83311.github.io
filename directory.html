@@ -23,7 +23,6 @@
             padding-top: 144px;
         }
 
-
         .back-top img {
             width: 24.29px;
             height: 15px;
@@ -359,7 +358,7 @@
         </div>
         <div class="desktop-select-type">
             <ul class="type">
-                <li  class="active">
+                <li class="active">
                     <a href="directory.html">全部</a>
                 </li>
                 <li>
@@ -532,7 +531,7 @@
                         </div>
                         <div class="mobile-clear"></div>
                     </a>
-                    
+
                 </div>
             </div>
         </div>
@@ -540,7 +539,7 @@
     </div>
 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -584,6 +583,29 @@
 
     <!-- 回到最上 -->
     <script>
+        // scroll top 高度
+        $(function () {
+             last=$("body").height()-$(window).height()-144
+
+            $('.content-wrap').scroll(function () {
+                var scrollVal = $(this).scrollTop();
+                console.log(scrollVal,last);
+            });
+        });
+
+
+        $(".back-top").hide();
+
+        $('.content-wrap').scroll(function () {
+           
+
+            if ($('.content-wrap').scrollTop() > last) {
+                $(".back-top").show();
+            } 
+            else
+            $(".back-top").hide();
+        });
+
         $(".back-top").on('click', function (e) {
             e.preventDefault();
             $(".content-wrap").animate({
