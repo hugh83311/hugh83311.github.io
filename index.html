@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
     <link rel="stylesheet" href="css/nav.css">
     <style>
-        a:active{
+        a:active {
             opacity: 1 !important;
         }
+
         .d-flex {
             display: flex;
         }
@@ -35,7 +36,7 @@
             display: inline-flex;
             width: 100%;
         }
-        
+
 
         /**************************************/
 
@@ -332,7 +333,8 @@
         .part_list a:hover {
             color: rgba(90, 90, 90, 0.8);
         }
-        .part_list a:active{
+
+        .part_list a:active {
             color: rgba(90, 90, 90, 0.9);
         }
 
@@ -476,7 +478,8 @@
                 justify-content: center;
                 align-items: center;
             }
-            .tablet-arrow:active{
+
+            .tablet-arrow:active {
                 opacity: 0.8;
             }
 
@@ -790,7 +793,7 @@
                 <div class="navbar-off">
                     <img src="img/Menu-40.svg" alt="">
                 </div>
-                <div class="search_box">
+                <div class="search_box" data-toggle="tooltip" data-placement="top" title="即將開放關鍵字搜尋">
                     <input type="text" placeholder="即將開放關鍵字搜尋" disabled>
                     <img class="search_icon" src="img/Magnifier-B.svg" alt="">
                 </div>
@@ -885,12 +888,12 @@
         <div class="content_right">
             <div class="arrow_td">
                 <a href="#" v-on:click="preArticle();">
-                    <div class="arrow_top">
+                    <div class="arrow_top" data-toggle="tooltip" data-placement="left" title="往上置頂">
                         <img class="org" src="img/Up-10.svg" alt="" height="10">
                     </div>
                 </a>
                 <a href="#" v-on:click="nextArticle();">
-                    <div class="arrow_down">
+                    <div class="arrow_down" data-toggle="tooltip" data-placement="left" title="往下置底">
                         <img class="org" src="img/Down-10.svg" alt="" height="10">
                     </div>
                 </a>
@@ -911,10 +914,10 @@
             <div class="arrow_num">
                 <div class="arrow">
                     <div class="arrow_lr">
-                        <div class="arrow_left" v-on:click="preChapter();">
+                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top" title="下一集新聞">
                             <img class="org" src="img/Left-20.svg" alt="" width="15px">
                         </div>
-                        <div class="arrow_right" v-on:click="nextChapter();">
+                        <div class="arrow_right" v-on:click="nextChapter();"  data-toggle="tooltip" data-placement="top" title="上一集新聞">
                             <img class="org" src="img/Right-20.svg" alt="" width="15px">
                         </div>
                     </div>

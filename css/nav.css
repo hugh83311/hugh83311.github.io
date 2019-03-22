@@ -294,6 +294,14 @@ p{
 .search_icon{
     width: 20px;
 }
+@media screen and (max-width: 1250px){
+    a:active{
+        opacity: 0.8!important;
+    }
+    .type p.active:active{
+        color: rgba(255,255,255,0.8);
+    }
+}
 @media screen and (max-width: 767px){
     .nav{
         width: 100%;
