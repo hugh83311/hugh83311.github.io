@@ -534,9 +534,15 @@
                 bottom: 55px;
                 z-index: 10;
             }
+            .more-btn:active{
+                opacity: 0.8;
+            }
 
             .more-btn.open {
                 background-image: url('img/More-Buttons-2.svg');
+            }
+            .more-btn.open:active{
+                opacity: 0.8;
             }
 
             .more-btn.move {
@@ -738,10 +744,10 @@
             </ul>
         </div>
         <div class="tablet-btn">
-            <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top" title="下集新聞">
                 <img class="org" src="img/Left-20.svg" alt="">
             </div>
-            <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();" data-toggle="tooltip" data-placement="top" title="上集新聞">
                 <img class="org" src="img/Right-20.svg" alt="">
             </div>
             <div class="tablet-num" data-toggle="tooltip" data-placement="left" title="即將開放集數搜尋">
@@ -750,10 +756,10 @@
             <div class="mobile-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
                 <div class="now-num" v-cloak>0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
-            <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();">
+            <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();" data-toggle="tooltip" data-placement="top" title="往上置頂">
                 <img class="org" src="img/Up-10.svg" alt="">
             </div>
-            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0" v-on:click="nextArticle();">
+            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0" v-on:click="nextArticle();" data-toggle="tooltip" data-placement="top" title="往下置底">
                 <img class="org" src="img/Down-10.svg" alt="">
             </div>
         </div>
@@ -914,18 +920,17 @@
             <div class="arrow_num">
                 <div class="arrow">
                     <div class="arrow_lr">
-                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top" title="下一集新聞">
+                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top" title="下集新聞">
                             <img class="org" src="img/Left-20.svg" alt="" width="15px">
                         </div>
-                        <div class="arrow_right" v-on:click="nextChapter();"  data-toggle="tooltip" data-placement="top" title="上一集新聞">
+                        <div class="arrow_right" v-on:click="nextChapter();"  data-toggle="tooltip" data-placement="top" title="上集新聞">
                             <img class="org" src="img/Right-20.svg" alt="" width="15px">
                         </div>
                     </div>
                 </div>
                 <div class="desktop-num">
-                    <div class="now-num">
-                        <span class="active-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋"
-                            v-cloak>0{{3-chapterIndex}}</span>
+                    <div class="now-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
+                        <span class="active-num"v-cloak>0{{3-chapterIndex}}</span>
                         <span class="total-num">/03</span>
                     </div>
                 </div>
