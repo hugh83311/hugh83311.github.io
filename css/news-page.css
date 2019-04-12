@@ -98,3 +98,17 @@ body {
         margin-bottom: 30px;
     }
 }
+@media screen and (max-width:767px) {
+    .nav_content {
+        padding: 65px 55px 10px 55px;
+    }
+
+}
+@media (max-width:360px) {
+    .nav_content {
+        padding: 50px 55px 10px 55px;
+    }
+    .search_box {
+        margin-bottom: 15px;
+    }
+}
