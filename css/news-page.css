@@ -100,8 +100,9 @@ body {
 }
 @media screen and (max-width:767px) {
     .nav_content {
-        padding: 65px 55px 10px 55px;
+        padding: 65px 55px 10px 55px!important;
     }
+    
 
 }
 @media (max-width:360px) {
