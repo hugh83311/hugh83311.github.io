@@ -930,12 +930,12 @@
             <div class="arrow_num">
                 <div class="arrow">
                     <div class="arrow_lr">
-                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top"
-                            title="下集新聞">
+                        <div class="arrow_left" v-on:click="nextChapter();" data-toggle="tooltip" data-placement="top"
+                            title="上集新聞">
                             <img class="org" src="img/Left-20.svg" alt="" width="15px">
                         </div>
-                        <div class="arrow_right" v-on:click="nextChapter();" data-toggle="tooltip" data-placement="top"
-                            title="上集新聞">
+                        <div class="arrow_right" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top"
+                            title="下集新聞">
                             <img class="org" src="img/Right-20.svg" alt="" width="15px">
                         </div>
                     </div>
@@ -969,7 +969,7 @@
 
             $('[data-toggle="tooltip"]').tooltip().click(function () {
                 $(this).tooltip('show');
-                
+                d
                 setTimeout(function () {
                     $('[data-toggle="tooltip"]').tooltip('hide');
                 }, 500);
