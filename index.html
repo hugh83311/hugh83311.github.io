@@ -534,14 +534,16 @@
                 bottom: 55px;
                 z-index: 10;
             }
-            .more-btn:active{
+
+            .more-btn:active {
                 opacity: 0.8;
             }
 
             .more-btn.open {
                 background-image: url('img/More-Buttons-2.svg');
             }
-            .more-btn.open:active{
+
+            .more-btn.open:active {
                 opacity: 0.8;
             }
 
@@ -588,7 +590,8 @@
             .list-menu ul>li>a.active {
                 color: #FFFF00;
             }
-            .list-menu ul>li>a:active{
+
+            .list-menu ul>li>a:active {
                 opacity: 0.8 !important;
             }
 
@@ -747,10 +750,12 @@
             </ul>
         </div>
         <div class="tablet-btn">
-            <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();" data-toggle="tooltip" :data-placement="tooltipDirection" title="下集新聞">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="preChapter();" data-toggle="tooltip"
+                :data-placement="tooltipDirection" title="下集新聞">
                 <img class="org" src="img/Left-20.svg" alt="">
             </div>
-            <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();" data-toggle="tooltip" :data-placement="tooltipDirection" title="上集新聞">
+            <div class="tablet-arrow tablet-arrow-lr" v-on:click="nextChapter();" data-toggle="tooltip"
+                :data-placement="tooltipDirection" title="上集新聞">
                 <img class="org" src="img/Right-20.svg" alt="">
             </div>
             <div class="tablet-num" data-toggle="tooltip" data-placement="left" title="即將開放集數搜尋">
@@ -759,10 +764,12 @@
             <div class="mobile-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
                 <div class="now-num" v-cloak>0{{ chapterIndexRevert(chapterIndex+1) }}#</div>
             </div>
-            <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();" data-toggle="tooltip" :data-placement="tooltipDirection" title="往上置頂">
+            <div class="tablet-arrow tablet-arrow-ud" v-on:click="preArticle();" data-toggle="tooltip"
+                :data-placement="tooltipDirection" title="往上置頂">
                 <img class="org" src="img/Up-10.svg" alt="">
             </div>
-            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0" v-on:click="nextArticle();" data-toggle="tooltip" :data-placement="tooltipDirection" title="往下置底">
+            <div class="tablet-arrow tablet-arrow-ud mb-0" style="margin-bottom:0" v-on:click="nextArticle();"
+                data-toggle="tooltip" :data-placement="tooltipDirection" title="往下置底">
                 <img class="org" src="img/Down-10.svg" alt="">
             </div>
         </div>
@@ -923,17 +930,19 @@
             <div class="arrow_num">
                 <div class="arrow">
                     <div class="arrow_lr">
-                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top" title="下集新聞">
+                        <div class="arrow_left" v-on:click="preChapter();" data-toggle="tooltip" data-placement="top"
+                            title="下集新聞">
                             <img class="org" src="img/Left-20.svg" alt="" width="15px">
                         </div>
-                        <div class="arrow_right" v-on:click="nextChapter();"  data-toggle="tooltip" data-placement="top" title="上集新聞">
+                        <div class="arrow_right" v-on:click="nextChapter();" data-toggle="tooltip" data-placement="top"
+                            title="上集新聞">
                             <img class="org" src="img/Right-20.svg" alt="" width="15px">
                         </div>
                     </div>
                 </div>
                 <div class="desktop-num">
                     <div class="now-num" data-toggle="tooltip" data-placement="top" title="即將開放集數搜尋">
-                        <span class="active-num"v-cloak>0{{3-chapterIndex}}</span>
+                        <span class="active-num" v-cloak>0{{3-chapterIndex}}</span>
                         <span class="total-num">/03</span>
                     </div>
                 </div>
@@ -957,6 +966,12 @@
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
+
+            $('[data-toggle="tooltip"]').tooltip().click(function () {
+                setTimeout(function () {
+                    $('[data-toggle="tooltip"]').tooltip('hide');
+                }, 2000);
+            });
         })
     </script>
     <!-- <script src="js/jquery.ripples-min.js"></script> -->
@@ -991,8 +1006,8 @@
                 currentArticleIndex: 0,
                 currentArticleOffsets: [],
                 chapterIndex: 0,
-                window_w:0,
-                tooltipDirection:'top',
+                window_w: 0,
+                tooltipDirection: 'top',
                 chapter: [],
                 firstChapter: [{
                     id: 'A',
@@ -1265,8 +1280,8 @@
                 this.window_w = window.innerWidth
                 this.$nextTick(() => {
                     window.addEventListener('resize', () => {
-                    this.window_w = window.innerWidth
-                });
+                        this.window_w = window.innerWidth
+                    });
                 })
             },
             updated: function () {
@@ -1597,14 +1612,14 @@
                     }
                 },
             },
-            watch:{
-                window_w(){
+            watch: {
+                window_w() {
                     let vm = this;
-                    if(vm.window_w <= 1250){
+                    if (vm.window_w <= 1250) {
                         vm.tooltipDirection = 'left'
                         // $('[data-toggle="tooltip"]').tooltip();
                     }
-                    if(vm.window_w <= 767){
+                    if (vm.window_w <= 767) {
                         vm.tooltipDirection = 'top'
                         // $('[data-toggle="tooltip"]').tooltip();
                     }
