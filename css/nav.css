@@ -174,7 +174,7 @@ p{
     left:50%;
     transform: translateX(-50%);
 } */
-.page_dot > ul > a > li::after{
+/* .page_dot > ul > a > li::after{
     content:'';
     position: absolute;
     width: 3px;
@@ -186,7 +186,7 @@ p{
 }
 .page_dot > ul > a:nth-last-child(1) > li::after{
     display: none;
-}
+} */
 .social {
     display: flex;
     align-items: center;
