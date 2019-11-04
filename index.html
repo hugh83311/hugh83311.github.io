@@ -1381,7 +1381,8 @@
                     //     $(".content").animate({
                     //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
                     //     }, 250);
-                    // }
+
+                    $(".list-menu ul>li:first-child>a").removeClass("active");
 
                     this.currentArticleIndex = this.chapter.length;
                     $(".content").animate({
