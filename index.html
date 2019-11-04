@@ -31,10 +31,36 @@
             align-items: center;
         }
 
+        .loading img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: opacity 1s ;
+            opacity: 1;
+        }
+
+        .loading img.remove {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .all {
             flex-direction: row;
             display: inline-flex;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 2s;
+        }
+
+        .all.active {
+            flex-direction: row;
+            display: inline-flex;
+            overflow:auto;
             width: 100%;
+            opacity: 1;
+            pointer-events: all;
         }
 
 
@@ -533,10 +559,17 @@
                 right: 15px;
                 bottom: 55px;
                 z-index: 10;
+                opacity: 1;
+                pointer-events: all;
+                transition: opacity 2s;
+            }
+
+            .more-btn.remove {
+                opacity: 0;
+                pointer-events: none;
             }
 
             .more-btn:active {
-                opacity: 0.8;
             }
 
             .more-btn.open {
@@ -544,7 +577,6 @@
             }
 
             .more-btn.open:active {
-                opacity: 0.8;
             }
 
             .more-btn.move {
@@ -736,12 +768,16 @@
         </div>
     </div> -->
     <!-- 選擇文章 -->
-    <div class="more-btn"></div>
+    <div class="more-btn remove"></div>
+    <div class="loading">
+        <img src="img/Cytu-Logo.svg" height="137" alt="">
+    </div>
     <div class="all" id="app">
         <div class="list-menu">
             <ul>
                 <li>
-                    <a href="#" v-on:click="closeListMenu();backToTop();" class="active">朝陽新聞第{{chinessChapterName}}集</a>
+                    <a href="#" v-on:click="closeListMenu();backToTop();"
+                        class="active">朝陽新聞第{{chinessChapterName}}集</a>
                 </li>
                 <li v-for="(item, index) in chapter" v-cloak>
                     <a v-bind:class={"active":mobileCheckIndex(index)} :href="'#'+changeAnchor(index)"
@@ -974,28 +1010,20 @@
                     $('[data-toggle="tooltip"]').tooltip('hide');
                 }, 500);
             });
+
+            setTimeout(function () {
+                $(".loading img").addClass("remove");
+            }, 2250);
+            
+            
+            setTimeout(function () {
+                $(".all").addClass("active");
+                $(".more-btn").removeClass("remove");
+            }, 3000);
+
+
         })
     </script>
-    <!-- <script src="js/jquery.ripples-min.js"></script> -->
-
-
-    <!-- <script>
-        $(".entrance-page").ripples({
-            imageUrl: null,
-            resolution: 256,
-            dropRadius: 20,
-            perturbance: 0.04,
-            interactive: true,
-            crossOrigin: ''
-        });
-        $(".entrance-page").click(function () {
-            $(this).fadeOut(2000);
-            setTimeout(function () {
-                $("div").remove(".entrance-page");
-            }, 2000);
-        })
-    </script> -->
-
 
 
     <!-- Vue -->
@@ -1273,18 +1301,23 @@
                 ]
             },
             created: function () {
+
                 // `this` points to the vm instance
                 this.chapter = this.firstChapter;
                 window.addEventListener('scroll', this.handleScroll, true);
+
             },
             mounted: function () {
+
                 this.initAnchorOffsetTop();
                 this.window_w = window.innerWidth
                 this.$nextTick(() => {
                     window.addEventListener('resize', () => {
                         this.window_w = window.innerWidth
                     });
-                })
+                });
+
+
             },
             updated: function () {
 
@@ -1331,7 +1364,7 @@
                     //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
                     //     }, 250);
                     // }
-
+                    $(".list-menu ul>li:first-child>a").addClass("active");
                     this.currentArticleIndex = 0;
 
                     $(".content").animate({
