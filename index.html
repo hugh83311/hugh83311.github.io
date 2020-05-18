@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>朝陽新聞台</title>
+    <title>朝陽新聞</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="bookmark" href="img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
@@ -31,10 +31,36 @@
             align-items: center;
         }
 
+        .loading img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: opacity 1s ;
+            opacity: 1;
+        }
+
+        .loading img.remove {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .all {
             flex-direction: row;
             display: inline-flex;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 2s;
+        }
+
+        .all.active {
+            flex-direction: row;
+            display: inline-flex;
+            overflow:auto;
             width: 100%;
+            opacity: 1;
+            pointer-events: all;
         }
 
 
@@ -533,10 +559,17 @@
                 right: 15px;
                 bottom: 55px;
                 z-index: 10;
+                opacity: 1;
+                pointer-events: all;
+                transition: opacity 2s;
+            }
+
+            .more-btn.remove {
+                opacity: 0;
+                pointer-events: none;
             }
 
             .more-btn:active {
-                opacity: 0.8;
             }
 
             .more-btn.open {
@@ -544,7 +577,6 @@
             }
 
             .more-btn.open:active {
-                opacity: 0.8;
             }
 
             .more-btn.move {
@@ -736,12 +768,16 @@
         </div>
     </div> -->
     <!-- 選擇文章 -->
-    <div class="more-btn"></div>
+    <div class="more-btn remove"></div>
+    <div class="loading">
+        <img src="img/Cytu-Logo.svg" height="137" alt="">
+    </div>
     <div class="all" id="app">
         <div class="list-menu">
             <ul>
                 <li>
-                    <a href="#" v-on:click="closeListMenu();backToTop();">朝陽新聞第{{chinessChapterName}}集</a>
+                    <a href="#" v-on:click="closeListMenu();backToTop();"
+                        class="active">朝陽新聞第{{chinessChapterName}}集</a>
                 </li>
                 <li v-for="(item, index) in chapter" v-cloak>
                     <a v-bind:class={"active":mobileCheckIndex(index)} :href="'#'+changeAnchor(index)"
@@ -848,7 +884,7 @@
                     <a href="/news-09.html">
                         <p class="active">
                             <span class="custom-tooltip" data-toggle="tooltip"
-                                data-placement="right">‧&nbsp;認識朝陽新聞台</span>
+                                data-placement="right">‧&nbsp;認識朝陽新聞</span>
                         </p>
                     </a>
                     <a href="http://ft.cyut.edu.tw/" target="_blank">
@@ -969,33 +1005,25 @@
 
             $('[data-toggle="tooltip"]').tooltip().click(function () {
                 $(this).tooltip('show');
-                
+
                 setTimeout(function () {
                     $('[data-toggle="tooltip"]').tooltip('hide');
                 }, 500);
             });
+
+            setTimeout(function () {
+                $(".loading img").addClass("remove");
+            }, 1250);
+            
+            
+            setTimeout(function () {
+                $(".all").addClass("active");
+                $(".more-btn").removeClass("remove");
+            }, 2000);
+
+
         })
     </script>
-    <!-- <script src="js/jquery.ripples-min.js"></script> -->
-
-
-    <!-- <script>
-        $(".entrance-page").ripples({
-            imageUrl: null,
-            resolution: 256,
-            dropRadius: 20,
-            perturbance: 0.04,
-            interactive: true,
-            crossOrigin: ''
-        });
-        $(".entrance-page").click(function () {
-            $(this).fadeOut(2000);
-            setTimeout(function () {
-                $("div").remove(".entrance-page");
-            }, 2000);
-        })
-    </script> -->
-
 
 
     <!-- Vue -->
@@ -1014,7 +1042,7 @@
                 firstChapter: [{
                     id: 'A',
                     title: '化妝水只是水 僅含微量保養成分',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2015/03/04',
                     type: '採訪報導',
                     image: 'img/01/01-3.jpg',
@@ -1045,7 +1073,7 @@
                 {
                     id: 'B',
                     title: '大學生活忙又忙 小心壓力超標',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2015/03/04',
                     type: '採訪報導',
                     image: 'img/01/01-3.jpg',
@@ -1073,7 +1101,7 @@
                 {
                     id: 'C',
                     title: '國際發明展爭光 朝陽2年奪51獎座',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2015/03/04',
                     type: '採訪報導',
                     image: 'img/01/01-3.jpg',
@@ -1081,7 +1109,7 @@
                     （記者旁白）自2013-2014年，朝陽科大的同學們先後參加了澳門、韓國、馬來西亞、美國等地舉辦的發明展，在這些發明展中，一共奪得19金，20銀，3銅，及9個特別獎的好成績。學生的發明作品在國際發明展上嶄露頭角，獲得了來自國際的肯定。
                     <br><br>（記者旁白）而在2014年韓國首爾發明展上，朝陽更是以「拉扣─單車踏板」和「安全氣囊式安全帽」這兩件作品，大放異彩。
                     <br><br>（記者旁白）「拉扣─單車踏板」，這看似普通的踏板有什麼樣的玄機呢？接下來請研發中心的同學為我們示範說明。
-                    <br><br>示範同學（需加姓名）：這個設計就是將鎖結合腳踏板，結合在一起。那我們要鎖的時候，把這個鎖抽離出來，那我們就是利用它這個設計原理，然後把它結合起來。鎖在輪子那邊。這樣子，那我們不用的時候就把它解開，然後放回原來的位置。這樣整體設計就會好看很多。
+                    <br><br>示範同學：這個設計就是將鎖結合腳踏板，結合在一起。那我們要鎖的時候，把這個鎖抽離出來，那我們就是利用它這個設計原理，然後把它結合起來。鎖在輪子那邊。這樣子，那我們不用的時候就把它解開，然後放回原來的位置。這樣整體設計就會好看很多。
                 </p>
                 <p class="literary title_orange">
                     <br>留意生活小細節&nbsp;&nbsp;創意源源不絕
@@ -1106,7 +1134,7 @@
                 secondChapter: [{
                     id: 'A',
                     title: '朝陽新型停車證 跟上QRcode潮流',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2015/01/01',
                     type: '採訪報導',
                     content: `<p class="literary">
@@ -1135,7 +1163,7 @@
                 {
                     id: 'B',
                     title: '勇奪金鐘 李宜珊、范家綺返校回饋',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2015/01/01',
                     type: '採訪報導',
                     image: 'img/01/01-3.jpg',
@@ -1169,7 +1197,7 @@
                 thirdChapter: [{
                     id: 'A',
                     title: '校園新增133、158公車 可抵高鐵站',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2014/12/15',
                     type: '採訪報導',
                     content: `<p class="literary">
@@ -1204,7 +1232,7 @@
                 {
                     id: 'B',
                     title: '物價上漲壓力 學生餐廳撐不住',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2014/12/15',
                     type: '台中報導',
                     content: `<p class="literary">
@@ -1235,7 +1263,7 @@
                 {
                     id: 'C',
                     title: '基地台深夜發出噪音 造成居民睡眠障礙',
-                    author: '朝陽新聞台',
+                    author: '朝陽新聞',
                     time: '2014/12/15',
                     type: '採訪報導',
                     content: `<p class="literary title_orange">
@@ -1273,18 +1301,23 @@
                 ]
             },
             created: function () {
+
                 // `this` points to the vm instance
                 this.chapter = this.firstChapter;
                 window.addEventListener('scroll', this.handleScroll, true);
+
             },
             mounted: function () {
+
                 this.initAnchorOffsetTop();
                 this.window_w = window.innerWidth
                 this.$nextTick(() => {
                     window.addEventListener('resize', () => {
                         this.window_w = window.innerWidth
                     });
-                })
+                });
+
+
             },
             updated: function () {
 
@@ -1306,7 +1339,6 @@
                 mobileCheckIndex: function (index) {
                     return index + 1 === this.currentArticleIndex;
                 },
-
                 initAnchorOffsetTop: function () {
                     //clear array
                     this.currentArticleOffsets = [];
@@ -1332,7 +1364,7 @@
                     //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
                     //     }, 250);
                     // }
-
+                    $(".list-menu ul>li:first-child>a").addClass("active");
                     this.currentArticleIndex = 0;
 
                     $(".content").animate({
@@ -1349,7 +1381,8 @@
                     //     $(".content").animate({
                     //         scrollTop: this.currentArticleOffsets[this.currentArticleIndex]
                     //     }, 250);
-                    // }
+
+                    $(".list-menu ul>li:first-child>a").removeClass("active");
 
                     this.currentArticleIndex = this.chapter.length;
                     $(".content").animate({
@@ -1361,8 +1394,11 @@
                     this.initAnchorOffsetTop();
                 },
                 nextChapter: function () {
+                    $(".list-menu ul>li:first-child>a").addClass("active");
+
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:first-child > li").addClass("active");
+
                     if (this.chapterIndex === 2) {
                         $(".video-container .yt-video").css("display", "none");
                         $(".video-container .yt-video:nth-child(1)").css("display", "block");
@@ -1377,7 +1413,7 @@
                         $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' +
                             'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 0;
-                        this.chapter = this.thirdChapter;
+                        this.chapter = this.firstChapter;
                         this.currentItemsIndex = 0;
                         $(".content").animate({
                             scrollTop: 0
@@ -1432,6 +1468,8 @@
                     });
                 },
                 preChapter: function () {
+                    $(".list-menu ul>li:first-child>a").addClass("active");
+
                     $(".page_dot li").removeClass("active");
                     $(".page_dot > ul > a:first-child > li").addClass("active");
                     if (this.chapterIndex === 0) {
@@ -1448,8 +1486,8 @@
                         $('#mb-video-2')[0].contentWindow.postMessage('{"event":"command","func":"' +
                             'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 2;
-                        this.chapter = this.firstChapter;
-                        this.currentItemsIndex = 2;
+                        this.chapter = this.thirdChapter;
+                        this.currentItemsIndex = 1;
                         $(".content").animate({
                             scrollTop: 0
                         }, 0);
@@ -1468,8 +1506,8 @@
                         $('#mb-video-3')[0].contentWindow.postMessage('{"event":"command","func":"' +
                             'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 0;
-                        this.chapter = this.thirdChapter;
-                        this.currentItemsIndex = 0;
+                        this.chapter = this.firstChapter;
+                        this.currentItemsIndex = 2;
                         $(".content").animate({
                             scrollTop: 0
                         }, 0);
@@ -1490,7 +1528,7 @@
                             'stopVideo' + '","args":""}', '*');
                         this.chapterIndex = 1;
                         this.chapter = this.secondChapter;
-                        this.currentItemsIndex = 1;
+                        this.currentItemsIndex = 0;
                         $(".content").animate({
                             scrollTop: 0
                         }, 0);
@@ -1594,10 +1632,12 @@
                     $(".list-menu").removeClass("show");
                 },
                 backToTop: function () {
+                    $(".list-menu ul>li:first-child>a").addClass("active");
                     this.currentArticleIndex = 0;
                     $(".content").scrollTop(0);
                 },
                 updateArticleIndex: function (index) {
+                    $(".list-menu ul>li>a.active").removeClass("active");
                     this.currentArticleIndex = index + 1;
                 },
                 ArticleActive: function (index) {

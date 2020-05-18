@@ -112,7 +112,7 @@ p{
     justify-content: space-between;
     align-items: center;
     width: 100px;
-    height: 100vh;
+    height: 100%;
     padding: 40px 0;
     background-color: #00A0F0;
     box-sizing: border-box;
@@ -253,6 +253,7 @@ p{
     padding: 6px 8px;
 }
 .search_box input{
+    padding: 0;
     border: none;
     width: 100%;
     padding-right: 8px;
@@ -260,6 +261,7 @@ p{
     color:white;
     font-size: 18px;
     box-sizing: border-box;
+    line-height: 26px;
 }
 .search_box input:focus{
     outline: none;
